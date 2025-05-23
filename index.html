@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+        <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Holozonic - Medicina Integrativa e Tecnologia Vestível</title>    <meta name="description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">        <!-- PWA Configuration -->    <link rel="manifest" href="/manifest.json">    <meta name="theme-color" content="#1E90FF">    <meta name="apple-mobile-web-app-capable" content="yes">    <meta name="apple-mobile-web-app-status-bar-style" content="default">    <meta name="apple-mobile-web-app-title" content="Holozonic">    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">        <!-- Open Graph / Facebook -->    <meta property="og:type" content="website">    <meta property="og:url" content="https://holozonic.com.br/">    <meta property="og:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="og:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="og:image" content="/icons/icon-512x512.png">        <!-- Twitter -->    <meta property="twitter:card" content="summary_large_image">    <meta property="twitter:url" content="https://holozonic.com.br/">    <meta property="twitter:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="twitter:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="twitter:image" content="/icons/icon-512x512.png">        <!-- Google Analytics 4 -->    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>    <script>        window.dataLayer = window.dataLayer || [];        function gtag(){dataLayer.push(arguments);}        gtag('js', new Date());        gtag('config', 'G-XXXXXXXXXX', {            page_title: 'Holozonic - Home',            page_location: window.location.href,            send_page_view: true        });    </script>        <!-- TailwindCSS -->    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </div>
+            </div>
+            
+            <!-- Menu de Navegação -->
+            <div class="hidden lg:flex space-x-6">
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Monitoramento Inteligente
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Por que a Holozonic
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Medicina Chinesa
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Oxigenioozonioterapia Estética
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Exames de Imagem
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                        Exame do Sono
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Botões de Ação -->
+            <div class="hidden lg:flex space-x-4">
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+                <button class="bg-accent text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                    VitaLin
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <button id="mobile-menu-btn" class="lg:hidden text-primary text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Mega Menu (Desktop) -->
+        <div id="mega-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t">
+            <div class="container mx-auto px-4 py-8">
+                <div class="grid grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="font-bold text-primary mb-4">Serviços Médicos</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#teleconsulta" class="text-gray-600 hover:text-primary">Teleconsulta</a></li>
+                            <li><a href="#pre-anamnese" class="text-gray-600 hover:text-primary">Formulário de Pré-Anamnese</a></li>
+                            <li><a href="#prescricao" class="text-gray-600 hover:text-primary">Prescrição Online</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-4">Exames</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#exames-imagem" class="text-gray-600 hover:text-primary">Exames de Imagem</a></li>
+                            <li><a href="#exame-sono" class="text-gray-600 hover:text-primary">Exame do Sono</a></li>
+                            <li><a href="#monitoramento" class="text-gray-600 hover:text-primary">Monitoramento Inteligente</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-4">Terapias</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#medicina-chinesa" class="text-gray-600 hover:text-primary">Medicina Chinesa</a></li>
+                            <li><a href="#oxigenio" class="text-gray-600 hover:text-primary">Oxigenioozonioterapia</a></li>
+                            <li><a href="#hospedagem" class="text-gray-600 hover:text-primary">Hospedagem Terapêutica</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-4">Outros</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#vitalin" class="text-gray-600 hover:text-primary">VitaLin</a></li>
+                            <li><a href="#loja" class="text-gray-600 hover:text-primary">Loja Integrada</a></li>
+                            <li><a href="#sobre" class="text-gray-600 hover:text-primary">Por que a Holozonic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#monitoramento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-heartbeat mr-2"></i>
+                    Monitoramento Inteligente
+                </a>
+                <a href="#sobre" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Por que a Holozonic
+                </a>
+                <a href="#medicina-chinesa" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-yin-yang mr-2"></i>
+                    Medicina Chinesa
+                </a>
+                <a href="#oxigenio" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-wind mr-2"></i>
+                    Oxigenioozonioterapia Estética
+                </a>
+                <a href="#exames-imagem" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-x-ray mr-2"></i>
+                    Exames de Imagem
+                </a>
+                <a href="#exame-sono" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <i class="fas fa-moon mr-2"></i>
+                    Exame do Sono
+                </a>
+                <div class="border-t pt-4 mt-4">
+                    <a href="#agendamento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Agendamento Online
+                    </a>
+                    <a href="#teleconsulta" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                        <i class="fas fa-video mr-2"></i>
+                        Teleconsulta
+                    </a>
+                    <a href="#vitalin" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                        <i class="fas fa-gem mr-2"></i>
+                        VitaLin
+                    </a>
+                    <a href="#hospedagem" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                        <i class="fas fa-home mr-2"></i>
+                        Hospedagem Terapêutica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-70">
+            <source src="img/background.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <div class="relative z-10 text-center text-white max-w-4xl px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Descubra uma nova abordagem à saúde que combina o melhor da tradição milenar com a tecnologia do futuro
+            </p>
+            <button id="hero-agendamento" class="bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Agendamento Online
+            </button>
+        </div>
+    </section>
+    
+    <!-- Seção: Por que a Holozonic -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Por que a Holozonic?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nossa missão é revolucionar o cuidado com a saúde através da integração harmoniosa entre sabedoria ancestral e inovação tecnológica
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Medicina Integrativa</h3>
+                    <p class="text-gray-600">
+                        Combinamos práticas milenares da medicina chinesa com diagnósticos modernos e precisos
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Tecnologia Vestível</h3>
+                    <p class="text-gray-600">
+                        Monitoramento contínuo da sua saúde através de dispositivos inteligentes e análises em tempo real
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Cuidado Personalizado</h3>
+                    <p class="text-gray-600">
+                        Tratamentos únicos desenvolvidos especificamente para seu perfil e necessidades individuais
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-6">Nossa Visão</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Ser referência mundial em medicina integrativa, conectando a sabedoria milenar oriental com as mais avançadas tecnologias de monitoramento e tratamento de saúde.
+                    </p>
+                    <h3 class="text-3xl font-bold text-primary mb-6">Nossos Valores</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            Excelência em atendimento e resultados
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            Inovação constante em tratamentos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            Ética e transparência em todos os procedimentos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            Cuidado humanizado e individualizado
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white">
+                    <h3 class="text-2xl font-bold mb-6">Diferenciais Competitivos</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Diagnóstico Integrado</h4>
+                                <p class="text-sm opacity-90">Medicina tradicional + tecnologia de ponta</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Monitoramento 24/7</h4>
+                                <p class="text-sm opacity-90">Acompanhamento contínuo da sua saúde</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Terapias Exclusivas</h4>
+                                <p class="text-sm opacity-90">Tratamentos únicos e personalizados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Medicina Chinesa -->
+    <section id="medicina-chinesa" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Medicina Chinesa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Práticas milenares baseadas no equilíbrio energético e diagnósticos precisos através de métodos tradicionais
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-6">Diagnósticos Tradicionais</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Diagnóstico pela Observação</h4>
+                                <p class="text-gray-600">Análise da compleição, língua, expressão facial e postura corporal para identificar desequilíbrios energéticos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Pulsologia</h4>
+                                <p class="text-gray-600">Leitura detalhada dos pulsos para avaliar o estado dos órgãos e sistemas corporais.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Anamnese Energética</h4>
+                                <p class="text-gray-600">Questionário detalhado sobre sintomas, emoções e padrões de vida segundo a medicina tradicional chinesa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Práticas Terapêuticas</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-spa text-3xl text-primary mb-2"></i>
+                            <h4 class="font-bold">Acupuntura</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-leaf text-3xl text-secondary mb-2"></i>
+                            <h4 class="font-bold">Fitoterapia</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-hands text-3xl text-accent mb-2"></i>
+                            <h4 class="font-bold">Tui Na</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-fire text-3xl text-orange-500 mb-2"></i>
+                            <h4 class="font-bold">Moxabustão</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center">
+                        <button class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            Agendar Consulta de Medicina Chinesa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Oxigenioozonioterapia Estética -->
+    <section id="oxigenio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Oxigenioozonioterapia Estética</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tratamentos estéticos avançados com ozônio medicinal para rejuvenescimento e revitalização celular
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl text-primary mb-4 text-center">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Revitalização Celular</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        O ozônio medicinal promove a oxigenação celular, estimulando a regeneração e o rejuvenescimento natural da pele.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Melhora da textura da pele
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Redução de linhas de expressão
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Estímulo à produção de colágeno
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl text-secondary mb-4 text-center">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Segurança Comprovada</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Protocolos rigorosos de segurança e profissionais especializados garantem tratamentos seguros e eficazes.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Procedimentos não invasivos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Sem efeitos colaterais
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Resultados duradouros
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl text-accent mb-4 text-center">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Resultados Visíveis</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Tratamentos personalizados que proporcionam resultados visíveis desde as primeiras sessões.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Pele mais luminosa
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Redução de manchas
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Firmeza e elasticidade
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-2xl text-center">
+                <h3 class="text-3xl font-bold mb-4">Agende sua Avaliação Gratuita</h3>
+                <p class="text-xl mb-6 opacity-90">
+                    Descubra como a oxigenioozonioterapia pode revolucionar seus cuidados estéticos
+                </p>
+                <button class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                    Quero Agendar Minha Avaliação
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Exames de Imagem e do Sono -->
+    <section id="exames" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Exames Especializados</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Diagnósticos precisos com laudo digital e acompanhamento remoto para sua comodidade e segurança
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Exames de Imagem -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-8">
+                        <div class="text-5xl text-primary mb-4">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-primary mb-4">Exames de Imagem</h3>
+                        <p class="text-gray-600">
+                            Equipamentos de última geração para diagnósticos precisos e detalhados
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Ressonância Magnética Digital</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Tomografia Computadorizada</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Ultrassonografia 4D</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Raio-X Digital</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Laudo Digital em 24h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-primary mb-3">Vantagens do Laudo Digital:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Acesso remoto aos resultados</li>
+                            <li>• Compartilhamento seguro com outros médicos</li>
+                            <li>• Armazenamento em nuvem permanente</li>
+                            <li>• Comparação histórica de exames</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-white py-3 rounded-lg mt-6 hover:bg-blue-600 transition-colors">
+                        Agendar Exame de Imagem
+                    </button>
+                </div>
+                
+                <!-- Exames do Sono -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-8">
+                        <div class="text-5xl text-accent mb-4">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-accent mb-4">Exame do Sono</h3>
+                        <p class="text-gray-600">
+                            Polissonografia completa com monitoramento domiciliar para seu conforto
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Polissonografia Domiciliar</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Monitoramento de Apneia</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Análise de Ronco</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Qualidade do Sono REM</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i>
+                            <span>Relatório Detalhado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-accent mb-3">Acompanhamento Remoto:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Equipamentos portáteis de fácil uso</li>
+                            <li>• Monitoramento em tempo real</li>
+                            <li>• Consultoria por telefone</li>
+                            <li>• Plano de tratamento personalizado</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="w-full bg-accent text-white py-3 rounded-lg mt-6 hover:bg-purple-600 transition-colors">
+                        Agendar Exame do Sono
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: VitaLin - Planos de Assinatura -->
+    <section id="vitalin" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-accent mb-4">VitaLin</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Programa de fidelidade exclusivo com planos personalizados e benefícios únicos para membros
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Plano Mensal -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Plano Mensal</h3>
+                        <div class="text-4xl font-bold text-gray-800 mb-4">
+                            R$ 299<span class="text-lg text-gray-500">/mês</span>
+                        </div>
+                        <p class="text-gray-600">Ideal para começar sua jornada</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>1 Consulta de Medicina Chinesa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Monitoramento básico 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Acesso à teleconsulta</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>20% desconto em exames</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Suporte via WhatsApp</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                        Assinar Plano Mensal
+                    </button>
+                </div>
+                
+                <!-- Plano Trimestral -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative border-2 border-secondary">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-secondary text-white px-4 py-2 rounded-full text-sm font-bold">MAIS POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Plano Trimestral</h3>
+                        <div class="text-4xl font-bold text-gray-800 mb-4">
+                            R$ 799<span class="text-lg text-gray-500">/trimestre</span>
+                        </div>
+                        <p class="text-gray-600">Economia de 11% + benefícios extras</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>3 Consultas de Medicina Chinesa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Monitoramento avançado 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Teleconsultas ilimitadas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>40% desconto em exames</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>1 Sessão de oxigenioterapia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Suporte prioritário</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-secondary text-white py-3 rounded-lg hover:bg-green-600 transition-colors">
+                        Assinar Plano Trimestral
+                    </button>
+                </div>
+                
+                <!-- Plano Anual -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">MELHOR VALOR</span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-accent mb-2">Plano Anual</h3>
+                        <div class="text-4xl font-bold text-gray-800 mb-4">
+                            R$ 2.599<span class="text-lg text-gray-500">/ano</span>
+                        </div>
+                        <p class="text-gray-600">Economia de 28% + máximos benefícios</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>12 Consultas de Medicina Chinesa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Monitoramento premium 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Teleconsultas + domiciliar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>60% desconto em exames</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>4 Sessões de oxigenioterapia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>1 Semana de hospedagem terapêutica</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span>Concierge de saúde dedicado</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-accent text-white py-3 rounded-lg hover:bg-purple-600 transition-colors">
+                        Assinar Plano Anual
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">Todos os planos incluem cancelamento sem taxas e garantia de satisfação</p>
+                <button class="text-primary hover:text-blue-600 underline">
+                    Ver comparação detalhada dos planos
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Serviços Integrados -->
+    <section id="servicos" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Serviços Integrados</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Plataforma completa para agendamento, atendimento e acompanhamento da sua saúde
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Agendamento Online -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Agendamento Online</h3>
+                    <p class="text-gray-600 mb-6">
+                        Agende suas consultas e exames de forma rápida e prática através da nossa plataforma digital.
+                    </p>
+                    <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        Agendar Agora
+                    </button>
+                </div>
+                
+                <!-- Teleconsulta -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Teleconsulta</h3>
+                    <p class="text-gray-600 mb-6">
+                        Consultas médicas por videoconferência com a mesma qualidade do atendimento presencial.
+                    </p>
+                    <button class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                        Iniciar Teleconsulta
+                    </button>
+                </div>
+                
+                <!-- Prescrição Online -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Prescrição Online</h3>
+                    <p class="text-gray-600 mb-6">
+                        Receba suas prescrições médicas digitalmente com validade legal e entrega em domicílio.
+                    </p>
+                    <button class="bg-accent text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                        Ver Prescrições
+                    </button>
+                </div>
+                
+                <!-- Hospedagem Terapêutica -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-orange-500 mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Hospedagem Terapêutica</h3>
+                    <p class="text-gray-600 mb-6">
+                        Imersão terapêutica completa em ambiente controlado para tratamentos intensivos.
+                    </p>
+                    <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Formulário de Pré-Anamnese (Protegida) -->
+    <section id="pre-anamnese" class="py-20 bg-gray-50 hidden" data-protected="true">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Verificação de Acesso -->
+                <div id="acesso-negado" class="text-center py-16">
+                    <div class="bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto">
+                        <div class="text-6xl text-red-500 mb-4">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Acesso Restrito</h3>
+                        <p class="text-gray-600 mb-6">
+                            Este formulário está disponível apenas após a confirmação de compra e agendamento.
+                        </p>
+                        <div class="space-y-3">
+                            <button id="btn-agendar" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Fazer Agendamento
+                            </button>
+                            <button id="btn-comprar" class="w-full bg-secondary text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Ver Planos VitaLin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário (oculto por padrão) -->
+                <div id="formulario-anamnese" class="hidden">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-bold text-primary mb-4">Formulário de Pré-Anamnese</h2>
+                        <p class="text-xl text-gray-600">
+                            Compartilhe suas informações de saúde para um atendimento mais personalizado e eficiente
+                        </p>
+                    </div>
+                    
+                    <form id="pre-anamnese-form" class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <!-- Dados Pessoais -->
+                            <div class="md:col-span-2">
+                                <h3 class="text-2xl font-bold text-primary mb-6 border-b pb-2">Dados Pessoais</h3>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Nome Completo*</label>
+                                <input type="text" name="nome" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Idade*</label>
+                                <input type="number" name="idade" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Telefone*</label>
+                                <input type="tel" name="telefone" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Email*</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <!-- Histórico de Saúde -->
+                            <div class="md:col-span-2">
+                                <h3 class="text-2xl font-bold text-primary mb-6 border-b pb-2 mt-8">Histórico de Saúde</h3>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-bold mb-2">Doenças Pré-existentes</label>
+                                <textarea name="doencas" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descreva suas doenças pré-existentes, se houver"></textarea>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-bold mb-2">Tratamentos Anteriores</label>
+                                <textarea name="tratamentos" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descreva tratamentos médicos anteriores"></textarea>
+                            </div>
+                            
+                            <!-- Estilo de Vida -->
+                            <div class="md:col-span-2">
+                                <h3 class="text-2xl font-bold text-primary mb-6 border-b pb-2 mt-8">Estilo de Vida</h3>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Qualidade do Sono</label>
+                                <select name="sono" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Selecione</option>
+                                    <option value="excelente">Excelente</option>
+                                    <option value="boa">Boa</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="ruim">Ruim</option>
+                                    <option value="pessima">Péssima</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2">Frequência de Exercícios</label>
+                                <select name="exercicios" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Selecione</option>
+                                    <option value="diario">Diário</option>
+                                    <option value="3-4x">3-4x por semana</option>
+                                    <option value="1-2x">1-2x por semana</option>
+                                    <option value="eventual">Eventual</option>
+                                    <option value="sedentario">Sedentário</option>
+                                </select>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-bold mb-2">Hábitos Alimentares</label>
+                                <textarea name="alimentacao" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descreva seus hábitos alimentares"></textarea>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-bold mb-2">Medicamentos Contínuos</label>
+                                <textarea name="medicamentos" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Liste medicamentos em uso contínuo"></textarea>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-bold mb-2">Objetivos com o Tratamento</label>
+                                <textarea name="objetivos" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descreva seus objetivos e expectativas"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="bg-primary text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar Formulário
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Monitoramento Inteligente -->
+    <section id="monitoramento" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Monitoramento Inteligente</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tecnologia vestível avançada para acompanhamento contínuo da sua saúde e bem-estar
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-6">Dispositivos Inteligentes</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Monitoramento Cardíaco</h4>
+                                <p class="text-gray-600">Acompanhamento contínuo da frequência cardíaca, pressão arterial e variabilidade cardíaca.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-accent text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Qualidade do Sono</h4>
+                                <p class="text-gray-600">Análise detalhada dos ciclos do sono e otimização do descanso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botão único para ativar monitoramento -->
+                    <div class="mt-8">
+                        <button id="ativar-monitoramento" class="bg-primary text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-play mr-2"></i>
+                            Ativar Monitoramento Inteligente
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white">
+                    <h3 class="text-2xl font-bold mb-6">Métricas em Tempo Real</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white/20 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span>Frequência Cardíaca</span>
+                                <span class="font-bold">72 BPM</span>
+                            </div>
+                            <div class="w-full bg-white/30 rounded-full h-2">
+                                <div class="bg-white h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/20 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span>Qualidade do Sono</span>
+                                <span class="font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-white/30 rounded-full h-2">
+                                <div class="bg-white h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-white/10 rounded-lg">
+                        <p class="text-sm opacity-90">
+                            Status: <span class="font-bold text-green-300">Monitoramento Ativo</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <h3 class="text-3xl font-bold text-primary text-center mb-8">Benefícios do Monitoramento Contínuo</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Alertas Preventivos</h4>
+                        <p class="text-gray-600">Notificações em tempo real para prevenir problemas de saúde antes que se tornem graves.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl text-secondary mb-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Análise de Tendências</h4>
+                        <p class="text-gray-600">Identificação de padrões e tendências na sua saúde para otimização de tratamentos.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl text-accent mb-4">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Cuidado Proativo</h4>
+                        <p class="text-gray-600">Intervenções médicas baseadas em dados para manter sua saúde sempre em equilíbrio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-4 gap-8 mb-8">
+                <!-- Logo e Descrição -->
+                <div>
+                    <div class="text-2xl font-bold text-primary mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar completo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Serviços -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#medicina-chinesa" class="hover:text-primary transition-colors">Medicina Chinesa</a></li>
+                        <li><a href="#oxigenio" class="hover:text-primary transition-colors">Oxigenioozonioterapia</a></li>
+                        <li><a href="#exames" class="hover:text-primary transition-colors">Exames Especializados</a></li>
+                        <li><a href="#monitoramento" class="hover:text-primary transition-colors">Monitoramento Inteligente</a></li>
+                        <li><a href="#hospedagem" class="hover:text-primary transition-colors">Hospedagem Terapêutica</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Plataforma -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Plataforma</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#agendamento" class="hover:text-primary transition-colors">Agendamento Online</a></li>
+                        <li><a href="#teleconsulta" class="hover:text-primary transition-colors">Teleconsulta</a></li>
+                        <li><a href="#prescricao" class="hover:text-primary transition-colors">Prescrição Online</a></li>
+                        <li><a href="#vitalin" class="hover:text-primary transition-colors">VitaLin</a></li>
+                        <li><a href="#loja" class="hover:text-primary transition-colors">Loja Integrada</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contato -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-primary"></i>
+                            <span>(11) 3456-7890</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>contato@holozonic.com.br</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-primary mt-1"></i>
+                            <span>Rua da Saúde, 123<br>São Paulo - SP<br>CEP: 01234-567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-secondary"></i>
+                            <span>(11) 99999-8888</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados. | Desenvolvido com tecnologia e cuidado.</p>
+            </div>
+        </div>
+    </footer>
+    
+        <!-- JavaScript -->    <script src="js/main.js"></script>    <script src="js/analytics.js"></script></body></html> 
