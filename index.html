@@ -1150,217 +1150,409 @@
     
         <!-- JavaScript -->    <script src="js/main.js"></script>    <script src="js/analytics.js"></script>    
     <script>
-        // Controle do Header com Scroll
-        let lastScrollTop = 0;
-        const header = document.getElementById('main-header');
-        let scrollDirection = '';
-        
-        // Função para verificar e aplicar cor do header
-        function updateHeaderColor() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const heroSection = document.getElementById('hero');
-            
-            if (heroSection) {
-                const heroHeight = heroSection.offsetHeight;
-                
-                if (scrollTop < heroHeight - 100) {
-                    // Sobre o vídeo - texto branco
-                    header.classList.add('over-video');
-                    header.classList.remove('scrolled');
-                } else {
-                    // Fora do vídeo - texto escuro
-                    header.classList.remove('over-video');
-                    header.classList.add('scrolled');
-                }
-            }
-        }
-        
-        // Aplicar cor inicial ao carregar a página
+        // Aguardar carregamento completo do DOM
         document.addEventListener('DOMContentLoaded', function() {
-            // Pequeno delay para garantir que o DOM está completamente carregado
-            setTimeout(updateHeaderColor, 100);
+            initializeHolozonicApp();
         });
         
-        // Também aplicar ao carregar a janela
-        window.addEventListener('load', function() {
-            updateHeaderColor();
-        });
-        
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Função principal de inicialização
+        function initializeHolozonicApp() {
+            console.log('🚀 Inicializando Holozonic App...');
             
-            // Atualizar cor do header
-            updateHeaderColor();
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down - hide header
-                header.style.transform = 'translateY(-100%)';
-                scrollDirection = 'down';
-            } else if (scrollTop < lastScrollTop || scrollTop < 50) {
-                // Scrolling up or near top - show header
-                header.style.transform = 'translateY(0)';
-                scrollDirection = 'up';
-            }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-        }, false);
-        
-        // Menu Mobile Toggle - Versão melhorada
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
-        
-        // Função para alternar menu
-        function toggleMobileMenu() {
-            if (!mobileMenu || !mobileMenuBtn) {
-                console.error('Elementos do menu mobile não encontrados');
-                return;
-            }
-            
-            isMenuOpen = !isMenuOpen;
-            
-            if (isMenuOpen) {
-                // Abrir menu
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.style.display = 'block';
-                mobileMenuBtn.querySelector('i').className = 'fas fa-times';
-                document.body.style.overflow = 'hidden'; // Prevenir scroll
+            try {
+                // Verificar elementos essenciais
+                const elements = checkEssentialElements();
                 
-                console.log('Menu mobile aberto');
-            } else {
-                // Fechar menu
-                mobileMenu.classList.add('hidden');
-                setTimeout(() => {
-                    mobileMenu.style.display = 'none';
-                }, 300);
-                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
-                document.body.style.overflow = 'auto';
+                // Configurar header se disponível
+                if (elements.header) {
+                    setupHeaderFunctionality(elements);
+                    console.log('✅ Header configurado');
+                }
                 
-                console.log('Menu mobile fechado');
-            }
-        }
-        
-        // Event listener para o botão
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-        } else {
-            console.error('Botão do menu mobile não encontrado');
-        }
-        
-        // Agendamento Mobile
-        const mobileAgendarBtn = document.getElementById('mobile-agendar-btn');
-        mobileAgendarBtn?.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Fechar menu mobile
-            if (isMenuOpen) {
-                toggleMobileMenu();
-            }
-            // Abrir modal de agendamento
-            if (window.showAgendamentoModal) {
-                window.showAgendamentoModal();
-            }
-        });
-        
-        // Botão Teste do Ronco - Verificar e melhorar
-        const testeRoncoBtn = document.getElementById('teste-ronco-btn');
-        if (testeRoncoBtn) {
-            testeRoncoBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Botão Ronco clicado - redirecionando para teste-ronco.html');
-                window.location.href = 'teste-ronco.html';
-            });
-            console.log('Botão Teste do Ronco configurado com sucesso');
-        } else {
-            console.error('Botão teste-ronco-btn não encontrado');
-        }
-        
-        // Link Ronco no menu mobile
-        const roncoMenuLink = document.querySelector('a[href="teste-ronco.html"]');
-        if (roncoMenuLink) {
-            roncoMenuLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Link Ronco no menu mobile clicado');
-                if (isMenuOpen) {
-                    toggleMobileMenu();
+                // Configurar menu mobile e obter controller
+                let mobileMenuController = null;
+                if (elements.mobileMenuBtn && elements.mobileMenu) {
+                    mobileMenuController = setupMobileMenuFunctionality(elements);
+                    console.log('✅ Menu mobile configurado');
                 }
-                setTimeout(() => {
-                    window.location.href = 'teste-ronco.html';
-                }, 300);
-            });
-        }
-        
-        // Menu Compacto Toggle (LG screens)
-        const menuCompactBtn = document.getElementById('menu-compact-btn');
-        const compactMenu = document.getElementById('compact-menu');
-        
-        menuCompactBtn?.addEventListener('click', function() {
-            compactMenu.classList.toggle('hidden');
-            const icon = this.querySelector('i');
-            if (compactMenu.classList.contains('hidden')) {
-                icon.className = 'fas fa-bars';
-            } else {
-                icon.className = 'fas fa-times';
-            }
-        });
-        
-        // Fechar menus ao clicar fora
-        document.addEventListener('click', function(event) {
-            // Fechar menu mobile se clicar fora
-            if (isMenuOpen && 
-                !mobileMenuBtn?.contains(event.target) && 
-                !mobileMenu?.contains(event.target)) {
-                toggleMobileMenu();
-            }
-            
-            // Fechar menu compacto se clicar fora
-            if (!menuCompactBtn?.contains(event.target) && !compactMenu?.contains(event.target)) {
-                compactMenu?.classList.add('hidden');
-                const compactIcon = menuCompactBtn?.querySelector('i');
-                if (compactIcon) {
-                    compactIcon.className = 'fas fa-bars';
+                
+                // Configurar handlers de botões e obter controller
+                const buttonController = setupButtonHandlers(elements);
+                if (mobileMenuController) {
+                    buttonController.setMobileMenuController(mobileMenuController);
                 }
-            }
-        });
-        
-        // Fechar menus ao redimensionar
-        window.addEventListener('resize', function() {
-            if (isMenuOpen) {
-                toggleMobileMenu();
-            }
-            
-            compactMenu?.classList.add('hidden');
-            const compactIcon = menuCompactBtn?.querySelector('i');
-            if (compactIcon) {
-                compactIcon.className = 'fas fa-bars';
-            }
-        });
-        
-        // Smooth scrolling para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Fechar menus após navegação
-                    if (isMenuOpen) {
-                        toggleMobileMenu();
+                
+                // Configurar event listeners gerais
+                const generalController = setupGeneralEventListeners(elements);
+                if (mobileMenuController) {
+                    generalController.setMobileMenuController(mobileMenuController);
+                }
+                
+                // Configurar efeitos de scroll (já incluído no header)
+                setupScrollEffects(elements);
+                
+                console.log('✅ Holozonic App inicializado com sucesso');
+                console.log('📊 Resumo dos elementos encontrados:');
+                console.table(Object.fromEntries(
+                    Object.entries(elements).map(([key, element]) => [key, !!element])
+                ));
+                
+            } catch (error) {
+                console.error('❌ Erro durante a inicialização:', error);
+                console.log('🔄 Tentando inicialização em modo de recuperação...');
+                
+                // Modo de recuperação - tentar configurar elementos básicos
+                try {
+                    const basicElements = {
+                        header: document.getElementById('main-header'),
+                        mobileMenuBtn: document.getElementById('mobile-menu-btn'),
+                        mobileMenu: document.getElementById('mobile-menu')
+                    };
+                    
+                    if (basicElements.mobileMenuBtn && basicElements.mobileMenu) {
+                        setupMobileMenuFunctionality(basicElements);
+                        console.log('✅ Modo de recuperação - Menu mobile básico configurado');
                     }
-                    compactMenu?.classList.add('hidden');
+                } catch (recoveryError) {
+                    console.error('❌ Falha no modo de recuperação:', recoveryError);
+                }
+            }
+        }
+        
+        // Verificar se todos os elementos essenciais existem
+        function checkEssentialElements() {
+            console.log('🔍 Verificando elementos essenciais...');
+            
+            const elements = {
+                header: document.getElementById('main-header'),
+                heroSection: document.getElementById('hero'),
+                mobileMenuBtn: document.getElementById('mobile-menu-btn'),
+                mobileMenu: document.getElementById('mobile-menu'),
+                menuCompactBtn: document.getElementById('menu-compact-btn'),
+                compactMenu: document.getElementById('compact-menu'),
+                testeRoncoBtn: document.getElementById('teste-ronco-btn'),
+                mobileAgendarBtn: document.getElementById('mobile-agendar-btn'),
+                roncoMenuLink: document.querySelector('a[href="teste-ronco.html"]')
+            };
+            
+            // Log dos elementos encontrados
+            Object.entries(elements).forEach(([key, element]) => {
+                console.log(`${element ? '✅' : '❌'} ${key}:`, !!element);
+            });
+            
+            return elements;
+        }
+        
+        // Configurar funcionalidade do header
+        function setupHeaderFunctionality(elements) {
+            console.log('🎨 Configurando header...');
+            
+            let lastScrollTop = 0;
+            
+            // Função para verificar e aplicar cor do header
+            function updateHeaderColor() {
+                if (!elements.header) return;
+                
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (elements.heroSection) {
+                    const heroHeight = elements.heroSection.offsetHeight;
+                    
+                    if (scrollTop < heroHeight - 100) {
+                        // Sobre o vídeo - texto branco
+                        elements.header.classList.add('over-video');
+                        elements.header.classList.remove('scrolled');
+                    } else {
+                        // Fora do vídeo - texto escuro
+                        elements.header.classList.remove('over-video');
+                        elements.header.classList.add('scrolled');
+                    }
+                }
+            }
+            
+            // Aplicar cor inicial
+            setTimeout(updateHeaderColor, 100);
+            
+            // Configurar scroll listener
+            window.addEventListener('scroll', function() {
+                if (!elements.header) return;
+                
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Atualizar cor do header
+                updateHeaderColor();
+                
+                // Hide/show header logic
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    elements.header.style.transform = 'translateY(-100%)';
+                } else if (scrollTop < lastScrollTop || scrollTop < 50) {
+                    elements.header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, false);
+            
+            // Também aplicar ao carregar a janela
+            window.addEventListener('load', updateHeaderColor);
+        }
+        
+        // Configurar funcionalidade do menu mobile
+        function setupMobileMenuFunctionality(elements) {
+            console.log('📱 Configurando menu mobile...');
+            
+            let isMenuOpen = false;
+            
+            // Função para alternar menu com verificação robusta
+            function toggleMobileMenu() {
+                if (!elements.mobileMenu || !elements.mobileMenuBtn) {
+                    console.error('❌ Elementos do menu mobile não encontrados');
+                    return;
+                }
+                
+                isMenuOpen = !isMenuOpen;
+                
+                try {
+                    if (isMenuOpen) {
+                        // Abrir menu
+                        elements.mobileMenu.classList.remove('hidden');
+                        elements.mobileMenu.style.display = 'block';
+                        
+                        const icon = elements.mobileMenuBtn.querySelector('i');
+                        if (icon) {
+                            icon.className = 'fas fa-times';
+                        }
+                        
+                        document.body.style.overflow = 'hidden';
+                        console.log('✅ Menu mobile aberto');
+                    } else {
+                        // Fechar menu
+                        elements.mobileMenu.classList.add('hidden');
+                        setTimeout(() => {
+                            if (elements.mobileMenu) {
+                                elements.mobileMenu.style.display = 'none';
+                            }
+                        }, 300);
+                        
+                        const icon = elements.mobileMenuBtn.querySelector('i');
+                        if (icon) {
+                            icon.className = 'fas fa-bars';
+                        }
+                        
+                        document.body.style.overflow = 'auto';
+                        console.log('✅ Menu mobile fechado');
+                    }
+                } catch (error) {
+                    console.error('❌ Erro ao alternar menu mobile:', error);
+                }
+            }
+            
+            // Event listener para o botão com verificação
+            if (elements.mobileMenuBtn) {
+                elements.mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('🔧 Botão do menu mobile clicado');
+                    toggleMobileMenu();
+                });
+                console.log('✅ Event listener do menu mobile configurado');
+            }
+            
+            // Retornar funções para uso em outras partes
+            return { toggleMobileMenu, isMenuOpen: () => isMenuOpen };
+        }
+        
+        // Configurar handlers dos botões
+        function setupButtonHandlers(elements) {
+            console.log('🔘 Configurando handlers dos botões...');
+            
+            // Variable to track menu state (will be updated by mobile menu function)
+            let mobileMenuController = null;
+            
+            // Botão Teste do Ronco - Verificação robusta
+            if (elements.testeRoncoBtn) {
+                elements.testeRoncoBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🔊 Botão Ronco clicado - redirecionando para teste-ronco.html');
+                    try {
+                        window.location.href = 'teste-ronco.html';
+                    } catch (error) {
+                        console.error('❌ Erro ao redirecionar para teste do ronco:', error);
+                    }
+                });
+                console.log('✅ Botão Teste do Ronco configurado');
+            } else {
+                console.warn('⚠️ Botão teste-ronco-btn não encontrado');
+            }
+            
+            // Agendamento Mobile com verificação
+            if (elements.mobileAgendarBtn) {
+                elements.mobileAgendarBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('📅 Botão agendar mobile clicado');
+                    
+                    // Fechar menu mobile se disponível
+                    if (mobileMenuController && mobileMenuController.isMenuOpen()) {
+                        mobileMenuController.toggleMobileMenu();
+                    }
+                    
+                    // Abrir modal de agendamento se disponível
+                    if (typeof window.showAgendamentoModal === 'function') {
+                        window.showAgendamentoModal();
+                    } else {
+                        console.log('📞 Modal de agendamento não disponível, implementar ação alternativa');
+                    }
+                });
+                console.log('✅ Botão agendar mobile configurado');
+            }
+            
+            // Link Ronco no menu mobile com verificação
+            if (elements.roncoMenuLink) {
+                elements.roncoMenuLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('🔊 Link Ronco no menu mobile clicado');
+                    
+                    // Fechar menu mobile se disponível
+                    if (mobileMenuController && mobileMenuController.isMenuOpen()) {
+                        mobileMenuController.toggleMobileMenu();
+                    }
+                    
+                    setTimeout(() => {
+                        try {
+                            window.location.href = 'teste-ronco.html';
+                        } catch (error) {
+                            console.error('❌ Erro ao redirecionar:', error);
+                        }
+                    }, 300);
+                });
+                console.log('✅ Link Ronco no menu mobile configurado');
+            }
+            
+            // Retornar função para definir controller do menu
+            return {
+                setMobileMenuController: (controller) => {
+                    mobileMenuController = controller;
+                }
+            };
+        }
+        
+        // Configurar efeitos adicionais
+        function setupScrollEffects(elements) {
+            // Já implementado na setupHeaderFunctionality
+        }
+        
+        // Configurar event listeners gerais
+        function setupGeneralEventListeners(elements) {
+            console.log('🎯 Configurando event listeners gerais...');
+            
+            let mobileMenuController = null;
+            
+            // Menu Compacto Toggle (LG screens) com verificação
+            if (elements.menuCompactBtn && elements.compactMenu) {
+                elements.menuCompactBtn.addEventListener('click', function() {
+                    try {
+                        elements.compactMenu.classList.toggle('hidden');
+                        const icon = this.querySelector('i');
+                        if (icon) {
+                            if (elements.compactMenu.classList.contains('hidden')) {
+                                icon.className = 'fas fa-bars';
+                            } else {
+                                icon.className = 'fas fa-times';
+                            }
+                        }
+                        console.log('🔧 Menu compacto alternado');
+                    } catch (error) {
+                        console.error('❌ Erro ao alternar menu compacto:', error);
+                    }
+                });
+                console.log('✅ Menu compacto configurado');
+            }
+            
+            // Fechar menus ao clicar fora - com verificações robustas
+            document.addEventListener('click', function(event) {
+                try {
+                    // Fechar menu mobile se clicar fora
+                    if (mobileMenuController && 
+                        mobileMenuController.isMenuOpen() &&
+                        elements.mobileMenuBtn && 
+                        elements.mobileMenu &&
+                        !elements.mobileMenuBtn.contains(event.target) && 
+                        !elements.mobileMenu.contains(event.target)) {
+                        mobileMenuController.toggleMobileMenu();
+                        console.log('🔧 Menu mobile fechado (clique fora)');
+                    }
+                    
+                    // Fechar menu compacto se clicar fora
+                    if (elements.menuCompactBtn && 
+                        elements.compactMenu &&
+                        !elements.menuCompactBtn.contains(event.target) && 
+                        !elements.compactMenu.contains(event.target)) {
+                        elements.compactMenu.classList.add('hidden');
+                        const compactIcon = elements.menuCompactBtn.querySelector('i');
+                        if (compactIcon) {
+                            compactIcon.className = 'fas fa-bars';
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ Erro no event listener de clique:', error);
                 }
             });
-        });
-        
-        // Log inicial para debug
-        console.log('Sistema de menu inicializado');
-        console.log('Botão mobile encontrado:', !!mobileMenuBtn);
-        console.log('Menu mobile encontrado:', !!mobileMenu);
-        console.log('Botão ronco encontrado:', !!document.getElementById('teste-ronco-btn'));
+            
+            // Fechar menus ao redimensionar - com verificações
+            window.addEventListener('resize', function() {
+                try {
+                    if (mobileMenuController && mobileMenuController.isMenuOpen()) {
+                        mobileMenuController.toggleMobileMenu();
+                    }
+                    
+                    if (elements.compactMenu) {
+                        elements.compactMenu.classList.add('hidden');
+                        const compactIcon = elements.menuCompactBtn?.querySelector('i');
+                        if (compactIcon) {
+                            compactIcon.className = 'fas fa-bars';
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ Erro no event listener de resize:', error);
+                }
+            });
+            
+            // Smooth scrolling para links internos com verificação
+            try {
+                const anchorLinks = document.querySelectorAll('a[href^="#"]');
+                anchorLinks.forEach(anchor => {
+                    if (anchor) {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const targetId = this.getAttribute('href');
+                            const target = document.querySelector(targetId);
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                                
+                                // Fechar menus após navegação
+                                if (mobileMenuController && mobileMenuController.isMenuOpen()) {
+                                    mobileMenuController.toggleMobileMenu();
+                                }
+                                if (elements.compactMenu) {
+                                    elements.compactMenu.classList.add('hidden');
+                                }
+                                console.log('🔧 Navegação suave para:', targetId);
+                            }
+                        });
+                    }
+                });
+                console.log(`✅ ${anchorLinks.length} links de navegação suave configurados`);
+            } catch (error) {
+                console.error('❌ Erro ao configurar smooth scrolling:', error);
+            }
+            
+            // Função para definir o controller do menu mobile
+            return {
+                setMobileMenuController: (controller) => {
+                    mobileMenuController = controller;
+                }
+            };
+        }
     </script></body></html> 
