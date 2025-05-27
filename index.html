@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-        <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Holozonic - Medicina Integrativa e Tecnologia Vestível</title>    <meta name="description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">        <!-- PWA Configuration -->    <link rel="manifest" href="/manifest.json">    <meta name="theme-color" content="#1E90FF">    <meta name="apple-mobile-web-app-capable" content="yes">    <meta name="apple-mobile-web-app-status-bar-style" content="default">    <meta name="apple-mobile-web-app-title" content="Holozonic">    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">        <!-- Open Graph / Facebook -->    <meta property="og:type" content="website">    <meta property="og:url" content="https://holozonic.com.br/">    <meta property="og:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="og:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="og:image" content="/icons/icon-512x512.png">        <!-- Twitter -->    <meta property="twitter:card" content="summary_large_image">    <meta property="twitter:url" content="https://holozonic.com.br/">    <meta property="twitter:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="twitter:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="twitter:image" content="/icons/icon-512x512.png">        <!-- Google Analytics 4 -->    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>    <script>        window.dataLayer = window.dataLayer || [];        function gtag(){dataLayer.push(arguments);}        gtag('js', new Date());        gtag('config', 'G-XXXXXXXXXX', {            page_title: 'Holozonic - Home',            page_location: window.location.href,            send_page_view: true        });    </script>        <!-- TailwindCSS -->    <script src="https://cdn.tailwindcss.com"></script>
+        <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Holozonic - Clínica integrada em saúde humana</title>    <meta name="description" content="Clínica integrada em saúde humana - Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">        <!-- PWA Configuration -->    <link rel="manifest" href="/manifest.json">    <meta name="theme-color" content="#1E90FF">    <meta name="apple-mobile-web-app-capable" content="yes">    <meta name="apple-mobile-web-app-status-bar-style" content="default">    <meta name="apple-mobile-web-app-title" content="Holozonic">    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">        <!-- Open Graph / Facebook -->    <meta property="og:type" content="website">    <meta property="og:url" content="https://holozonic.com.br/">    <meta property="og:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="og:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="og:image" content="/icons/icon-512x512.png">        <!-- Twitter -->    <meta property="twitter:card" content="summary_large_image">    <meta property="twitter:url" content="https://holozonic.com.br/">    <meta property="twitter:title" content="Holozonic - Medicina Integrativa e Tecnologia Vestível">    <meta property="twitter:description" content="Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar.">    <meta property="twitter:image" content="/icons/icon-512x512.png">        <!-- Google Analytics 4 -->    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>    <script>        window.dataLayer = window.dataLayer || [];        function gtag(){dataLayer.push(arguments);}        gtag('js', new Date());        gtag('config', 'G-XXXXXXXXXX', {            page_title: 'Holozonic - Home',            page_location: window.location.href,            send_page_view: true        });    </script>        <!-- TailwindCSS -->    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
     
     <!-- TailwindCSS Configuration -->
     <script>
@@ -28,106 +29,118 @@
 <body class="bg-white text-gray-800 font-sans">
     
     <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <header id="main-header" class="fixed top-0 w-full bg-white/98 backdrop-blur-md shadow-lg z-50 transition-transform duration-300 ease-in-out">
+        <nav class="container mx-auto px-3 py-2 flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center">
-                <div class="text-2xl font-bold text-primary">
-                    <i class="fas fa-atom mr-2"></i>
+                <div class="text-xl font-bold text-primary logo-hover cursor-pointer">
+                    <i class="fas fa-atom mr-1"></i>
                     Holozonic
                 </div>
             </div>
             
             <!-- Menu de Navegação -->
-            <div class="hidden lg:flex space-x-6">
+            <div class="hidden xl:flex space-x-4 text-sm">
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
-                        Monitoramento Inteligente
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    <a href="monitoramento-inteligente.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Monitoramento
+                    </a>
                 </div>
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
-                        Por que a Holozonic
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    <a href="porque-holozonic.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Por que Holozonic
+                    </a>
                 </div>
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
+                    <a href="medicina-chinesa.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
                         Medicina Chinesa
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    </a>
                 </div>
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
-                        Oxigenioozonioterapia Estética
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    <a href="oxigeniozonioterapia-estetica.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Ozonioterapia
+                    </a>
                 </div>
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
-                        Exames de Imagem
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    <a href="exames-imagem.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Exames
+                    </a>
                 </div>
                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary transition-colors py-2 px-3 rounded">
-                        Exame do Sono
-                        <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
+                    <a href="exame-sono.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Exame Sono
+                    </a>
                 </div>
             </div>
             
-            <!-- Botões de Ação -->
-            <div class="hidden lg:flex space-x-4">
-                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
-                    Agendamento Online
+            <!-- Menu Compacto para LG -->
+            <div class="hidden lg:flex xl:hidden">
+                <button id="menu-compact-btn" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-3 rounded flex items-center">
+                    <i class="fas fa-bars mr-2"></i>
+                    <span class="text-sm">Menu</span>
                 </button>
-                <button class="bg-accent text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
-                    VitaLin
+            </div>
+            
+            <!-- Botões de Ação -->
+            <div class="hidden lg:flex space-x-2 btn-group">
+                <button id="teste-ronco-btn" class="group relative bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1.5 rounded-lg text-xs font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden btn-primary">
+                    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative flex items-center">
+                        <div class="bg-white/20 p-0.5 rounded-full mr-1">
+                            <i class="fas fa-volume-up text-xs icon-bounce"></i>
+                        </div>
+                        <span>Ronco</span>
+                        <div class="ml-1 bg-yellow-400 text-orange-800 text-xs px-1 py-0.5 rounded-full font-bold badge-animate">
+                            FREE
+                        </div>
+                    </div>
+                </button>
+                <button id="agendamento-btn" class="group bg-secondary text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt text-xs mr-1 group-hover:animate-pulse"></i>
+                        <span>Agendar</span>
+                    </div>
+                </button>
+                <button class="group bg-accent text-white px-3 py-1.5 rounded-lg hover:bg-purple-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-gem text-xs mr-1 group-hover:animate-spin"></i>
+                        <span>VitaLin</span>
+                    </div>
                 </button>
             </div>
             
             <!-- Menu Mobile -->
-            <button id="mobile-menu-btn" class="lg:hidden text-primary text-xl">
+            <button id="mobile-menu-btn" class="lg:hidden text-primary text-lg">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
         
-        <!-- Mega Menu (Desktop) -->
-        <div id="mega-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t">
-            <div class="container mx-auto px-4 py-8">
-                <div class="grid grid-cols-4 gap-8">
+        <!-- Menu Compacto Dropdown (LG) -->
+        <div id="compact-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t">
+            <div class="container mx-auto px-4 py-6">
+                <div class="grid grid-cols-3 gap-6">
                     <div>
-                        <h3 class="font-bold text-primary mb-4">Serviços Médicos</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#teleconsulta" class="text-gray-600 hover:text-primary">Teleconsulta</a></li>
-                            <li><a href="#pre-anamnese" class="text-gray-600 hover:text-primary">Formulário de Pré-Anamnese</a></li>
-                            <li><a href="#prescricao" class="text-gray-600 hover:text-primary">Prescrição Online</a></li>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Serviços Principais</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="monitoramento-inteligente.html" class="text-gray-600 hover:text-primary transition-colors">Monitoramento Inteligente</a></li>
+                            <li><a href="medicina-chinesa.html" class="text-gray-600 hover:text-primary transition-colors">Medicina Chinesa</a></li>
+                            <li><a href="oxigeniozonioterapia-estetica.html" class="text-gray-600 hover:text-primary transition-colors">Ozonioterapia Estética</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary mb-4">Exames</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#exames-imagem" class="text-gray-600 hover:text-primary">Exames de Imagem</a></li>
-                            <li><a href="#exame-sono" class="text-gray-600 hover:text-primary">Exame do Sono</a></li>
-                            <li><a href="#monitoramento" class="text-gray-600 hover:text-primary">Monitoramento Inteligente</a></li>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Exames</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="exames-imagem.html" class="text-gray-600 hover:text-primary transition-colors">Exames de Imagem</a></li>
+                            <li><a href="exame-sono.html" class="text-gray-600 hover:text-primary transition-colors">Exame do Sono</a></li>
+                            <li><a href="monitoramentodosono.html" class="text-gray-600 hover:text-primary transition-colors">Monitoramento do Sono</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary mb-4">Terapias</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#medicina-chinesa" class="text-gray-600 hover:text-primary">Medicina Chinesa</a></li>
-                            <li><a href="#oxigenio" class="text-gray-600 hover:text-primary">Oxigenioozonioterapia</a></li>
-                            <li><a href="#hospedagem" class="text-gray-600 hover:text-primary">Hospedagem Terapêutica</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-primary mb-4">Outros</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#vitalin" class="text-gray-600 hover:text-primary">VitaLin</a></li>
-                            <li><a href="#loja" class="text-gray-600 hover:text-primary">Loja Integrada</a></li>
-                            <li><a href="#sobre" class="text-gray-600 hover:text-primary">Por que a Holozonic</a></li>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Outros</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="porque-holozonic.html" class="text-gray-600 hover:text-primary transition-colors">Por que a Holozonic</a></li>
+                            <li><a href="#vitalin" class="text-gray-600 hover:text-primary transition-colors">VitaLin</a></li>
+                            <li><a href="#teleconsulta" class="text-gray-600 hover:text-primary transition-colors">Teleconsulta</a></li>
                         </ul>
                     </div>
                 </div>
@@ -135,48 +148,44 @@
         </div>
         
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
-            <div class="px-4 py-4 space-y-4">
-                <a href="#monitoramento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-2 max-h-96 overflow-y-auto">
+                <a href="monitoramento-inteligente.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-heartbeat mr-2"></i>
                     Monitoramento Inteligente
                 </a>
-                <a href="#sobre" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="porque-holozonic.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-info-circle mr-2"></i>
-                    Por que a Holozonic
+                    Por que Holozonic
                 </a>
-                <a href="#medicina-chinesa" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="medicina-chinesa.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-yin-yang mr-2"></i>
                     Medicina Chinesa
                 </a>
-                <a href="#oxigenio" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="oxigeniozonioterapia-estetica.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-wind mr-2"></i>
-                    Oxigenioozonioterapia Estética
+                    Ozonioterapia
                 </a>
-                <a href="#exames-imagem" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="exames-imagem.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-x-ray mr-2"></i>
-                    Exames de Imagem
+                    Exames
                 </a>
-                <a href="#exame-sono" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="exame-sono.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-moon mr-2"></i>
-                    Exame do Sono
+                    Exames de Sono
                 </a>
-                <div class="border-t pt-4 mt-4">
-                    <a href="#agendamento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                <a href="teste-ronco.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-volume-up mr-2"></i>
+                    Ronco
+                </a>
+                <div class="border-t pt-3 mt-3">
+                    <a href="#agendamento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm" id="mobile-agendar-btn">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        Agendamento Online
+                        Agendar
                     </a>
-                    <a href="#teleconsulta" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
-                        <i class="fas fa-video mr-2"></i>
-                        Teleconsulta
-                    </a>
-                    <a href="#vitalin" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
+                    <a href="#vitalin" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                         <i class="fas fa-gem mr-2"></i>
-                        VitaLin
-                    </a>
-                    <a href="#hospedagem" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors">
-                        <i class="fas fa-home mr-2"></i>
-                        Hospedagem Terapêutica
+                        Vitalin
                     </a>
                 </div>
             </div>
@@ -1139,4 +1148,219 @@
         </div>
     </footer>
     
-        <!-- JavaScript -->    <script src="js/main.js"></script>    <script src="js/analytics.js"></script></body></html> 
+        <!-- JavaScript -->    <script src="js/main.js"></script>    <script src="js/analytics.js"></script>    
+    <script>
+        // Controle do Header com Scroll
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+        let scrollDirection = '';
+        
+        // Função para verificar e aplicar cor do header
+        function updateHeaderColor() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const heroSection = document.getElementById('hero');
+            
+            if (heroSection) {
+                const heroHeight = heroSection.offsetHeight;
+                
+                if (scrollTop < heroHeight - 100) {
+                    // Sobre o vídeo - texto branco
+                    header.classList.add('over-video');
+                    header.classList.remove('scrolled');
+                } else {
+                    // Fora do vídeo - texto escuro
+                    header.classList.remove('over-video');
+                    header.classList.add('scrolled');
+                }
+            }
+        }
+        
+        // Aplicar cor inicial ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pequeno delay para garantir que o DOM está completamente carregado
+            setTimeout(updateHeaderColor, 100);
+        });
+        
+        // Também aplicar ao carregar a janela
+        window.addEventListener('load', function() {
+            updateHeaderColor();
+        });
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Atualizar cor do header
+            updateHeaderColor();
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down - hide header
+                header.style.transform = 'translateY(-100%)';
+                scrollDirection = 'down';
+            } else if (scrollTop < lastScrollTop || scrollTop < 50) {
+                // Scrolling up or near top - show header
+                header.style.transform = 'translateY(0)';
+                scrollDirection = 'up';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+        
+        // Menu Mobile Toggle - Versão melhorada
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+        
+        // Função para alternar menu
+        function toggleMobileMenu() {
+            if (!mobileMenu || !mobileMenuBtn) {
+                console.error('Elementos do menu mobile não encontrados');
+                return;
+            }
+            
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                // Abrir menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.display = 'block';
+                mobileMenuBtn.querySelector('i').className = 'fas fa-times';
+                document.body.style.overflow = 'hidden'; // Prevenir scroll
+                
+                console.log('Menu mobile aberto');
+            } else {
+                // Fechar menu
+                mobileMenu.classList.add('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.display = 'none';
+                }, 300);
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = 'auto';
+                
+                console.log('Menu mobile fechado');
+            }
+        }
+        
+        // Event listener para o botão
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+        } else {
+            console.error('Botão do menu mobile não encontrado');
+        }
+        
+        // Agendamento Mobile
+        const mobileAgendarBtn = document.getElementById('mobile-agendar-btn');
+        mobileAgendarBtn?.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Fechar menu mobile
+            if (isMenuOpen) {
+                toggleMobileMenu();
+            }
+            // Abrir modal de agendamento
+            if (window.showAgendamentoModal) {
+                window.showAgendamentoModal();
+            }
+        });
+        
+        // Botão Teste do Ronco - Verificar e melhorar
+        const testeRoncoBtn = document.getElementById('teste-ronco-btn');
+        if (testeRoncoBtn) {
+            testeRoncoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Botão Ronco clicado - redirecionando para teste-ronco.html');
+                window.location.href = 'teste-ronco.html';
+            });
+            console.log('Botão Teste do Ronco configurado com sucesso');
+        } else {
+            console.error('Botão teste-ronco-btn não encontrado');
+        }
+        
+        // Link Ronco no menu mobile
+        const roncoMenuLink = document.querySelector('a[href="teste-ronco.html"]');
+        if (roncoMenuLink) {
+            roncoMenuLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Link Ronco no menu mobile clicado');
+                if (isMenuOpen) {
+                    toggleMobileMenu();
+                }
+                setTimeout(() => {
+                    window.location.href = 'teste-ronco.html';
+                }, 300);
+            });
+        }
+        
+        // Menu Compacto Toggle (LG screens)
+        const menuCompactBtn = document.getElementById('menu-compact-btn');
+        const compactMenu = document.getElementById('compact-menu');
+        
+        menuCompactBtn?.addEventListener('click', function() {
+            compactMenu.classList.toggle('hidden');
+            const icon = this.querySelector('i');
+            if (compactMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars';
+            } else {
+                icon.className = 'fas fa-times';
+            }
+        });
+        
+        // Fechar menus ao clicar fora
+        document.addEventListener('click', function(event) {
+            // Fechar menu mobile se clicar fora
+            if (isMenuOpen && 
+                !mobileMenuBtn?.contains(event.target) && 
+                !mobileMenu?.contains(event.target)) {
+                toggleMobileMenu();
+            }
+            
+            // Fechar menu compacto se clicar fora
+            if (!menuCompactBtn?.contains(event.target) && !compactMenu?.contains(event.target)) {
+                compactMenu?.classList.add('hidden');
+                const compactIcon = menuCompactBtn?.querySelector('i');
+                if (compactIcon) {
+                    compactIcon.className = 'fas fa-bars';
+                }
+            }
+        });
+        
+        // Fechar menus ao redimensionar
+        window.addEventListener('resize', function() {
+            if (isMenuOpen) {
+                toggleMobileMenu();
+            }
+            
+            compactMenu?.classList.add('hidden');
+            const compactIcon = menuCompactBtn?.querySelector('i');
+            if (compactIcon) {
+                compactIcon.className = 'fas fa-bars';
+            }
+        });
+        
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Fechar menus após navegação
+                    if (isMenuOpen) {
+                        toggleMobileMenu();
+                    }
+                    compactMenu?.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Log inicial para debug
+        console.log('Sistema de menu inicializado');
+        console.log('Botão mobile encontrado:', !!mobileMenuBtn);
+        console.log('Menu mobile encontrado:', !!mobileMenu);
+        console.log('Botão ronco encontrado:', !!document.getElementById('teste-ronco-btn'));
+    </script></body></html> 

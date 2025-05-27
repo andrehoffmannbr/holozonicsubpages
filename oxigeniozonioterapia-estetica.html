@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxigênio-Ozonioterapia Estética - Holozonic</title>
+    <meta name="description" content="Oxigênio-Ozonioterapia Estética na Holozonic - Ciência, regeneração e beleza a serviço da sua saúde.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-cyan-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <i class="fas fa-wind mr-4"></i>
+                    Oxigênio-Ozonioterapia Estética
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Ciência, regeneração e beleza a serviço da sua saúde
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Principal -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                        A <strong>Oxigênio-Ozonioterapia</strong>, também conhecida como <strong>Ozonioterapia Estética</strong>, é uma técnica moderna e segura que tem transformado vidas ao unir os avanços da ciência com o poder natural do oxigênio e do ozônio medicinal.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            Reconhecida por seus <strong>resultados clínicos e estéticos</strong>, essa terapia complementar tem conquistado espaço nos cuidados com a saúde integral e estética funcional.
+                        </p>
+                        
+                        <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-lg mb-8">
+                            <h3 class="text-xl font-bold text-primary mb-4">
+                                <i class="fas fa-microscope mr-3"></i>
+                                Nossa Abordagem
+                            </h3>
+                            <p class="text-gray-700">
+                                Em nossa clínica, oferecemos <strong>protocolos personalizados</strong> que aproveitam o potencial dessa tecnologia para promover regeneração celular, desintoxicação, equilíbrio e rejuvenescimento da pele.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-8 rounded-2xl text-white">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-atom text-4xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Tecnologia Avançada</h3>
+                        </div>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Regeneração celular profunda
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Desintoxicação natural
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Rejuvenescimento da pele
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Protocolos personalizados
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Resultados duradouros
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Benefícios Comprovados -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        ✅ Benefícios Comprovados da Oxigênio-Ozonioterapia
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Resultados cientificamente comprovados para sua saúde e beleza
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Cuidados com diabéticos -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-heartbeat text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-700 mb-2">🔹 Cuidados com pacientes diabéticos</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Tratamento eficaz de <strong>feridas e úlceras diabéticas</strong>, com ação antimicrobiana, anti-inflamatória e cicatrizante. Favorece a regeneração tecidual e melhora a circulação local, acelerando a recuperação e reduzindo o risco de infecções.
+                        </p>
+                    </div>
+                    
+                    <!-- Recuperação pós-cirúrgica -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-md text-2xl text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-700 mb-2">🔹 Recuperação pós-cirúrgica</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ideal para acelerar a <strong>cicatrização de cirurgias estéticas ou reparadoras</strong>. Reduz edemas, inflamações e infecções, com estímulo à oxigenação celular e resposta imune mais eficaz.
+                        </p>
+                    </div>
+                    
+                    <!-- Melhora da circulação -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-stream text-2xl text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-purple-700 mb-2">🔹 Melhora da circulação sanguínea</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Auxilia no tratamento de <strong>varizes, capilares aparentes e retenção de líquidos</strong>. Estimula a microcirculação, potencializa a eliminação de toxinas e revitaliza a pele.
+                        </p>
+                    </div>
+                    
+                    <!-- Tratamentos estéticos -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-pink-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-spa text-2xl text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-pink-700 mb-2">🔹 Tratamentos estéticos faciais e assepsia da pele</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Indicado para <strong>acne, manchas, flacidez, rugas e sinais do tempo</strong>. O ozônio promove uma limpeza profunda da pele, combate microrganismos e estimula a produção natural de colágeno e elastina, melhorando visivelmente a firmeza e a luminosidade da pele.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Por que escolher -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        💡 Por que escolher a Ozonioterapia Estética?
+                    </h2>
+                </div>
+                
+                <div class="bg-gradient-to-br from-primary to-secondary p-12 rounded-2xl text-white text-center mb-12">
+                    <p class="text-xl md:text-2xl leading-relaxed mb-8">
+                        Porque ela atua de forma <strong>inteligente, natural e eficaz</strong>, integrando saúde e beleza em um único protocolo.
+                    </p>
+                    <p class="text-lg opacity-90">
+                        Seus efeitos não são apenas estéticos: eles envolvem uma <strong>melhora real na vitalidade e bem-estar</strong> do corpo como um todo.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-brain text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Inteligente</h3>
+                        <p class="text-gray-600">
+                            Tratamento que se adapta às necessidades específicas do seu organismo
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-leaf text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Natural</h3>
+                        <p class="text-gray-600">
+                            Utiliza o poder natural do oxigênio e ozônio medicinal
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Eficaz</h3>
+                        <p class="text-gray-600">
+                            Resultados comprovados e duradouros para sua saúde e beleza
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Atendimento Especializado -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-cyan-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                            👩‍⚕️ Atendimento especializado
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Equipe Capacitada</h4>
+                                    <p class="text-gray-700">
+                                        Nossa equipe é <strong>capacitada e habilitada</strong> para aplicar a ozonioterapia com excelência e segurança.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Planejamento Individual</h4>
+                                    <p class="text-gray-700">
+                                        Cada sessão é <strong>cuidadosamente planejada</strong> com base na avaliação clínica individual do paciente.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Segurança Total</h4>
+                                    <p class="text-gray-700">
+                                        Protocolos rigorosos de segurança e <strong>técnicas comprovadas</strong> para resultados seguros.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-8">
+                            <i class="fas fa-star text-4xl text-yellow-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Excelência em Resultados</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="text-gray-700">Satisfação dos pacientes</span>
+                                <span class="font-bold text-green-600">98%</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="text-gray-700">Resultados visíveis</span>
+                                <span class="font-bold text-blue-600">Primeira sessão</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="text-gray-700">Segurança do tratamento</span>
+                                <span class="font-bold text-purple-600">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Agende sua Avaliação -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                    📍 Agende sua avaliação e conheça todos os benefícios
+                </h2>
+                
+                <div class="bg-gradient-to-br from-primary to-accent p-8 md:p-12 rounded-2xl text-white mb-8">
+                    <p class="text-xl md:text-2xl leading-relaxed mb-8">
+                        Descubra como a <strong>Oxigênio-Ozonioterapia</strong> pode revolucionar seus cuidados estéticos
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-weight text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Seu corpo mais leve</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-sparkles text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Sua pele mais viva</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Sua saúde mais forte</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center mb-12">
+                    <button id="avaliacao-ozonioterapia" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Quero Agendar Minha Avaliação
+                    </button>
+                    
+                    <button id="whatsapp-ozonioterapia" class="w-full md:w-auto bg-green-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                
+                <div class="bg-green-50 border-l-4 border-secondary p-8 rounded-lg">
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h4 class="text-lg font-bold text-secondary mb-4">🌱 Tratamos o todo</h4>
+                            <p class="text-gray-700">
+                                Respeitamos sua individualidade e oferecemos cuidado integral
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold text-primary mb-4">✨ Holozonic</h4>
+                            <p class="text-gray-700">
+                                Saúde Integrativa com Propósito
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Oxigênio-Ozonioterapia Estética com tecnologia avançada
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i> (11) 9999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="medicina-chinesa.html" class="block text-gray-300 hover:text-white transition-colors">Medicina Chinesa</a>
+                        <a href="monitoramentodosono.html" class="block text-gray-300 hover:text-white transition-colors">Monitoramento do Sono</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('avaliacao-ozonioterapia')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento de avaliação...');
+        });
+        
+        document.getElementById('whatsapp-ozonioterapia')?.addEventListener('click', function() {
+            const phoneNumber = '5511999998888';
+            const message = encodeURIComponent('Olá! Gostaria de agendar uma avaliação de Oxigênio-Ozonioterapia Estética.');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 

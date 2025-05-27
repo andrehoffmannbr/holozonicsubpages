@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exames de Imagem - Holozonic</title>
+    <meta name="description" content="Exames de Imagem na Holozonic - Diagnósticos precisos com laudo digital e equipamentos de última geração.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-indigo-50 to-purple-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <i class="fas fa-x-ray mr-4"></i>
+                    Exames de Imagem
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Diagnósticos precisos com laudo digital e acompanhamento remoto
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Principal -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                        Na <strong>Holozonic</strong>, oferecemos uma gama completa de exames de imagem com <strong>equipamentos de última geração</strong> e tecnologia digital avançada para diagnósticos precisos e detalhados.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            Nossos exames são realizados por profissionais altamente qualificados, utilizando protocolos internacionais de segurança e qualidade. Todos os laudos são <strong>digitais</strong> e disponibilizados em <strong>24 horas</strong>.
+                        </p>
+                        
+                        <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-primary mb-4">
+                                <i class="fas fa-digital-tachograph mr-3"></i>
+                                Tecnologia Digital
+                            </h3>
+                            <p class="text-gray-700">
+                                Todos os nossos equipamentos são digitais, garantindo <strong>maior precisão</strong> e <strong>menor exposição à radiação</strong> quando aplicável.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-primary to-indigo-600 p-8 rounded-2xl text-white">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-shield-alt text-4xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Qualidade e Segurança</h3>
+                        </div>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Equipamentos certificados
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Protocolos de segurança rigorosos
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Profissionais especializados
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Laudos em 24 horas
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Acesso digital aos resultados
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Exames Disponíveis -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        🔬 Exames Disponíveis
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Equipamentos de última geração para diagnósticos precisos
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Ressonância Magnética -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-blue-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-magnet text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-blue-800">Ressonância Magnética Digital</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Alta resolução de imagem</li>
+                            <li>• Sem radiação ionizante</li>
+                            <li>• Diagnóstico de tecidos moles</li>
+                            <li>• Contraste aprimorado</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tomografia -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-green-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-circle-dot text-2xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-green-800">Tomografia Computadorizada</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Imagens transversais detalhadas</li>
+                            <li>• Diagnóstico rápido</li>
+                            <li>• Avaliação de órgãos internos</li>
+                            <li>• Baixa dose de radiação</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ultrassonografia -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-purple-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-wave-square text-2xl text-purple-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-purple-800">Ultrassonografia 4D</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Imagens em tempo real</li>
+                            <li>• Sem radiação</li>
+                            <li>• Doppler colorido</li>
+                            <li>• Tecnologia 4D avançada</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Raio-X -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-x-ray text-2xl text-orange-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-orange-800">Raio-X Digital</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Imagens digitais de alta qualidade</li>
+                            <li>• Redução significativa de radiação</li>
+                            <li>• Processamento instantâneo</li>
+                            <li>• Armazenamento digital</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Densitometria -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-pink-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bone text-2xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-pink-800">Densitometria Óssea</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Avaliação da densidade óssea</li>
+                            <li>• Diagnóstico de osteoporose</li>
+                            <li>• Baixíssima radiação</li>
+                            <li>• Resultados precisos</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Mamografia -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-red-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-red-800">Mamografia Digital</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Detecção precoce</li>
+                            <li>• Imagens de alta resolução</li>
+                            <li>• Compressão otimizada</li>
+                            <li>• Controle de qualidade rigoroso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Vantagens do Laudo Digital -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        💻 Vantagens do Laudo Digital
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Tecnologia a seu favor para maior comodidade e eficiência
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-blue-500 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-cloud text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-700 mb-2">Acesso Remoto aos Resultados</h3>
+                                <p class="text-gray-700">
+                                    Consulte seus exames de qualquer lugar, a qualquer momento, através de nossa plataforma segura online.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-teal-100 p-8 rounded-xl">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-green-500 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-share-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-700 mb-2">Compartilhamento Seguro</h3>
+                                <p class="text-gray-700">
+                                    Compartilhe seus resultados com outros médicos de forma rápida e segura, sem perda de qualidade.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-xl">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-purple-500 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-database text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-purple-700 mb-2">Armazenamento Permanente</h3>
+                                <p class="text-gray-700">
+                                    Seus exames ficam armazenados em nuvem permanentemente, sem risco de perda ou deterioração.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-xl">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-orange-500 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-orange-700 mb-2">Comparação Histórica</h3>
+                                <p class="text-gray-700">
+                                    Compare exames anteriores automaticamente para acompanhar a evolução do seu quadro clínico.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Processo do Exame -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        📋 Como Funciona o Processo
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Um processo simples e eficiente do agendamento aos resultados
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            1
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-3">Agendamento</h3>
+                        <p class="text-gray-600 text-sm">
+                            Agende online ou por telefone de forma rápida e prática
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            2
+                        </div>
+                        <h3 class="text-lg font-bold text-secondary mb-3">Preparação</h3>
+                        <p class="text-gray-600 text-sm">
+                            Receba orientações específicas para o seu tipo de exame
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            3
+                        </div>
+                        <h3 class="text-lg font-bold text-accent mb-3">Realização</h3>
+                        <p class="text-gray-600 text-sm">
+                            Exame realizado com conforto e segurança por profissionais qualificados
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            4
+                        </div>
+                        <h3 class="text-lg font-bold text-orange-500 mb-3">Resultados</h3>
+                        <p class="text-gray-600 text-sm">
+                            Laudo digital disponível em 24h com acesso online
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Agende seu Exame -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                    📅 Agende seu Exame de Imagem
+                </h2>
+                
+                <div class="bg-gradient-to-br from-primary to-indigo-600 p-8 md:p-12 rounded-2xl text-white mb-8">
+                    <p class="text-xl md:text-2xl leading-relaxed mb-8">
+                        Equipamentos de <strong>última geração</strong> e profissionais especializados para o seu diagnóstico
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Resultados em 24h</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-shield-alt text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Máxima Segurança</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-md text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Profissionais Qualificados</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center mb-12">
+                    <button id="agendamento-imagem" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Agendar Exame de Imagem
+                    </button>
+                    
+                    <button id="whatsapp-imagem" class="w-full md:w-auto bg-green-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-lg">
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h4 class="text-lg font-bold text-primary mb-4">📞 Central de Atendimento</h4>
+                            <p class="text-gray-700">
+                                <strong>(11) 9999-9999</strong><br>
+                                Horário: Segunda à Sexta, 7h às 19h<br>
+                                Sábado: 7h às 12h
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold text-secondary mb-4">⚡ Agendamento Express</h4>
+                            <p class="text-gray-700">
+                                Agendamento online 24h com confirmação automática e lembretes por SMS/WhatsApp
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Exames de Imagem com tecnologia de ponta
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i> (11) 9999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="medicina-chinesa.html" class="block text-gray-300 hover:text-white transition-colors">Medicina Chinesa</a>
+                        <a href="exame-sono.html" class="block text-gray-300 hover:text-white transition-colors">Exame do Sono</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('agendamento-imagem')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento de exame de imagem...');
+        });
+        
+        document.getElementById('whatsapp-imagem')?.addEventListener('click', function() {
+            const phoneNumber = '5511999998888';
+            const message = encodeURIComponent('Olá! Gostaria de agendar um exame de imagem.');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 

@@ -165,6 +165,14 @@ function setupAgendamentoButtons() {
             showAgendamentoModal();
         });
     });
+    
+    // Teste do Ronco Gratuito Button
+    const testeRoncoButton = document.getElementById('teste-ronco-btn');
+    if (testeRoncoButton) {
+        testeRoncoButton.addEventListener('click', function() {
+            window.location.href = 'teste-ronco.html';
+        });
+    }
 }
 
 // VitaLin Plans

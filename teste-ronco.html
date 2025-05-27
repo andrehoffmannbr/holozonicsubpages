@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Ronco Gratuito - Holozonic</title>
+    <meta name="description" content="Faça o teste do ronco gratuito e descubra se você apresenta sinais de distúrbios do sono.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="monitoramentodosono.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-br from-orange-50 to-red-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-orange-600 mb-6">
+                    <i class="fas fa-clipboard-check mr-4"></i>
+                    Teste do Ronco Gratuito
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Preencha o formulário e descubra se você apresenta sinais de distúrbios do sono
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Formulário Principal -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm text-gray-600">Progresso do Teste</span>
+                        <span id="progress-text" class="text-sm text-gray-600">0 de 15 perguntas</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div id="progress-bar" class="bg-orange-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <form id="teste-ronco-form" class="space-y-8">
+                    
+                    <!-- Seção: Informações Pessoais -->
+                    <div id="secao-1" class="form-section">
+                        <h2 class="text-2xl font-bold text-primary mb-6">
+                            <i class="fas fa-user mr-3"></i>
+                            Informações Pessoais
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Nome Completo *</label>
+                                <input type="text" name="nome" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Idade *</label>
+                                <input type="number" name="idade" min="18" max="100" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                                <input type="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Telefone *</label>
+                                <input type="tel" name="telefone" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Hábitos de Sono -->
+                    <div id="secao-2" class="form-section hidden">
+                        <h2 class="text-2xl font-bold text-primary mb-6">
+                            <i class="fas fa-moon mr-3"></i>
+                            Hábitos de Sono
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">1. Que horas você costuma ir dormir? *</label>
+                                                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                <input type="radio" name="horario_dormir" value="antes_22h" required class="mr-2">
+                                Antes das 22h
+                            </label>
+                            <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                <input type="radio" name="horario_dormir" value="22h_23h" required class="mr-2">
+                                22h - 23h
+                            </label>
+                            <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                <input type="radio" name="horario_dormir" value="23h_1h" required class="mr-2">
+                                23h - 1h
+                            </label>
+                            <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                <input type="radio" name="horario_dormir" value="depois_1h" required class="mr-2">
+                                Depois da 1h
+                            </label>
+                        </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">2. Quantas horas você dorme por noite? *</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                        <input type="radio" name="horas_sono" value="menos_5h" required class="mr-2">
+                                        Menos de 5h
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                        <input type="radio" name="horas_sono" value="5h_6h" required class="mr-2">
+                                        5h - 6h
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                        <input type="radio" name="horas_sono" value="6h_8h" required class="mr-2">
+                                        6h - 8h
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors text-sm">
+                                        <input type="radio" name="horas_sono" value="mais_8h" required class="mr-2">
+                                        Mais de 8h
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">3. Como você se sente ao acordar? *</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="acordar_sentimento" value="descansado" required class="mr-2">
+                                        Sempre descansado
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="acordar_sentimento" value="as_vezes" required class="mr-2">
+                                        Às vezes descansado
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="acordar_sentimento" value="raramente" required class="mr-2">
+                                        Raramente descansado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Sintomas de Ronco -->
+                    <div id="secao-3" class="form-section hidden">
+                        <h2 class="text-2xl font-bold text-primary mb-6">
+                            <i class="fas fa-volume-up mr-3"></i>
+                            Sintomas de Ronco e Respiração
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">4. Com que frequência você ronca? *</label>
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="frequencia_ronco" value="nunca" required class="mr-2">
+                                        Nunca
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="frequencia_ronco" value="raramente" required class="mr-2">
+                                        Raramente
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="frequencia_ronco" value="frequentemente" required class="mr-2">
+                                        Frequentemente
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="frequencia_ronco" value="sempre" required class="mr-2">
+                                        Sempre
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">5. Alguém já observou pausas na sua respiração durante o sono? *</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="pausas_respiracao" value="sim_frequente" required class="mr-2">
+                                        Sim, frequentemente
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="pausas_respiracao" value="sim_as_vezes" required class="mr-2">
+                                        Sim, às vezes
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="pausas_respiracao" value="nao" required class="mr-2">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">6. Você sente sonolência durante o dia? *</label>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="sonolencia_diurna" value="nunca" required class="mr-2">
+                                        Nunca
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="sonolencia_diurna" value="leve" required class="mr-2">
+                                        Leve
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="sonolencia_diurna" value="moderada" required class="mr-2">
+                                        Moderada
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="sonolencia_diurna" value="severa" required class="mr-2">
+                                        Severa
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Saúde Geral -->
+                    <div id="secao-4" class="form-section hidden">
+                        <h2 class="text-2xl font-bold text-primary mb-6">
+                            <i class="fas fa-heartbeat mr-3"></i>
+                            Saúde Geral
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">7. Você tem ou já teve hipertensão arterial? *</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="hipertensao" value="sim" required class="mr-2">
+                                        Sim
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="hipertensao" value="nao" required class="mr-2">
+                                        Não
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="hipertensao" value="nao_sei" required class="mr-2">
+                                        Não sei
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">8. Você tem diabetes? *</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="diabetes" value="sim" required class="mr-2">
+                                        Sim
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="diabetes" value="nao" required class="mr-2">
+                                        Não
+                                    </label>
+                                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        <input type="radio" name="diabetes" value="nao_sei" required class="mr-2">
+                                        Não sei
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Resultado -->
+                    <div id="resultado-section" class="hidden">
+                        <div class="text-center">
+                            <div id="resultado-content" class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white mb-8">
+                                <!-- Conteúdo do resultado será inserido aqui via JavaScript -->
+                            </div>
+                            
+                            <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                                <button type="button" id="btn-agendar" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    Agendar Consulta
+                                </button>
+                                
+                                <button type="button" id="btn-novo-teste" class="w-full md:w-auto bg-gray-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-gray-600 transition-all transform hover:scale-105 shadow-lg">
+                                    <i class="fas fa-redo mr-2"></i>
+                                    Fazer Novo Teste
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botões de Navegação -->
+                    <div class="flex justify-between mt-8">
+                        <button type="button" id="btn-anterior" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors hidden">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Anterior
+                        </button>
+                        
+                        <button type="button" id="btn-proximo" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors ml-auto">
+                            Próximo
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        
+                        <button type="submit" id="btn-finalizar" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors hidden">
+                            <i class="fas fa-check mr-2"></i>
+                            Finalizar Teste
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-4">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic - Clínica integrada em saúde humana
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Especialistas em monitoramento do sono e bem-estar integral
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Controle do formulário de teste do ronco
+        let currentSection = 1;
+        const totalSections = 4;
+        
+        const btnProximo = document.getElementById('btn-proximo');
+        const btnAnterior = document.getElementById('btn-anterior');
+        const btnFinalizar = document.getElementById('btn-finalizar');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        
+        function updateProgress() {
+            const progress = (currentSection / totalSections) * 100;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = `Seção ${currentSection} de ${totalSections}`;
+        }
+        
+        function showSection(sectionNumber) {
+            // Esconder todas as seções
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Mostrar seção atual
+            document.getElementById(`secao-${sectionNumber}`).classList.remove('hidden');
+            
+            // Atualizar botões
+            btnAnterior.classList.toggle('hidden', sectionNumber === 1);
+            btnProximo.classList.toggle('hidden', sectionNumber === totalSections);
+            btnFinalizar.classList.toggle('hidden', sectionNumber !== totalSections);
+            
+            updateProgress();
+        }
+        
+        function validateCurrentSection() {
+            const currentSectionElement = document.getElementById(`secao-${currentSection}`);
+            const requiredFields = currentSectionElement.querySelectorAll('input[required]');
+            
+            for (let field of requiredFields) {
+                if (field.type === 'radio') {
+                    const radioGroup = currentSectionElement.querySelectorAll(`input[name="${field.name}"]`);
+                    const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+                    if (!isChecked) {
+                        alert('Por favor, responda todas as perguntas obrigatórias.');
+                        return false;
+                    }
+                } else if (!field.value.trim()) {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    field.focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        btnProximo.addEventListener('click', function() {
+            if (validateCurrentSection()) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        });
+        
+        btnAnterior.addEventListener('click', function() {
+            currentSection--;
+            showSection(currentSection);
+        });
+        
+        document.getElementById('teste-ronco-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateCurrentSection()) {
+                return;
+            }
+            
+            // Calcular resultado
+            const formData = new FormData(this);
+            const resultado = calcularResultado(formData);
+            
+            // Mostrar resultado
+            mostrarResultado(resultado);
+        });
+        
+        function calcularResultado(formData) {
+            let pontuacao = 0;
+            let risco = 'baixo';
+            
+            // Analisar respostas
+            const frequenciaRonco = formData.get('frequencia_ronco');
+            const pausasRespiracao = formData.get('pausas_respiracao');
+            const sonolenciaDiurna = formData.get('sonolencia_diurna');
+            const acordarSentimento = formData.get('acordar_sentimento');
+            
+            // Sistema de pontuação
+            if (frequenciaRonco === 'frequentemente' || frequenciaRonco === 'sempre') pontuacao += 3;
+            if (frequenciaRonco === 'raramente') pontuacao += 1;
+            
+            if (pausasRespiracao === 'sim_frequente') pontuacao += 4;
+            if (pausasRespiracao === 'sim_as_vezes') pontuacao += 2;
+            
+            if (sonolenciaDiurna === 'severa') pontuacao += 3;
+            if (sonolenciaDiurna === 'moderada') pontuacao += 2;
+            if (sonolenciaDiurna === 'leve') pontuacao += 1;
+            
+            if (acordarSentimento === 'raramente') pontuacao += 2;
+            if (acordarSentimento === 'as_vezes') pontuacao += 1;
+            
+            // Determinar nível de risco
+            if (pontuacao >= 8) risco = 'alto';
+            else if (pontuacao >= 5) risco = 'medio';
+            else risco = 'baixo';
+            
+            return { pontuacao, risco, formData };
+        }
+        
+        function mostrarResultado(resultado) {
+            const resultadoContent = document.getElementById('resultado-content');
+            const resultadoSection = document.getElementById('resultado-section');
+            
+            let conteudo = '';
+            let cor = '';
+            
+            switch (resultado.risco) {
+                case 'alto':
+                    cor = 'bg-red-500';
+                    conteudo = `
+                        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Risco Alto para Distúrbios do Sono</h3>
+                        <p class="text-lg mb-4">
+                            Suas respostas indicam alta probabilidade de distúrbios respiratórios do sono.
+                            É altamente recomendado que você procure avaliação médica especializada.
+                        </p>
+                        <div class="bg-white/20 p-4 rounded-lg">
+                            <p class="font-semibold">Recomendações:</p>
+                            <ul class="list-disc list-inside text-left mt-2">
+                                <li>Agende uma consulta médica imediatamente</li>
+                                <li>Considere realizar um exame do sono</li>
+                                <li>Evite álcool antes de dormir</li>
+                                <li>Mantenha um peso saudável</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                case 'medio':
+                    cor = 'bg-yellow-500';
+                    conteudo = `
+                        <i class="fas fa-exclamation-circle text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Risco Moderado para Distúrbios do Sono</h3>
+                        <p class="text-lg mb-4">
+                            Suas respostas sugerem alguns sinais de distúrbios do sono.
+                            Recomendamos monitoramento e avaliação médica.
+                        </p>
+                        <div class="bg-white/20 p-4 rounded-lg">
+                            <p class="font-semibold">Recomendações:</p>
+                            <ul class="list-disc list-inside text-left mt-2">
+                                <li>Agende uma consulta para avaliação</li>
+                                <li>Mantenha um diário do sono</li>
+                                <li>Pratique boa higiene do sono</li>
+                                <li>Considere mudanças no estilo de vida</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                default:
+                    cor = 'bg-green-500';
+                    conteudo = `
+                        <i class="fas fa-check-circle text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Risco Baixo para Distúrbios do Sono</h3>
+                        <p class="text-lg mb-4">
+                            Suas respostas indicam baixo risco para distúrbios respiratórios do sono.
+                            Continue mantendo bons hábitos de sono.
+                        </p>
+                        <div class="bg-white/20 p-4 rounded-lg">
+                            <p class="font-semibold">Recomendações:</p>
+                            <ul class="list-disc list-inside text-left mt-2">
+                                <li>Mantenha uma rotina regular de sono</li>
+                                <li>Pratique exercícios regularmente</li>
+                                <li>Evite dispositivos eletrônicos antes de dormir</li>
+                                <li>Consulte um médico se surgirem novos sintomas</li>
+                            </ul>
+                        </div>
+                    `;
+            }
+            
+            resultadoContent.className = `${cor} p-8 rounded-2xl text-white mb-8`;
+            resultadoContent.innerHTML = conteudo;
+            
+            // Esconder formulário e mostrar resultado
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.querySelector('.flex.justify-between').classList.add('hidden');
+            resultadoSection.classList.remove('hidden');
+            
+            // Atualizar barra de progresso
+            progressBar.style.width = '100%';
+            progressText.textContent = 'Teste Concluído';
+        }
+        
+        // Event listeners para botões do resultado
+        document.getElementById('btn-agendar').addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+        
+        document.getElementById('btn-novo-teste').addEventListener('click', function() {
+            location.reload();
+        });
+        
+        // Inicializar
+        showSection(1);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exame do Sono - Holozonic</title>
+    <meta name="description" content="Exame do Sono na Holozonic - Polissonografia completa com monitoramento domiciliar para diagnóstico de distúrbios do sono.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <i class="fas fa-bed mr-4"></i>
+                    Exame do Sono
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Polissonografia completa com monitoramento domiciliar para seu conforto
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Principal -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                        O <strong>Exame do Sono</strong> é fundamental para diagnosticar distúrbios que afetam a qualidade do seu descanso. Na <strong>Holozonic</strong>, oferecemos <strong>polissonografia domiciliar</strong> com equipamentos portáteis de última geração.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            Realizamos o exame no conforto da sua casa, eliminando o desconforto de dormir em ambiente hospitalar. Nossos equipamentos capturam dados precisos sobre seus padrões de sono para diagnóstico completo.
+                        </p>
+                        
+                        <div class="bg-purple-50 border-l-4 border-accent p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-accent mb-4">
+                                <i class="fas fa-home mr-3"></i>
+                                Monitoramento Domiciliar
+                            </h3>
+                            <p class="text-gray-700">
+                                Durma na sua própria cama enquanto nossos equipamentos portáteis monitoram <strong>todos os parâmetros necessários</strong> para um diagnóstico preciso.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-accent to-purple-600 p-8 rounded-2xl text-white">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-moon text-4xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Diagnóstico Completo</h3>
+                        </div>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Apneia do sono
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Ronco patológico
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Insônia crônica
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Síndrome das pernas inquietas
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Qualidade do sono REM
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Tipos de Exame -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        🛌 Tipos de Exame do Sono
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Diferentes modalidades para atender suas necessidades específicas
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Polissonografia Domiciliar -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-home text-2xl text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-purple-700 mb-2">Polissonografia Domiciliar</h3>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">MAIS POPULAR</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Realizado no conforto da sua casa
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Equipamentos portáteis e confortáveis
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Monitoramento de 8-12 horas
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Análise completa dos ciclos do sono
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Relatório detalhado em 48h
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-purple-600">R$ 450</span>
+                            <span class="text-gray-500 ml-2">/ exame</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Polissonografia Laboratorial -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-hospital text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-700 mb-2">Polissonografia Laboratorial</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">PREMIUM</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Realizado em nossa clínica
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Monitoramento técnico especializado
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Equipamentos de alta precisão
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Análise de múltiplos parâmetros
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                Suporte técnico durante o exame
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-blue-600">R$ 680</span>
+                            <span class="text-gray-500 ml-2">/ exame</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Parâmetros Monitorados -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        📊 Parâmetros Monitorados
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Análise completa de todos os aspectos do seu sono
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Atividade Cerebral -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl border border-blue-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-brain text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-blue-800">Atividade Cerebral (EEG)</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Ondas cerebrais durante o sono</li>
+                            <li>• Identificação dos estágios do sono</li>
+                            <li>• Qualidade do sono REM</li>
+                            <li>• Microdespertares</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Respiração -->
+                    <div class="bg-gradient-to-br from-green-50 to-teal-100 p-6 rounded-xl border border-green-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lungs text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-green-800">Padrão Respiratório</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Fluxo de ar nasal e oral</li>
+                            <li>• Movimentos torácicos e abdominais</li>
+                            <li>• Eventos de apneia e hipopneia</li>
+                            <li>• Saturação de oxigênio</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Atividade Cardíaca -->
+                    <div class="bg-gradient-to-br from-red-50 to-pink-100 p-6 rounded-xl border border-red-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heartbeat text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-red-800">Atividade Cardíaca (ECG)</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Frequência cardíaca</li>
+                            <li>• Ritmo cardíaco durante o sono</li>
+                            <li>• Arritmias relacionadas ao sono</li>
+                            <li>• Variabilidade cardíaca</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Movimentos Oculares -->
+                    <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl border border-purple-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-eye text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-purple-800">Movimentos Oculares</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Identificação do sono REM</li>
+                            <li>• Qualidade dos sonhos</li>
+                            <li>• Transições entre estágios</li>
+                            <li>• Padrões de movimento ocular</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tônus Muscular -->
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-6 rounded-xl border border-orange-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-dumbbell text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-orange-800">Atividade Muscular</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Tônus muscular do queixo</li>
+                            <li>• Movimentos das pernas</li>
+                            <li>• Síndrome das pernas inquietas</li>
+                            <li>• Movimentos periódicos</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ronco e Som -->
+                    <div class="bg-gradient-to-br from-gray-50 to-slate-100 p-6 rounded-xl border border-gray-200">
+                        <div class="text-center mb-4">
+                            <div class="bg-gray-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-volume-up text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800">Ronco e Sons</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Intensidade do ronco</li>
+                            <li>• Frequência dos eventos</li>
+                            <li>• Padrões de respiração ruidosa</li>
+                            <li>• Correlação com posição corporal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Processo do Exame -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        🔄 Como Funciona o Exame
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Processo simples e confortável do agendamento aos resultados
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            1
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-3">Agendamento</h3>
+                        <p class="text-gray-600 text-sm">
+                            Agende online ou por telefone. Escolha entre exame domiciliar ou laboratorial.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            2
+                        </div>
+                        <h3 class="text-lg font-bold text-secondary mb-3">Orientação</h3>
+                        <p class="text-gray-600 text-sm">
+                            Receba instruções detalhadas para preparação e instalação dos equipamentos.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            3
+                        </div>
+                        <h3 class="text-lg font-bold text-accent mb-3">Monitoramento</h3>
+                        <p class="text-gray-600 text-sm">
+                            Durma normalmente enquanto os equipamentos capturam dados do seu sono.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-orange-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            4
+                        </div>
+                        <h3 class="text-lg font-bold text-orange-500 mb-3">Resultados</h3>
+                        <p class="text-gray-600 text-sm">
+                            Laudo médico detalhado disponível em 48h com recomendações de tratamento.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border border-blue-200 p-8 rounded-xl">
+                    <h3 class="text-xl font-bold text-primary mb-4 text-center">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Preparação para o Exame
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-green-700 mb-3">✅ O que FAZER:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Manter rotina normal de sono</li>
+                                <li>• Tomar banho antes de dormir</li>
+                                <li>• Evitar produtos no cabelo</li>
+                                <li>• Usar roupa confortável</li>
+                                <li>• Seguir orientações médicas</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-red-700 mb-3">❌ O que NÃO fazer:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Não consumir álcool ou cafeína</li>
+                                <li>• Não fazer exercícios intensos</li>
+                                <li>• Não cochilar durante o dia</li>
+                                <li>• Não usar medicamentos para dormir</li>
+                                <li>• Não alterar medicações habituais</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Acompanhamento Remoto -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        📱 Acompanhamento Remoto
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Suporte completo durante todo o processo
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Suporte 24h</h4>
+                                    <p class="text-gray-700">
+                                        Nossa equipe técnica está disponível para esclarecer dúvidas durante o exame.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">App de Monitoramento</h4>
+                                    <p class="text-gray-700">
+                                        Acompanhe em tempo real a qualidade dos dados coletados.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Consultoria Médica</h4>
+                                    <p class="text-gray-700">
+                                        Discussão dos resultados com especialista em medicina do sono.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-100 p-8 rounded-2xl">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-chart-pie text-4xl text-purple-600 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Relatório Detalhado</h3>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                                Índice de Apneia-Hipopneia (IAH)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                                Eficiência do sono
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                                Análise dos estágios do sono
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                                Saturação de oxigênio
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                                Recomendações de tratamento
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Agendar Exame -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                    📅 Agende seu Exame do Sono
+                </h2>
+                
+                <div class="bg-gradient-to-br from-accent to-purple-600 p-8 md:p-12 rounded-2xl text-white mb-8">
+                    <p class="text-xl md:text-2xl leading-relaxed mb-8">
+                        Descubra a qualidade do seu sono com <strong>monitoramento profissional</strong> no conforto da sua casa
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-home text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Conforto da sua casa</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Resultados em 48h</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-md text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Suporte especializado</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center mb-12">
+                    <button id="agendamento-sono" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Agendar Exame do Sono
+                    </button>
+                    
+                    <button id="whatsapp-sono" class="w-full md:w-auto bg-green-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </button>
+                    
+                    <a href="teste-ronco.html" class="w-full md:w-auto bg-orange-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg inline-block">
+                        <i class="fas fa-volume-up mr-2"></i>
+                        Teste do Ronco Gratuito
+                    </a>
+                </div>
+                
+                <div class="bg-purple-50 border-l-4 border-accent p-8 rounded-lg">
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h4 class="text-lg font-bold text-accent mb-4">📞 Central de Agendamento</h4>
+                            <p class="text-gray-700">
+                                <strong>(11) 9999-9999</strong><br>
+                                Horário: Segunda à Sexta, 8h às 18h<br>
+                                Sábado: 8h às 12h
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-bold text-secondary mb-4">🩺 Convênios Aceitos</h4>
+                            <p class="text-gray-700">
+                                Aceitamos os principais convênios médicos. Consulte disponibilidade para seu plano.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Exames do Sono com tecnologia avançada
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i> (11) 9999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="medicina-chinesa.html" class="block text-gray-300 hover:text-white transition-colors">Medicina Chinesa</a>
+                        <a href="exames-imagem.html" class="block text-gray-300 hover:text-white transition-colors">Exames de Imagem</a>
+                        <a href="teste-ronco.html" class="block text-gray-300 hover:text-white transition-colors">Teste do Ronco</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('agendamento-sono')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento de exame do sono...');
+        });
+        
+        document.getElementById('whatsapp-sono')?.addEventListener('click', function() {
+            const phoneNumber = '5511999998888';
+            const message = encodeURIComponent('Olá! Gostaria de agendar um exame do sono.');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 
