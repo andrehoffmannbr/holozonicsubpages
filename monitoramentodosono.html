@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento do Sono - Holozonic</title>
+    <meta name="description" content="Descubra dados interessantes sobre os hábitos de sono e como a Holozonic pode ajudar você a ter noites revigorantes.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <i class="fas fa-moon mr-4"></i>
+                    Monitoramento do Sono
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Descubra dados fascinantes sobre os hábitos de sono na América Latina e encontre o caminho para noites verdadeiramente revigorantes
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Dados da Pesquisa -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">O que a Pesquisa Revelou</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Uma pesquisa revelou dados interessantes sobre os hábitos e desafios relacionados ao sono na América Latina
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-primary">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clock text-2xl text-primary mr-3"></i>
+                        <h3 class="text-lg font-bold">Horário de Dormir</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        <span class="font-bold text-primary">49,66%</span> dormem entre 23h e 1h
+                    </p>
+                    <p class="text-gray-700">
+                        <span class="font-bold text-primary">67,35%</span> dormem de 6 a 8 horas por noite
+                    </p>
+                </div>
+                
+                <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tired text-2xl text-red-500 mr-3"></i>
+                        <h3 class="text-lg font-bold">Qualidade do Sono</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        Apenas <span class="font-bold text-red-500">4,76%</span> sempre acordam descansados
+                    </p>
+                    <p class="text-gray-700">
+                        <span class="font-bold text-red-500">70%+</span> relatam perda diurna de energia
+                    </p>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-2xl text-orange-500 mr-3"></i>
+                        <h3 class="text-lg font-bold">Sinais de Alerta</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        <span class="font-bold text-orange-500">40%</span> relatam roncos recorrentes
+                    </p>
+                    <p class="text-gray-700">
+                        <span class="font-bold text-orange-500">17%</span> admitem episódios de apneia
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-lg font-bold">Desempenho Diário</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        <span class="font-bold text-purple-500">54,42%</span> sentem que a falta de sono afeta o desempenho diário
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-gray-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mobile-alt text-2xl text-gray-500 mr-3"></i>
+                        <h3 class="text-lg font-bold">Monitoramento</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        <span class="font-bold text-gray-500">90%+</span> não usam dispositivos de monitoramento
+                    </p>
+                    <p class="text-gray-700">
+                        <span class="font-bold text-secondary">12,24%</span> têm interesse em experimentar
+                    </p>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-stethoscope text-2xl text-yellow-500 mr-3"></i>
+                        <h3 class="text-lg font-bold">Diagnóstico</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        <span class="font-bold text-yellow-500">16%</span> têm ou suspeitam de distúrbio do sono
+                    </p>
+                    <p class="text-gray-700">
+                        Apenas <span class="font-bold text-yellow-500">8,84%</span> têm diagnóstico confirmado
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl font-semibold text-primary mb-6">
+                    Você se identifica com algum desses dados?
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Seu Sono Merece Atenção -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                    Seu Sono Merece Atenção: Descubra o Caminho para Noites Revigorantes
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    Você deita entre 23h e 1h e dorme suas 6 a 8 horas, mas acorda raramente se sentindo realmente descansado? 
+                    A pesquisa mostra que <strong>você não está sozinho!</strong> Muitos de nós enfrentamos a perda de energia durante o dia 
+                    (mais de 70%!) e sentimos o impacto da falta de sono no desempenho diário (54,42%).
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Sinais de Alerta -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+                    <i class="fas fa-exclamation-circle mr-3"></i>
+                    Sinais de Alerta para Ficar de Olho
+                </h2>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg mb-8">
+                    <div class="flex items-start">
+                        <i class="fas fa-volume-up text-2xl text-red-500 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold text-red-700 mb-2">Roncos Frequentes?</h3>
+                            <p class="text-gray-700">
+                                Cerca de <strong>40%</strong> das pessoas relatam roncos recorrentes. 
+                                Este pode ser um sinal importante de que seu sono não está sendo totalmente reparador.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg mb-8">
+                    <div class="flex items-start">
+                        <i class="fas fa-pause-circle text-2xl text-orange-500 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-700 mb-2">Pausas na Respiração (Apneia)?</h3>
+                            <p class="text-gray-700">
+                                Quase <strong>17%</strong> admitem episódios de apneia durante o sono. 
+                                Esses são sinais importantes de que seu sono pode não estar sendo reparador.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Primeiro Passo -->
+    <section class="py-16 bg-secondary/10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-primary mb-6">
+                    <i class="fas fa-arrow-right mr-3"></i>
+                    Dê o Primeiro Passo Rumo a Noites Melhores
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    Sabemos que mais de <strong>90%</strong> das pessoas não usam nenhum tipo de monitoramento, 
+                    mas <strong>12,24%</strong> têm interesse em experimentar. Se você suspeita de algum distúrbio do sono 
+                    ou simplesmente quer otimizar suas noites, <strong>a hora é agora!</strong> Apenas uma pequena porcentagem 
+                    tem diagnóstico confirmado, o que significa que muitos ainda não buscaram a ajuda necessária.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Transforme Suas Noites -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+                    <i class="fas fa-magic mr-3"></i>
+                    Transforme Suas Noites, Transforme Seus Dias
+                </h2>
+                
+                <div class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white mb-8">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-hospital text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Na Clínica Holozonic</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-user-md text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Especialistas em Monitoramento do Sono</h4>
+                                <p class="opacity-90">
+                                    Nossa equipe é especializada em identificar e tratar distúrbios do sono
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-laptop-medical text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Tecnologia Avançada</h4>
+                                <p class="opacity-90">
+                                    Utilizamos equipamentos de última geração para monitoramento preciso
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-search text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Identificação Precisa</h4>
+                                <p class="opacity-90">
+                                    Podemos identificar a causa exata dos seus problemas de sono
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-heart text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Tratamento Personalizado</h4>
+                                <p class="opacity-90">
+                                    Oferecemos o tratamento ideal especificamente para você
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-xl font-semibold text-gray-700 mb-6">
+                        Chega de acordar cansado!
+                    </p>
+                    
+                    <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                        <button id="agendamento-sono" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Agende Sua Consulta
+                        </button>
+                        
+                        <button id="teste-ronco" class="w-full md:w-auto bg-orange-500 text-white px-8 py-4 text-lg rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-clipboard-check mr-2"></i>
+                            Teste do Ronco Gratuito
+                        </button>
+                    </div>
+                    
+                    <p class="text-gray-600 mt-6 text-lg">
+                        <strong>Invista no seu sono, invista na sua qualidade de vida!</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Especialistas em monitoramento do sono e bem-estar integral
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                                        <p><i class="fas fa-phone mr-2"></i> (48) 99912-8212</p>
+                <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> Rua James Robert Amós, 159 – Lages, SC</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="#agendamento" class="block text-gray-300 hover:text-white transition-colors">Agendamento</a>
+                        <a href="#teste-ronco" class="block text-gray-300 hover:text-white transition-colors">Teste do Ronco</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('agendamento-sono')?.addEventListener('click', function() {
+            // Redirecionar para agendamento ou abrir modal
+            alert('Redirecionando para agendamento...');
+        });
+        
+        document.getElementById('teste-ronco')?.addEventListener('click', function() {
+            // Redirecionar para formulário de teste do ronco
+            window.location.href = 'teste-ronco.html';
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            // Redirecionar para agendamento ou abrir modal
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 

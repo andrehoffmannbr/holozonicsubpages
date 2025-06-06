@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que escolher a Holozonic - Clínica integrada em saúde humana</title>
+    <meta name="description" content="Descubra por que a Holozonic é mais que uma clínica - é um espaço onde inovação tecnológica encontra o toque humano.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+                    Por que escolher a Holozonic?
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Clínica integrada em saúde humana
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Principal -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                        Na Holozonic, acreditamos que cuidar da saúde humana vai muito além de tratar sintomas — 
+                        envolve compreender o ser humano como um todo: <strong>corpo, mente, energia e ambiente</strong>. 
+                        Somos uma <strong>Clínica Integrada em Saúde Humana</strong>, com uma estrutura moderna, 
+                        profissionais qualificados e um olhar verdadeiramente comprometido com o bem-estar integral de cada pessoa.
+                    </p>
+                </div>
+                
+                <!-- Cards de Diferencial -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-blue-50 p-8 rounded-xl border-l-4 border-primary">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-yin-yang text-4xl text-primary mb-4"></i>
+                            <h3 class="text-xl font-bold text-primary">Atendimento Único</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Consultas baseadas na Medicina Chinesa, que avaliam o paciente de forma completa, 
+                            integrando saberes ancestrais com tecnologias avançadas.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-8 rounded-xl border-l-4 border-secondary">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-leaf text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold text-secondary">Oxigênio-Ozonioterapia</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Terapias estéticas e clínicas com protocolos seguros e eficazes, 
+                            aplicando oxigênio-ozonioterapia para resultados únicos.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-8 rounded-xl border-l-4 border-accent">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-heartbeat text-4xl text-accent mb-4"></i>
+                            <h3 class="text-xl font-bold text-accent">Monitoramento Inteligente</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Conectamos profissionais, pacientes e familiares de forma remota, 
+                            permitindo um cuidado humanizado mesmo à distância.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Tecnologia e Humanização -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                            Tecnologia Conectada ao Cuidado Humano
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-video text-2xl text-primary mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">Teleconsultas e Agendamento Online</h4>
+                                    <p class="text-gray-700">
+                                        Sistema integrado que respeita seu tempo e rotina, com prescrição digital e acompanhamento contínuo.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-x-ray text-2xl text-secondary mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">Exames de Imagem no Local</h4>
+                                    <p class="text-gray-700">
+                                        Laudos emitidos em até 24 horas, trazendo agilidade e conforto ao paciente.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-moon text-2xl text-accent mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2">Monitoramento de Sono em Casa</h4>
+                                    <p class="text-gray-700">
+                                        Testes de ronco no conforto da sua casa, de forma prática, gratuita e com tecnologia de ponta.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-hospital text-4xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Ecossistema de Saúde Completo</h3>
+                        </div>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Conexão contínua profissional-paciente-família
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Cuidado humanizado mesmo à distância
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Teleconsultas e agendamento online
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Prescrição digital integrada
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Monitoramento inteligente de saúde
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Diferencial Profissional -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        Nosso Diferencial Está no Compromisso
+                    </h2>
+                    <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+                        A clínica é dirigida por um responsável técnico com múltiplas formações na área da saúde, 
+                        vasta experiência e dedicação ao cuidado com o ser humano de maneira ética, integrativa e respeitosa.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="bg-blue-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-primary mb-4">
+                                <i class="fas fa-eye mr-3"></i>
+                                Observação e Inspeção Completa
+                            </h3>
+                            <p class="text-gray-700">
+                                Nossa equipe observa, inspeciona e identifica os desequilíbrios energéticos e físicos, 
+                                aplicando conhecimento profundo e experiência clínica.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-secondary mb-4">
+                                <i class="fas fa-heart mr-3"></i>
+                                Cuidado Ético e Integrativo
+                            </h3>
+                            <p class="text-gray-700">
+                                Cada vida que passa por aqui recebe atenção dedicada, com métodos éticos, 
+                                integrativos e respeitosos ao tempo de cura de cada pessoa.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-secondary to-primary p-8 rounded-2xl text-white text-center">
+                        <i class="fas fa-quote-left text-4xl mb-6 opacity-75"></i>
+                        <blockquote class="text-xl md:text-2xl font-medium mb-6 leading-relaxed">
+                            "Nosso segredo é o método Holozonic - uma maneira de adicionar anos à sua vida e qualidade de vida aos seus anos"
+                        </blockquote>
+                        <div class="border-t border-white/30 pt-6">
+                            <p class="text-lg font-semibold">Filosofia Holozonic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Mais que uma Clínica -->
+    <section class="py-16 bg-gradient-to-br from-accent/10 to-primary/10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                    Holozonic é mais do que uma clínica
+                </h2>
+                
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-8">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                        É um espaço onde a <strong>inovação tecnológica encontra o toque humano</strong>, 
+                        promovendo saúde com propósito, ciência com empatia e resultados com verdade.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-2xl text-primary"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-primary mb-2">Saúde com Propósito</h4>
+                            <p class="text-gray-600">
+                                Cada tratamento tem um objetivo claro e personalizado
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-microscope text-2xl text-secondary"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-secondary mb-2">Ciência com Empatia</h4>
+                            <p class="text-gray-600">
+                                Tecnologia avançada aplicada com cuidado humano
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-2xl text-accent"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-accent mb-2">Resultados com Verdade</h4>
+                            <p class="text-gray-600">
+                                Transparência total em diagnósticos e tratamentos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                    <button id="agendamento-principal" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Agende Sua Consulta
+                    </button>
+                    
+                    <a href="monitoramentodosono.html" class="w-full md:w-auto bg-primary text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-lg inline-block text-center">
+                        <i class="fas fa-moon mr-2"></i>
+                        Monitoramento do Sono
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Onde inovação tecnológica encontra o toque humano
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                                        <p><i class="fas fa-phone mr-2"></i> (48) 99912-8212</p>
+                <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> Rua James Robert Amós, 159 – Lages, SC</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="monitoramentodosono.html" class="block text-gray-300 hover:text-white transition-colors">Monitoramento do Sono</a>
+                        <a href="teste-ronco.html" class="block text-gray-300 hover:text-white transition-colors">Teste do Ronco</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('agendamento-principal')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 

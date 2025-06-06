@@ -1,0 +1,22 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências
+node_modules/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Configurações do sistema
+../../../../*
+../../../*
+../../*
+
+# Arquivos de configuração local
+.env.local 

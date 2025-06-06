@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina Chinesa - Holozonic</title>
+    <meta name="description" content="Consulta completa de Medicina Chinesa na Holozonic - Avaliação individualizada e indicação terapêutica personalizada.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">
+                    <i class="fas fa-atom mr-2"></i>
+                    Holozonic
+                </a>
+            </div>
+            
+            <!-- Botão Voltar -->
+            <div class="flex space-x-4">
+                <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Voltar
+                </a>
+                <button id="agendamento-btn" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Agendamento Online
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-green-50 to-teal-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <i class="fas fa-yin-yang mr-4"></i>
+                    Medicina Chinesa
+                </h1>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Por que fazer uma consulta com Medicina Chinesa na clínica Holozonic?
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Principal -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                        Em um mundo onde os sintomas muitas vezes são tratados de forma isolada, a <strong>Medicina Chinesa</strong> oferece um caminho diferente: ela busca compreender você por inteiro.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                            Através de um olhar milenar, que respeita a sabedoria do corpo, das emoções e da natureza, realizamos uma <strong>avaliação profunda e individualizada</strong>, que vai muito além de uma simples queixa ou diagnóstico convencional.
+                        </p>
+                        
+                        <div class="bg-green-50 border-l-4 border-secondary p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-secondary mb-4">
+                                <i class="fas fa-target mr-3"></i>
+                                Nosso Objetivo
+                            </h3>
+                            <p class="text-gray-700">
+                                Identificar a origem dos desequilíbrios e te conduzir a um estado de <strong>equilíbrio físico, mental e energético</strong>, promovendo saúde real e duradoura.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-leaf text-4xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Abordagem Integrativa</h3>
+                        </div>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Avaliação do corpo como um todo
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Respeito à sabedoria milenar
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Tratamento personalizado
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Equilíbrio físico e emocional
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-yellow-300"></i>
+                                Prevenção e cura natural
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: O que é avaliado -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        O que é avaliado em uma consulta completa?
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Nossa avaliação é minuciosa e respeita sua individualidade
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- 1. Escuta ativa -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-ear-listen text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-primary">🧠 1. Escuta ativa e anamnese energética</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Um momento especial onde escutamos com atenção tudo o que o corpo expressa — desde o cansaço, o apetite, o sono, até os aspectos emocionais, digestivos e respiratórios. Coletamos informações amplas para entender seu padrão energético único.
+                        </p>
+                    </div>
+                    
+                    <!-- 2. Observação visual -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-eye text-2xl text-secondary"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-secondary">👁️‍🗨️ 2. Observação visual e análise corporal</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Analisamos sinais sutis, como o brilho dos olhos, a pele, o aspecto da língua, a postura e outros pontos externos que revelam muito sobre sua saúde interna.
+                        </p>
+                    </div>
+                    
+                    <!-- 3. Sons e odores -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-volume-up text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-accent">👂 3. Sons e odores</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            A voz, a respiração e até o hálito trazem informações importantes sobre o estado dos seus órgãos e da sua energia vital. Tudo é levado em consideração com respeito e discrição.
+                        </p>
+                    </div>
+                    
+                    <!-- 4. Avaliação tátil -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-hand-paper text-2xl text-orange-500"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-orange-500">✋ 4. Avaliação tátil e energética</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Inclui a leitura do pulso — uma técnica tradicional que oferece pistas sobre o estado interno do organismo — e o toque terapêutico em regiões específicas para perceber tensões, frio, calor ou bloqueios.
+                        </p>
+                    </div>
+                    
+                    <!-- 5. Padrões de desequilíbrio -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-yin-yang text-2xl text-indigo-500"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-indigo-500">🌀 5. Identificação dos padrões de desequilíbrio</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Após reunir todas as informações, identificamos quais padrões energéticos estão em desarmonia, como excesso, deficiência, presença de fatores externos, entre outros.
+                        </p>
+                    </div>
+                    
+                    <!-- 6. Emoções e estilo de vida -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center mb-4">
+                            <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-2xl text-pink-500"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-pink-500">🪔 6. Emoções, sono, alimentação e estilo de vida</h3>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            A forma como você vive, sente, se alimenta e descansa influencia diretamente sua saúde. Esses aspectos são avaliados com cuidado, pois fazem parte do processo de equilíbrio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Indicação Terapêutica -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        📋 7. Indicação terapêutica personalizada
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Com base na sua avaliação, indicamos os melhores caminhos terapêuticos
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                        <div class="text-center">
+                            <i class="fas fa-spa text-3xl text-blue-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-blue-800">Acupuntura</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+                        <div class="text-center">
+                            <i class="fas fa-leaf text-3xl text-green-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-green-800">Fitoterapia chinesa</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+                        <div class="text-center">
+                            <i class="fas fa-fire text-3xl text-orange-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-orange-800">Moxabustão</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                        <div class="text-center">
+                            <i class="fas fa-wind text-3xl text-purple-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-purple-800">Ventosaterapia</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
+                        <div class="text-center">
+                            <i class="fas fa-ear-listen text-3xl text-pink-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-pink-800">Auriculoterapia</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl border border-indigo-200">
+                        <div class="text-center">
+                            <i class="fas fa-utensils text-3xl text-indigo-600 mb-3"></i>
+                            <h3 class="text-lg font-bold text-indigo-800">Dietoterapia energética</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-secondary to-primary p-8 rounded-2xl text-white text-center mb-12">
+                    <i class="fas fa-hands text-4xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Tui Na (massagem terapêutica)</h3>
+                    <p class="text-lg opacity-90">
+                        E outros tratamentos complementares personalizados para seu perfil único
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção: Cuidado Personalizado -->
+    <section class="py-16 bg-gradient-to-br from-green-50 to-teal-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+                    ✨ Um cuidado que respeita a sua história
+                </h2>
+                
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-8">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                        Ao escolher essa abordagem, você recebe um <strong>plano de cuidado feito exclusivamente para você</strong>, respeitando sua individualidade, sua rotina e seu tempo de cura.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="text-left">
+                            <h4 class="text-xl font-bold text-primary mb-4">Na Holozonic, unimos:</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-yin-yang text-primary mr-3"></i>
+                                    <span>Tradição milenar</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-laptop-medical text-primary mr-3"></i>
+                                    <span>Tecnologia moderna</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-heart text-primary mr-3"></i>
+                                    <span>Cuidado humanizado</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-left">
+                            <h4 class="text-xl font-bold text-secondary mb-4">Cada consulta é:</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-user-check text-secondary mr-3"></i>
+                                    <span>Uma oportunidade de reconexão</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-spa text-secondary mr-3"></i>
+                                    <span>Um momento de autocuidado</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-seedling text-secondary mr-3"></i>
+                                    <span>Um passo rumo ao equilíbrio</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                    <button id="agendamento-medicina-chinesa" class="w-full md:w-auto bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+                        📍 Agendamentos presenciais
+                    </button>
+                    
+                    <button id="teleconsulta-medicina-chinesa" class="w-full md:w-auto bg-primary text-white px-8 py-4 text-lg rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                        📲 Teleconsulta
+                    </button>
+                </div>
+                
+                <div class="mt-8 bg-white/80 p-6 rounded-xl">
+                    <div class="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-md text-primary mr-2"></i>
+                            Atendimento humanizado e individual
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-primary mr-2"></i>
+                            Acompanhamento contínuo e suporte via app
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <p class="text-2xl font-bold text-primary mb-4">
+                        Entre em contato e agende sua avaliação.
+                    </p>
+                    <p class="text-xl text-secondary">
+                        Descubra o poder da Medicina Chinesa em sua vida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        Clínica integrada em saúde humana - Medicina Chinesa tradicional com abordagem moderna
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                                        <p><i class="fas fa-phone mr-2"></i> (48) 99912-8212</p>
+                <p><i class="fas fa-envelope mr-2"></i> contato@holozonic.com.br</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> Rua James Robert Amós, 159 – Lages, SC</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-white transition-colors">Página Inicial</a>
+                        <a href="oxigeniozonioterapia-estetica.html" class="block text-gray-300 hover:text-white transition-colors">Oxigenioozonioterapia</a>
+                        <a href="monitoramentodosono.html" class="block text-gray-300 hover:text-white transition-colors">Monitoramento do Sono</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Event listeners específicos para esta página
+        document.getElementById('agendamento-medicina-chinesa')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento presencial...');
+        });
+        
+        document.getElementById('teleconsulta-medicina-chinesa')?.addEventListener('click', function() {
+            alert('Redirecionando para teleconsulta...');
+        });
+        
+        document.getElementById('agendamento-btn')?.addEventListener('click', function() {
+            alert('Redirecionando para agendamento...');
+        });
+    </script>
+</body>
+</html> 
