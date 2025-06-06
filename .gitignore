@@ -19,4 +19,7 @@ node_modules/
 ../../*
 
 # Arquivos de configuração local
-.env.local 
+.env.local
+
+# Pasta duplicada
+holozonicsubpages/ 
