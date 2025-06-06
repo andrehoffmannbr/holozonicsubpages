@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIB - Medicina Integrativa Bioenergética | Holozonic</title>
+    <meta name="description" content="Apresentação da Medicina Integrativa Bioenergética (MIB) - Uma criação visionária do Dr. Hamilton integrando saberes milenares e ciência moderna.">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1E90FF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Holozonic">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full bg-white/98 backdrop-blur-md shadow-lg z-50 transition-transform duration-300 ease-in-out">
+        <nav class="container mx-auto px-3 py-2 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="text-xl font-bold text-primary logo-hover cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fas fa-atom mr-1"></i>
+                    Holozonic
+                </div>
+            </div>
+            
+            <!-- Menu de Navegação -->
+            <div class="hidden xl:flex space-x-4 text-sm">
+                <div class="relative group">
+                    <a href="monitoramento-inteligente.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Monitoramento
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="porque-holozonic.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Por que Holozonic
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="medicina-chinesa.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Medicina Chinesa
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="mib.html" class="text-primary bg-primary/10 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link font-medium">
+                        MIB
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="oxigeniozonioterapia-estetica.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Ozonioterapia
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="exames-imagem.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Exames
+                    </a>
+                </div>
+                <div class="relative group">
+                    <a href="exame-sono.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Exame Sono
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Menu Compacto para LG -->
+            <div class="hidden lg:flex xl:hidden">
+                <button id="menu-compact-btn" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-3 rounded flex items-center">
+                    <i class="fas fa-bars mr-2"></i>
+                    <span class="text-sm">Menu</span>
+                </button>
+            </div>
+            
+            <!-- Botões de Ação -->
+            <div class="hidden lg:flex space-x-2 btn-group">
+                <button id="teste-ronco-btn" class="group relative bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1.5 rounded-lg text-xs font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden btn-primary">
+                    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative flex items-center">
+                        <div class="bg-white/20 p-0.5 rounded-full mr-1">
+                            <i class="fas fa-volume-up text-xs icon-bounce"></i>
+                        </div>
+                        <span>Ronco</span>
+                        <div class="ml-1 bg-yellow-400 text-orange-800 text-xs px-1 py-0.5 rounded-full font-bold badge-animate">
+                            FREE
+                        </div>
+                    </div>
+                </button>
+                <button id="agendamento-btn" class="group bg-secondary text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt text-xs mr-1 group-hover:animate-pulse"></i>
+                        <span>Agendar</span>
+                    </div>
+                </button>
+                <button class="group bg-accent text-white px-3 py-1.5 rounded-lg hover:bg-purple-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-gem text-xs mr-1 group-hover:animate-spin"></i>
+                        <span>VitaLin</span>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <button id="mobile-menu-btn" class="lg:hidden text-primary text-lg">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Menu Compacto Dropdown (LG) -->
+        <div id="compact-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t">
+            <div class="container mx-auto px-4 py-6">
+                <div class="grid grid-cols-4 gap-6">
+                    <div>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Serviços Principais</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="monitoramento-inteligente.html" class="text-gray-600 hover:text-primary transition-colors">Monitoramento Inteligente</a></li>
+                            <li><a href="medicina-chinesa.html" class="text-gray-600 hover:text-primary transition-colors">Medicina Chinesa</a></li>
+                            <li><a href="mib.html" class="text-gray-600 hover:text-primary transition-colors font-semibold">MIB</a></li>
+                            <li><a href="oxigeniozonioterapia-estetica.html" class="text-gray-600 hover:text-primary transition-colors">Ozonioterapia Estética</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Exames</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="exames-imagem.html" class="text-gray-600 hover:text-primary transition-colors">Exames de Imagem</a></li>
+                            <li><a href="exame-sono.html" class="text-gray-600 hover:text-primary transition-colors">Exame do Sono</a></li>
+                            <li><a href="monitoramentodosono.html" class="text-gray-600 hover:text-primary transition-colors">Monitoramento do Sono</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Outros</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="porque-holozonic.html" class="text-gray-600 hover:text-primary transition-colors">Por que a Holozonic</a></li>
+                            <li><a href="#vitalin" class="text-gray-600 hover:text-primary transition-colors">VitaLin</a></li>
+                            <li><a href="#teleconsulta" class="text-gray-600 hover:text-primary transition-colors">Teleconsulta</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-2 max-h-96 overflow-y-auto">
+                <a href="monitoramento-inteligente.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-heartbeat mr-2"></i>
+                    Monitoramento Inteligente
+                </a>
+                <a href="porque-holozonic.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Por que Holozonic
+                </a>
+                <a href="medicina-chinesa.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-yin-yang mr-2"></i>
+                    Medicina Chinesa
+                </a>
+                <a href="mib.html" class="block text-primary bg-primary/10 py-2 px-3 rounded transition-colors text-sm font-medium">
+                    <i class="fas fa-leaf mr-2"></i>
+                    MIB
+                </a>
+                <a href="oxigeniozonioterapia-estetica.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-wind mr-2"></i>
+                    Ozonioterapia
+                </a>
+                <a href="exames-imagem.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-x-ray mr-2"></i>
+                    Exames
+                </a>
+                <a href="exame-sono.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-moon mr-2"></i>
+                    Exames de Sono
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <i class="fas fa-leaf mr-2"></i>
+                    Medicina Integrativa Bioenergética
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
+                    Apresentação da 
+                    <span class="text-primary">MIB</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Uma criação visionária e sensitiva do Dr. Hamilton, resultado de anos de estudos, escuta clínica profunda e dedicação ao cuidado com a saúde humana de forma abrangente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            
+            <!-- Introdução -->
+            <div class="prose prose-lg max-w-none mb-12">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Fruto da integração de estudos entre saberes milenares e a pesquisa na ciência moderna, a MIB nasce para oferecer um novo jeito de tratar, prevenir e compreender o processo de adoecimento.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para o criador da MIB, saúde vai muito além de não estar doente. Ser saudável é ter clareza mental, equilíbrio emocional, energia vital fluindo, autonomia para viver com sentido e relações saudáveis. É estar presente no corpo, com um estilo de vida conectado à natureza, aos ciclos da vida e à sua verdade.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-12">
+                    Adoecer não acontece do nada. Antes dos sintomas surgirem, o corpo dá sinais. Há sobrecargas, desconexões, emoções reprimidas, maus hábitos, ambientes que adoece. Por isso, cuidar da saúde não pode ser só aliviar sintomas. Precisa ser profundo, humano e completo.
+                </p>
+            </div>
+
+            <!-- O que é a MIB -->
+            <div class="bg-gradient-to-r from-secondary/10 to-primary/10 rounded-xl p-8 mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    🌱 O que é a Medicina Integrativa Bioenergética (MIB)?
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    A MIB é um modelo clínico que integra:
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-3">Medicina Tradicional Chinesa (MTC):</h3>
+                        <p class="text-gray-700">
+                            conhecimento sobre energia vital (Qi), meridianos, órgãos e vísceras, diagnóstico pela língua e pulso, os Cinco Elementos, Yin e Yang, e o fluxo natural da vida.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-3">Medicina Ocidental Baseada em Evidências:</h3>
+                        <p class="text-gray-700">
+                            fisiologia, anatomia, exames laboratoriais, avaliações clínicas detalhadas, recursos diagnósticos modernos e tecnologias de ponta.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-3">Ciência da Bioenergia:</h3>
+                        <p class="text-gray-700">
+                            compreensão sobre campos energéticos humanos, eletromagnetismo celular, influências ambientais, recursos como oxigênio, ozonioterapia, frequências, magnetoterapia, e a relação entre corpo, emoção, espírito e ambiente.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-lg text-gray-700 mt-6 font-medium">
+                    A MIB é uma forma preditiva, causal e integrativa de tratar o paciente. Ela busca os sinais antes que a doença se instale, identifica as causas profundas dos desequilíbrios e integra diversas ciências para restaurar a vitalidade.
+                </p>
+            </div>
+
+            <!-- Diagnóstico Ampliado -->
+            <div class="bg-gradient-to-r from-accent/10 to-secondary/10 rounded-xl p-8 mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    🔍 Diagnóstico Ampliado e Escuta Profunda
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    O atendimento com base na MIB vai muito além de nomear uma doença. Ele investiga:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <ul class="space-y-2 text-gray-700">
+                        <li>- Como está a alimentação e o sono</li>
+                        <li>- Emoções e relacionamentos</li>
+                        <li>- Ambiente de trabalho e de vida</li>
+                        <li>- Exposição a toxinas físicas e emocionais</li>
+                        <li>- Estresse, estilo de vida e ritmo biológico</li>
+                    </ul>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>- Histórico de traumas e bloqueios</li>
+                        <li>- Conexão com o espiritual e com o próprio propósito</li>
+                        <li>- Interação entre sistemas nervoso, imune e hormonal</li>
+                        <li>- Entre outras</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <p class="text-lg text-gray-700 italic">
+                        A consulta é um mergulho. O terapeuta olha para o ser humano por inteiro, não apenas para um sintoma. A verdadeira causa do adoecimento muitas vezes está onde não se vê nos exames, relaciona-se ao todo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Um outro olhar para a saúde -->
+            <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    🌟 Um outro olhar para a saúde
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    A MIB reconhece que sintomas podem ser alertas de algo mais profundo, por exemplo:
+                </p>
+
+                <div class="space-y-3 mb-6">
+                    <div class="bg-white rounded-lg p-4 shadow-sm">- Estresse e falta de sentido</div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">- Alimentação incompatível com o biotipo</div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">- Relações vazias ou prejudiciais</div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">- Excesso de tecnologia, falta de natureza</div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm">- Silêncio e pausa esquecidos na rotina</div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <p class="text-lg text-gray-700">
+                        A proposta é tratar a raiz do problema. Estimular a autorregulação do corpo, a inteligência do sistema imune e a consciência do paciente sobre si mesmo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Um convite para a integração -->
+            <div class="bg-gradient-to-r from-secondary/10 to-primary/10 rounded-xl p-8 mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    🙏 Um convite para a integração
+                </h2>
+                
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Não existe uma medicina melhor que a outra. Existe a integração com propósito. A MIB respeita as diferentes abordagens e une o que há de melhor em cada uma para que o cuidado seja mais eficaz, mais sensível e mais completo.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed font-medium">
+                        Essa visão não se propõe a ser isolada, e sim integradora, preditiva, causal e profundamente humana.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Uma nova abordagem -->
+            <div class="bg-gradient-to-r from-accent/10 to-secondary/10 rounded-xl p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    ✨ Uma nova abordagem, um novo caminho
+                </h2>
+                
+                <div class="bg-white rounded-lg p-8 shadow-sm mb-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A Medicina Integrativa Bioenergética, criada pelo Dr. Hamilton, convida você a fazer parte de um novo paradigma de saúde: aquele em que a ciência, a natureza e a energia se encontram para promover o verdadeiro caminho da saúde.
+                    </p>
+                </div>
+
+                <div class="space-y-4 text-xl font-medium text-gray-800">
+                    <p>Chegou o tempo de tratar o ser humano, não apenas a doença.</p>
+                    <p>Chegou o tempo de cuidar com verdade, escuta e presença.</p>
+                    <p>Chegou o tempo de viver com vitalidade e sentido.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-4 gap-8 mb-8">
+                <!-- Logo e Descrição -->
+                <div>
+                    <div class="text-2xl font-bold text-primary mb-4">
+                        <i class="fas fa-atom mr-2"></i>
+                        Holozonic
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar completo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Serviços -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="medicina-chinesa.html" class="hover:text-primary transition-colors">Medicina Chinesa</a></li>
+                        <li><a href="mib.html" class="hover:text-primary transition-colors">MIB</a></li>
+                        <li><a href="oxigeniozonioterapia-estetica.html" class="hover:text-primary transition-colors">Oxigenioozonioterapia</a></li>
+                        <li><a href="exames-imagem.html" class="hover:text-primary transition-colors">Exames Especializados</a></li>
+                        <li><a href="monitoramento-inteligente.html" class="hover:text-primary transition-colors">Monitoramento Inteligente</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Plataforma -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Plataforma</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#agendamento" class="hover:text-primary transition-colors">Agendamento Online</a></li>
+                        <li><a href="#teleconsulta" class="hover:text-primary transition-colors">Teleconsulta</a></li>
+                        <li><a href="#prescricao" class="hover:text-primary transition-colors">Prescrição Online</a></li>
+                        <li><a href="#vitalin" class="hover:text-primary transition-colors">VitaLin</a></li>
+                        <li><a href="#loja" class="hover:text-primary transition-colors">Loja Integrada</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contato -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-primary"></i>
+                            <span>(48) 99912-8212</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>contato@holozonic.com.br</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-primary mt-1"></i>
+                            <span>Rua James Robert Amós, 159<br>Lages - SC</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-secondary"></i>
+                            <a href="https://wa.me/554899128212" target="_blank" class="hover:text-secondary transition-colors">(48) 99912-8212</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-gray-300">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados. | Desenvolvido com tecnologia e cuidado.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <div id="whatsapp-float" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/554899128212" target="_blank" 
+           class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const compactMenuBtn = document.getElementById('menu-compact-btn');
+            const compactMenu = document.getElementById('compact-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (compactMenuBtn && compactMenu) {
+                compactMenuBtn.addEventListener('click', function() {
+                    compactMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close menus when clicking outside
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && !mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+                if (compactMenu && !compactMenuBtn.contains(event.target) && !compactMenu.contains(event.target)) {
+                    compactMenu.classList.add('hidden');
+                }
+            });
+
+            // Teste do Ronco button functionality
+            const testeRoncoBtn = document.getElementById('teste-ronco-btn');
+            if (testeRoncoBtn) {
+                testeRoncoBtn.addEventListener('click', function() {
+                    window.location.href = 'teste-ronco.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
