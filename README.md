@@ -45,7 +45,7 @@ Site institucional da **Clínica Holozonic**, especializada em medicina integrat
 - Anamnese energética
 - Acupuntura e fitoterapia
 
-### 💨 **Oxigenioozonioterapia Estética**
+### 💨 **Oxigenioozonioterapia Asséptica**
 - Revitalização celular
 - Procedimentos não invasivos
 - Resultados comprovados

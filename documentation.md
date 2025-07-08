@@ -53,7 +53,7 @@ ClinicaHolozonic/
 - Monitoramento Inteligente
 - Por que a Holozonic
 - Medicina Chinesa
-- Oxigenioozonioterapia Estética
+- Oxigenioozonioterapia Asséptica
 - Exames de Imagem
 - Exame do Sono
 - Agendamento Online
@@ -96,7 +96,7 @@ ClinicaHolozonic/
   - Tui Na
   - Moxabustão
 
-#### C) Oxigenioozonioterapia Estética
+#### C) Oxigenioozonioterapia Asséptica
 - **Benefícios**:
   - Revitalização celular
   - Segurança comprovada
