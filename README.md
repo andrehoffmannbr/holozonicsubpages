@@ -128,7 +128,7 @@ npx serve .
 
 ## 📞 **Contato**
 
-- **📧 Email**: contato@holozonic.com.br
+- **📧 Email**: holozonic@gmail.com
 - **📱 WhatsApp**: (11) 99999-8888
 - **📍 Endereço**: Rua da Saúde, 123 - São Paulo/SP
 

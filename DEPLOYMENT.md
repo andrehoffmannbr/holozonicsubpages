@@ -94,7 +94,7 @@ sudo ./ssl-setup.sh
 ### 4.2 Seguir as Instruções do Script
 - Digite seu domínio: `holozonic.com.br`
 - Confirmar subdomínio www: `y`
-- Digite seu email: `admin@holozonic.com.br`
+- Digite seu email: `holozonic@gmail.com`
 
 ### 4.3 Verificar Instalação SSL
 ```bash
@@ -150,7 +150,7 @@ const response = await fetch('https://formspree.io/f/SEU_FORM_ID', {
 ### 7.1 Atualizar Informações de Contato
 Edite `index.html` e atualize:
 - Telefone: `(11) 99999-8888`
-- Email: `contato@holozonic.com.br`
+- Email: `holozonic@gmail.com`
 - Endereço: `Rua da Saúde, 123 - São Paulo`
 - WhatsApp: `5511999998888`
 
@@ -290,7 +290,7 @@ sudo systemctl restart apache2
 ## 📞 Suporte
 
 Para suporte técnico:
-- 📧 Email: suporte@holozonic.com.br
+- 📧 Email: holozonic@gmail.com
 - 📱 WhatsApp: (11) 99999-8888
 - 🌐 Portal: https://holozonic.com.br/suporte
 

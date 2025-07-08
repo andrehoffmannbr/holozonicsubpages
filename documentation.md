@@ -187,7 +187,7 @@ ClinicaHolozonic/
 
 **Informações de Contato:**
 - Telefone: (11) 3456-7890
-- Email: contato@holozonic.com.br
+- Email: holozonic@gmail.com
 - Endereço: Rua da Saúde, 123, São Paulo - SP, CEP: 01234-567
 - WhatsApp: (11) 99999-8888
 
