@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado - Holozonic</title>
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full text-center">
+            <div class="text-6xl text-green-500 mb-6">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                Pagamento Confirmado!
+            </h1>
+            
+            <p class="text-gray-600 mb-8">
+                Seu pagamento foi processado com sucesso. Agora você pode agendar sua consulta no Google Calendar.
+            </p>
+            
+            <div class="space-y-4">
+                <button onclick="window.HolozonicPayment.redirectToCalendar()" 
+                    class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Agendar no Google Calendar
+                </button>
+                
+                <button onclick="window.HolozonicPayment.redirectToWhatsApp('default')"
+                    class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    Falar via WhatsApp
+                </button>
+                
+                <a href="index.html" 
+                    class="block w-full bg-gray-100 text-gray-700 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-home mr-2"></i>
+                    Voltar para o Início
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/mercadopago.js"></script>
+</body>
+</html> 

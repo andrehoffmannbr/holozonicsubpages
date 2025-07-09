@@ -3,6 +3,8 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    setupAgendamentoButtons();
+    removeMonitoramentoSection();
 });
 
 // Initialize the application
@@ -11,13 +13,11 @@ function initializeApp() {
     setupMegaMenu();
     setupScrollEffects();
     setupFormHandling();
-    setupAgendamentoButtons();
     setupVitaLinPlans();
     setupSmoothScrolling();
     setupProgressBars();
     setupIntersectionObserver();
     setupModalHandlers();
-    setupMonitoramentoInteligente();
     setupPreAnamneseProtection();
     setupPWA();
 }
@@ -157,20 +157,40 @@ function setupFormHandling() {
 
 // Agendamento Buttons
 function setupAgendamentoButtons() {
-    const agendamentoButtons = document.querySelectorAll('#agendamento-btn, #hero-agendamento');
+    // Botões que devem abrir formulário + pagamento
+    const agendamentoButtons = document.querySelectorAll(`
+        #agendamento-btn, 
+        #hero-agendamento,
+        #agendamento-principal,
+        #agendamento-medicina-chinesa,
+        #agendar-consulta,
+        button:contains("Agendar Consulta")
+    `);
     
     agendamentoButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Simulate Portal Telemedicina integration
-            showAgendamentoModal();
+            window.PreAnamnese.showForm();
         });
     });
     
-    // Contato Button
-    const contatoButtons = document.querySelectorAll('#contato-btn, #mobile-contato-btn');
-    contatoButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            showContatoModal();
+    // Botões que devem abrir WhatsApp
+    const whatsappButtons = {
+        '#agendamento-sono': 'sono',
+        '#whatsapp-sono': 'sono',
+        '#agendamento-imagem': 'imagem',
+        '#whatsapp-imagem': 'imagem',
+        '#atendimento-domiciliar': 'default',
+        'button:contains("Agendar Exame de Sono")': 'sono',
+        'button:contains("Agendar Exame de Imagem")': 'imagem',
+        'button:contains("Quero agendar minha avaliação")': 'avaliacao'
+    };
+    
+    Object.entries(whatsappButtons).forEach(([selector, service]) => {
+        const buttons = document.querySelectorAll(selector);
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                window.HolozonicPayment.redirectToWhatsApp(service);
+            });
         });
     });
 }
@@ -779,32 +799,27 @@ function showUpdateNotification() {
     });
 }
 
-// Monitoramento Inteligente
-function setupMonitoramentoInteligente() {
-    const btnAtivarMonitoramento = document.getElementById('ativar-monitoramento');
+// Remover seção de Monitoramento Inteligente
+function removeMonitoramentoSection() {
+    // Remover do menu
+    const menuItem = document.querySelector('a[href="monitoramento-inteligente.html"]');
+    if (menuItem) {
+        menuItem.remove();
+    }
     
-    if (btnAtivarMonitoramento) {
-        btnAtivarMonitoramento.addEventListener('click', function() {
-            const originalText = this.innerHTML;
-            
-            // Simular ativação do monitoramento
-            this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Ativando Monitoramento...';
-            this.disabled = true;
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check mr-2"></i>Monitoramento Ativo';
-                this.classList.remove('bg-primary', 'hover:bg-blue-600');
-                this.classList.add('bg-green-500', 'hover:bg-green-600');
-                
-                showNotification('Monitoramento Inteligente ativado com sucesso!', 'success');
-                
-                // Atualizar status no dashboard
-                const statusElement = document.querySelector('.text-green-300');
-                if (statusElement) {
-                    statusElement.textContent = 'Monitoramento Ativo';
-                }
-            }, 2000);
-        });
+    // Remover seção da página inicial
+    const section = document.querySelector('#monitoramento');
+    if (section) {
+        section.remove();
+    }
+    
+    // Remover do footer
+    const footerLink = document.querySelector('a[href="#monitoramento"]');
+    if (footerLink) {
+        const listItem = footerLink.parentElement;
+        if (listItem) {
+            listItem.remove();
+        }
     }
 }
 
