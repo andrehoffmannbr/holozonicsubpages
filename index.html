@@ -95,7 +95,7 @@
                         <span>Contato</span>
                     </div>
                 </button>
-                <button id="agendamento-btn" class="group bg-secondary text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
+                <button id="agendamento-btn" data-type="consulta" class="group bg-secondary text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
                     <div class="flex items-center">
                         <i class="fas fa-calendar-alt text-xs mr-1 group-hover:animate-pulse"></i>
                         <span>Agendar</span>
@@ -200,7 +200,7 @@
             <p class="text-xl md:text-2xl mb-8 opacity-90">
                 Descubra uma nova abordagem à saúde que combina o melhor da tradição milenar com a tecnologia do futuro
             </p>
-            <button id="hero-agendamento" class="bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
+            <button id="hero-agendamento" data-type="consulta" class="bg-secondary text-white px-8 py-4 text-lg rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg">
                 <i class="fas fa-calendar-alt mr-2"></i>
                 Agendamento Online
             </button>
@@ -390,8 +390,8 @@
                     </div>
                     
                     <div class="mt-6 text-center">
-                        <button class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                            Agendar Consulta de Medicina Chinesa
+                        <button data-type="consulta" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors btn-hover">
+                            📅 Agendar Consulta
                         </button>
                     </div>
                 </div>
@@ -488,8 +488,8 @@
                 <p class="text-xl mb-6 opacity-90">
                     Descubra como a oxigenioozonioterapia pode revolucionar seus cuidados estéticos
                 </p>
-                <button class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
-                    Quero Agendar Minha Avaliação
+                <button data-type="avaliacao" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-600 transition-colors btn-hover">
+                    📅 Agendar Avaliação
                 </button>
             </div>
         </div>
@@ -551,8 +551,8 @@
                         </ul>
                     </div>
                     
-                    <button class="w-full bg-primary text-white py-3 rounded-lg mt-6 hover:bg-blue-600 transition-colors">
-                        Agendar Exame de Imagem
+                    <button data-type="exame-imagem" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors btn-hover">
+                        📅 Agendar Exame de Imagem
                     </button>
                 </div>
                 
@@ -601,8 +601,8 @@
                         </ul>
                     </div>
                     
-                    <button class="w-full bg-accent text-white py-3 rounded-lg mt-6 hover:bg-purple-600 transition-colors">
-                        Agendar Exame do Sono
+                    <button data-type="exame-sono" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors btn-hover">
+                        📅 Agendar Exame do Sono
                     </button>
                 </div>
             </div>
@@ -661,7 +661,7 @@
                     </ul>
                     
                     <div class="space-y-3">
-                        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors btn-hover">
+                        <button data-type="consulta" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors btn-hover">
                             📅 Agendar Consulta
                         </button>
                         <a href="https://wa.me/554899128212" target="_blank" class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors block text-center">
@@ -725,7 +725,7 @@
                     </ul>
                     
                     <div class="space-y-3">
-                        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors btn-hover">
+                        <button data-type="consulta" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors btn-hover">
                             📅 Agendar Consulta
                         </button>
                         <a href="https://wa.me/554899128212" target="_blank" class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors block text-center">
@@ -785,7 +785,7 @@
                     </ul>
                     
                     <div class="space-y-3">
-                        <button class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors btn-hover">
+                        <button data-type="consulta" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors btn-hover">
                             📅 Agendar Consulta
                         </button>
                         <a href="https://wa.me/554899128212" target="_blank" class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors block text-center">
@@ -828,7 +828,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors text-sm">
                             📅 Agendar Consulta
                         </button>
                     </div>
@@ -865,7 +865,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm">
                             📅 Agendar Consulta
                         </button>
                     </div>
@@ -902,7 +902,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-violet-600 text-white py-2 rounded-lg hover:bg-violet-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-violet-600 text-white py-2 rounded-lg hover:bg-violet-700 transition-colors text-sm">
                             📅 Agendar Consulta
                         </button>
                     </div>
@@ -942,7 +942,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -971,7 +971,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -1000,7 +1000,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -1029,7 +1029,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -1058,7 +1058,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -1087,7 +1087,7 @@
                             </li>
                         </ul>
                         
-                        <button class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm">
+                        <button data-type="consulta" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm">
                             📅 Agende seu Tratamento
                         </button>
                     </div>
@@ -1451,9 +1451,26 @@
     </div>
     
     <!-- Scripts -->
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script src="js/mercadopago.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="https://sdk.mercadopago.com/js/v2"></script>
+    <script defer src="js/form.js"></script>
+    <script defer src="js/mercadopago.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/analytics.js"></script>
+
+    <!-- PWA Resources -->
+    <link rel="manifest" href="/manifest.json" id="manifest-link">
+    <script>
+    // Remover manifest.json se estiver em ambiente local
+    if (window.location.protocol === 'file:') {
+        document.getElementById('manifest-link')?.remove();
+        console.info('Manifest.json removido em ambiente local para evitar erro CORS');
+    }
+
+    // Aviso sobre cookieEnabled em ambiente local
+    if (window.location.protocol === 'file:') {
+        console.info('Aviso de cookieEnabled é esperado em ambiente local (file://)');
+    }
+    </script>
+
 </body>
 </html> 

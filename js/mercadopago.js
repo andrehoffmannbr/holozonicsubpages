@@ -3,14 +3,35 @@ const PUBLIC_KEY = 'APP_USR-101288b1-79a0-477a-b6ef-ae973433bc65';
 const WHATSAPP_NUMBER = '5548999128212';
 const CALENDAR_URL = 'https://calendar.google.com/calendar/embed?src=holozonic%40gmail.com&ctz=America%2FSao_Paulo';
 
-// Inicializar Mercado Pago
-const mp = new MercadoPago(PUBLIC_KEY, {
-    locale: 'pt-BR'
-});
+// Verificar se o SDK do Mercado Pago está carregado
+let mp;
+try {
+    if (typeof MercadoPago === 'undefined') {
+        console.error('SDK do Mercado Pago não carregado');
+    } else {
+        // Inicializar Mercado Pago
+        mp = new MercadoPago(PUBLIC_KEY, {
+            locale: 'pt-BR'
+        });
+        console.log('Mercado Pago inicializado com sucesso');
+    }
+} catch (error) {
+    console.error('Erro ao inicializar Mercado Pago:', error);
+}
 
 // Função para criar preferência de pagamento
 async function createPreference() {
+    if (!mp) {
+        console.error('Mercado Pago não inicializado');
+        return null;
+    }
+
     try {
+        // Por enquanto, vamos redirecionar para o WhatsApp
+        redirectToWhatsApp('default');
+        return null;
+
+        /* Código original comentado até termos o backend
         const response = await fetch('/create_preference', {
             method: 'POST',
             headers: {
@@ -27,6 +48,7 @@ async function createPreference() {
         });
         const preference = await response.json();
         return preference.id;
+        */
     } catch (error) {
         console.error('Erro ao criar preferência:', error);
         return null;
@@ -36,9 +58,15 @@ async function createPreference() {
 // Função para processar pagamento
 async function processPayment(formData) {
     try {
+        console.log('Processando pagamento com dados:', formData);
+        
         // Salvar dados do formulário
         localStorage.setItem('preAnamnese', JSON.stringify(formData));
         
+        // Por enquanto, vamos redirecionar para o WhatsApp
+        redirectToWhatsApp('default');
+
+        /* Código original comentado até termos o backend
         // Criar preferência de pagamento
         const preferenceId = await createPreference();
         if (!preferenceId) {
@@ -55,6 +83,7 @@ async function processPayment(formData) {
                 label: 'Pagar',
             }
         });
+        */
     } catch (error) {
         console.error('Erro ao processar pagamento:', error);
         alert('Erro ao processar pagamento. Por favor, tente novamente.');

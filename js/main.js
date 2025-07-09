@@ -1,11 +1,168 @@
 // Holozonic Website JavaScript
 
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+// Utilitário para log seguro
+const log = {
+    info: (msg, ...args) => console.info(`[Holozonic] ${msg}`, ...args),
+    error: (msg, ...args) => console.error(`[Holozonic] ${msg}`, ...args),
+    warn: (msg, ...args) => console.warn(`[Holozonic] ${msg}`, ...args)
+};
+
+// Verificar se os scripts necessários foram carregados
+function checkDependencies() {
+    const dependencies = {
+        PreAnamnese: window.PreAnamnese,
+        HolozonicPayment: window.HolozonicPayment
+    };
+
+    const missing = Object.entries(dependencies)
+        .filter(([, dep]) => !dep)
+        .map(([name]) => name);
+
+    if (missing.length > 0) {
+        log.error(`Dependências não carregadas: ${missing.join(', ')}`);
+        return false;
+    }
+
+    log.info('Todas as dependências carregadas com sucesso');
+    return true;
+}
+
+// Função segura para adicionar event listener
+function safeAddEventListener(element, event, handler) {
+    if (!element) {
+        log.warn(`Elemento não encontrado para evento ${event}`);
+        return false;
+    }
+    
+    try {
+        element.addEventListener(event, handler);
+        return true;
+    } catch (error) {
+        log.error(`Erro ao adicionar evento ${event}:`, error);
+        return false;
+    }
+}
+
+// Função segura para query selector
+function safeQuerySelector(selector, context = document) {
+    try {
+        return context.querySelector(selector);
+    } catch (error) {
+        log.error(`Erro ao buscar selector ${selector}:`, error);
+        return null;
+    }
+}
+
+// Função segura para query selector all
+function safeQuerySelectorAll(selector, context = document) {
+    try {
+        return Array.from(context.querySelectorAll(selector));
+    } catch (error) {
+        log.error(`Erro ao buscar selector ${selector}:`, error);
+        return [];
+    }
+}
+
+// Agendamento Buttons
+function setupAgendamentoButtons() {
+    log.info('Configurando botões de agendamento...');
+    
+    // Botões que devem abrir formulário + pagamento
+    const agendamentoSelectors = [
+        'button[data-type="consulta"]',
+        '#hero-agendamento',
+        '#agendamento-btn',
+        '#agendamento-principal',
+        '#agendamento-medicina-chinesa',
+        '#agendar-consulta'
+    ];
+    
+    // Encontrar todos os botões de agendamento
+    let foundConsultaButtons = false;
+    agendamentoSelectors.forEach(selector => {
+        const buttons = safeQuerySelectorAll(selector);
+        if (buttons.length > 0) {
+            foundConsultaButtons = true;
+            log.info(`Encontrados ${buttons.length} botões para o seletor: ${selector}`);
+            buttons.forEach((button, index) => {
+                if (button) {
+                    safeAddEventListener(button, 'click', (e) => {
+                        e.preventDefault();
+                        log.info(`Botão de agendamento clicado (${selector} #${index})`);
+                        window.PreAnamnese?.showForm();
+                    });
+                }
+            });
+        } else {
+            log.info(`Nenhum botão encontrado para o seletor: ${selector}`);
+        }
+    });
+    
+    if (!foundConsultaButtons) {
+        log.warn('Nenhum botão de consulta encontrado na página');
+    }
+    
+    // Botões que devem abrir WhatsApp
+    const whatsappSelectors = {
+        'button[data-type="exame-sono"]': 'sono',
+        'button[data-type="exame-imagem"]': 'imagem',
+        'button[data-type="avaliacao"]': 'avaliacao',
+        '#agendamento-sono': 'sono',
+        '#whatsapp-sono': 'sono',
+        '#agendamento-imagem': 'imagem',
+        '#whatsapp-imagem': 'imagem',
+        '#atendimento-domiciliar': 'default'
+    };
+    
+    // Configurar botões do WhatsApp
+    let foundWhatsAppButtons = false;
+    Object.entries(whatsappSelectors).forEach(([selector, service]) => {
+        const buttons = safeQuerySelectorAll(selector);
+        if (buttons.length > 0) {
+            foundWhatsAppButtons = true;
+            log.info(`Encontrados ${buttons.length} botões de WhatsApp para o serviço: ${service}`);
+            buttons.forEach((button, index) => {
+                if (button) {
+                    safeAddEventListener(button, 'click', (e) => {
+                        e.preventDefault();
+                        log.info(`Botão do WhatsApp clicado (${service} #${index})`);
+                        window.HolozonicPayment?.redirectToWhatsApp(service);
+                    });
+                }
+            });
+        } else {
+            log.info(`Nenhum botão de WhatsApp encontrado para o seletor: ${selector}`);
+        }
+    });
+    
+    if (!foundWhatsAppButtons) {
+        log.warn('Nenhum botão de WhatsApp encontrado na página');
+    }
+}
+
+// Inicialização segura
+function initializeApp() {
+    log.info('Inicializando aplicação...');
+    
+    if (!checkDependencies()) {
+        log.error('Falha ao carregar dependências. Abortando inicialização.');
+        return;
+    }
+    
+    try {
+        setupAgendamentoButtons();
+        log.info('Aplicação inicializada com sucesso');
+    } catch (error) {
+        log.error('Erro ao inicializar aplicação:', error);
+    }
+}
+
+// Garantir que o DOM está carregado
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
     initializeApp();
-    setupAgendamentoButtons();
-    removeMonitoramentoSection();
-});
+}
 
 // Initialize the application
 function initializeApp() {
@@ -153,46 +310,6 @@ function setupFormHandling() {
             }
         });
     }
-}
-
-// Agendamento Buttons
-function setupAgendamentoButtons() {
-    // Botões que devem abrir formulário + pagamento
-    const agendamentoButtons = document.querySelectorAll(`
-        #agendamento-btn, 
-        #hero-agendamento,
-        #agendamento-principal,
-        #agendamento-medicina-chinesa,
-        #agendar-consulta,
-        button:contains("Agendar Consulta")
-    `);
-    
-    agendamentoButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            window.PreAnamnese.showForm();
-        });
-    });
-    
-    // Botões que devem abrir WhatsApp
-    const whatsappButtons = {
-        '#agendamento-sono': 'sono',
-        '#whatsapp-sono': 'sono',
-        '#agendamento-imagem': 'imagem',
-        '#whatsapp-imagem': 'imagem',
-        '#atendimento-domiciliar': 'default',
-        'button:contains("Agendar Exame de Sono")': 'sono',
-        'button:contains("Agendar Exame de Imagem")': 'imagem',
-        'button:contains("Quero agendar minha avaliação")': 'avaliacao'
-    };
-    
-    Object.entries(whatsappButtons).forEach(([selector, service]) => {
-        const buttons = document.querySelectorAll(selector);
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                window.HolozonicPayment.redirectToWhatsApp(service);
-            });
-        });
-    });
 }
 
 // VitaLin Plans
