@@ -339,3 +339,58 @@ button, a, .interactive {
         transition-duration: 0.01ms !important;
     }
 } 
+
+/* Teste do Ronco Button Styles */
+#teste-ronco-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+#teste-ronco-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#teste-ronco-btn:hover::before {
+    left: 100%;
+}
+
+#teste-ronco-btn .fa-volume-up {
+    animation: pulse-scale 2s infinite;
+}
+
+@keyframes pulse-scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Mobile version of Teste do Ronco button */
+#mobile-teste-ronco-btn {
+    background-color: #FF6600;
+    color: white !important;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+#mobile-teste-ronco-btn i {
+    color: white !important;
+    animation: pulse-scale 2s infinite;
+}
+
+#mobile-teste-ronco-btn:hover {
+    background-color: #e65c00;
+    transform: translateX(4px);
+} 

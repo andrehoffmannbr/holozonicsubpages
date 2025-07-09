@@ -1019,3 +1019,37 @@ window.openPortalTelemedicina = openPortalTelemedicina;
 window.openWhatsApp = openWhatsApp;
 window.openTeleconsulta = openTeleconsulta;
 window.processPlanSubscription = processPlanSubscription; 
+
+// Teste do Ronco Button Functionality
+function setupTesteRoncoButton() {
+    const testeRoncoBtn = document.getElementById('teste-ronco-btn');
+    const mobileTesteRoncoBtn = document.getElementById('mobile-teste-ronco-btn');
+
+    const handleTesteRoncoClick = () => {
+        window.location.href = 'teste-ronco.html';
+    };
+
+    if (testeRoncoBtn) {
+        testeRoncoBtn.addEventListener('click', handleTesteRoncoClick);
+    }
+
+    if (mobileTesteRoncoBtn) {
+        mobileTesteRoncoBtn.addEventListener('click', handleTesteRoncoClick);
+    }
+}
+
+// Initialize all functionalities
+document.addEventListener('DOMContentLoaded', function() {
+    setupMobileMenu();
+    setupMegaMenu();
+    setupTesteRoncoButton();
+    setupScrollEffects();
+    setupFormHandling();
+    setupVitaLinPlans();
+    setupSmoothScrolling();
+    setupProgressBars();
+    setupIntersectionObserver();
+    setupModalHandlers();
+    setupPreAnamneseProtection();
+    setupPWA();
+}); 
