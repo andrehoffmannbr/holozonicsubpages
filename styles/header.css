@@ -1,5 +1,28 @@
 /* Header Styles and Animations */
 
+/* Header height adjustments */
+#main-header {
+    height: 65px;
+}
+
+@media (max-width: 768px) {
+    #main-header {
+        height: 60px;
+    }
+    .logo-hover img {
+        height: 50px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #main-header {
+        height: 62px;
+    }
+    .logo-hover img {
+        height: 55px !important;
+    }
+}
+
 /* Header scroll animation */
 #main-header {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
