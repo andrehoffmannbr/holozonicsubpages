@@ -16,10 +16,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E90FF',
-                        secondary: '#32CD32',
+                        primary: '#0EA5E9',
+                        secondary: '#22C55E',
                         accent: '#8A2BE2',
-                        light: '#D3D3D3'
+                        light: '#D3D3D3',
+                        gold: '#FFD700',
+                        darkGold: '#B8860B'
                     }
                 }
             }
@@ -67,8 +69,8 @@
                     </a>
                 </div>
                 <div class="relative group">
-                    <a href="exames-imagem.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
-                        Exames
+                    <a href="feridas.html" class="text-gray-700 hover:text-primary transition-colors py-1.5 px-2 rounded menu-link">
+                        Feridas
                     </a>
                 </div>
                 <div class="relative group">
@@ -88,16 +90,13 @@
             
             <!-- Botões de Ação -->
             <div class="hidden lg:flex space-x-2 btn-group">
-                <button id="teste-ronco-btn" class="group relative bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1.5 rounded-lg text-xs font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden btn-primary">
-                    <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <button id="contato-btn" class="group relative bg-gradient-to-r from-primary to-secondary text-white px-3 py-1.5 rounded-lg text-xs font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden btn-primary">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative flex items-center">
                         <div class="bg-white/20 p-0.5 rounded-full mr-1">
-                            <i class="fas fa-volume-up text-xs icon-bounce"></i>
+                            <i class="fas fa-envelope text-xs icon-bounce"></i>
                         </div>
-                        <span>Ronco</span>
-                        <div class="ml-1 bg-yellow-400 text-orange-800 text-xs px-1 py-0.5 rounded-full font-bold badge-animate">
-                            FREE
-                        </div>
+                        <span>Contato</span>
                     </div>
                 </button>
                 <button id="agendamento-btn" class="group bg-secondary text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg text-xs btn-primary">
@@ -129,9 +128,9 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary mb-3 text-sm">Exames</h3>
+                        <h3 class="font-bold text-primary mb-3 text-sm">Especialidades</h3>
                         <ul class="space-y-1 text-sm">
-                            <li><a href="exames-imagem.html" class="text-gray-600 hover:text-primary transition-colors">Exames de Imagem</a></li>
+                            <li><a href="feridas.html" class="text-gray-600 hover:text-primary transition-colors">Tratamento de Feridas</a></li>
                             <li><a href="exame-sono.html" class="text-gray-600 hover:text-primary transition-colors">Exame do Sono</a></li>
                             <li><a href="monitoramentodosono.html" class="text-gray-600 hover:text-primary transition-colors">Monitoramento do Sono</a></li>
                         </ul>
@@ -171,18 +170,18 @@
                     <i class="fas fa-wind mr-2"></i>
                     Ozonioterapia
                 </a>
-                <a href="exames-imagem.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
-                    <i class="fas fa-x-ray mr-2"></i>
-                    Exames
+                <a href="feridas.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-band-aid mr-2"></i>
+                    Feridas
                 </a>
                 <a href="exame-sono.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
                     <i class="fas fa-moon mr-2"></i>
                     Exames de Sono
                 </a>
-                <a href="teste-ronco.html" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
-                    <i class="fas fa-volume-up mr-2"></i>
-                    Ronco
-                </a>
+                <button id="mobile-contato-btn" class="w-full text-left text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contato
+                </button>
                 <div class="border-t pt-3 mt-3">
                     <a href="#agendamento" class="block text-gray-700 hover:text-primary py-2 px-3 rounded transition-colors text-sm" id="mobile-agendar-btn">
                         <i class="fas fa-calendar-alt mr-2"></i>
@@ -203,7 +202,7 @@
         
         <div class="relative z-10 text-center text-white max-w-4xl px-4">
             <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Integrando tecnologia vestível, medicina chinesa e terapias inovadoras para seu bem-estar
+                Integrando <span class="text-gold">tecnologia vestível</span>, <span class="text-gold">medicina chinesa</span> e terapias inovadoras para seu <span class="text-gold">bem-estar</span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 opacity-90">
                 Descubra uma nova abordagem à saúde que combina o melhor da tradição milenar com a tecnologia do futuro
@@ -219,7 +218,7 @@
     <section id="sobre" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-primary mb-4">Por que a Holozonic?</h2>
+                <h2 class="text-4xl font-bold text-gold mb-4">Por que a Holozonic?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Nossa missão é revolucionar o cuidado com a saúde através da integração harmoniosa entre sabedoria ancestral e inovação tecnológica
                 </p>
@@ -261,7 +260,7 @@
                 <div>
                     <h3 class="text-3xl font-bold text-primary mb-6">Nossa Visão</h3>
                     <p class="text-gray-600 text-lg mb-6">
-                        Ser referência mundial em medicina integrativa, conectando a sabedoria milenar oriental com as mais avançadas tecnologias de monitoramento e tratamento de saúde.
+                        Ser referência em medicina integrativa, conectando a sabedoria milenar oriental com as mais avançadas tecnologias de monitoramento e tratamento de saúde.
                     </p>
                     <h3 class="text-3xl font-bold text-primary mb-6">Nossos Valores</h3>
                     <ul class="space-y-3 text-gray-600">
@@ -284,27 +283,34 @@
                     </ul>
                 </div>
                 <div class="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-white">
-                    <h3 class="text-2xl font-bold mb-6">Diferenciais Competitivos</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-yellow-300">Diferenciais Competitivos</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
                             <div>
-                                <h4 class="font-bold">Diagnóstico Integrado</h4>
-                                <p class="text-sm opacity-90">Medicina tradicional + tecnologia de ponta</p>
+                                <h4 class="font-bold text-yellow-300">Método MIB</h4>
+                                <p class="text-sm opacity-90">Medicina Integrativa Biorepositiva criada pelo Dr. Hamilton, integrando saberes milenares e ciência moderna</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
                             <div>
-                                <h4 class="font-bold">Monitoramento 24/7</h4>
-                                <p class="text-sm opacity-90">Acompanhamento contínuo da sua saúde</p>
+                                <h4 class="font-bold text-yellow-300">Tecnologia de Saúde Integrativa</h4>
+                                <p class="text-sm opacity-90">Monitoramento vestível 24/7 combinado com análise energética tradicional</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
                             <div>
-                                <h4 class="font-bold">Terapias Exclusivas</h4>
-                                <p class="text-sm opacity-90">Tratamentos únicos e personalizados</p>
+                                <h4 class="font-bold text-yellow-300">Terapias Holísticas</h4>
+                                <p class="text-sm opacity-90">Aromaterapia, cromoterapia, musicoterapia, fitoterapia e outras práticas integrativas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-star text-yellow-300 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-yellow-300">Tratamentos Personalizados</h4>
+                                <p class="text-sm opacity-90">Protocolos únicos baseados no perfil energético e fisiológico individual</p>
                             </div>
                         </div>
                     </div>
@@ -317,7 +323,7 @@
     <section id="medicina-chinesa" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-primary mb-4">Medicina Chinesa</h2>
+                <h2 class="text-4xl font-bold text-gold mb-4">Medicina Chinesa</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Práticas milenares baseadas no equilíbrio energético e diagnósticos precisos através de métodos tradicionais
                 </p>
@@ -325,25 +331,25 @@
             
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
-                    <h3 class="text-3xl font-bold text-primary mb-6">Diagnósticos Tradicionais</h3>
+                    <h3 class="text-3xl font-bold text-primary mb-6">Métodos de Diagnóstico da MTC</h3>
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="bg-primary text-white p-3 rounded-full mr-4">
                                 <i class="fas fa-eye"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold mb-2">Diagnóstico pela Observação</h4>
+                                <h4 class="text-xl font-bold mb-2">Observação (望 – Wàng)</h4>
                                 <p class="text-gray-600">Análise da compleição, língua, expressão facial e postura corporal para identificar desequilíbrios energéticos.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
                             <div class="bg-secondary text-white p-3 rounded-full mr-4">
-                                <i class="fas fa-hand-paper"></i>
+                                <i class="fas fa-ear-listen"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold mb-2">Pulsologia</h4>
-                                <p class="text-gray-600">Leitura detalhada dos pulsos para avaliar o estado dos órgãos e sistemas corporais.</p>
+                                <h4 class="text-xl font-bold mb-2">Audição e Olfação (闻 – Wén)</h4>
+                                <p class="text-gray-600">Avaliação através dos sons corporais, respiração e odores para diagnóstico energético.</p>
                             </div>
                         </div>
                         
@@ -352,8 +358,18 @@
                                 <i class="fas fa-comments"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold mb-2">Anamnese Energética</h4>
+                                <h4 class="text-xl font-bold mb-2">Interrogação (问 – Wèn)</h4>
                                 <p class="text-gray-600">Questionário detalhado sobre sintomas, emoções e padrões de vida segundo a medicina tradicional chinesa.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-orange-500 text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Palpação/Pulsologia (切 – Qiè)</h4>
+                                <p class="text-gray-600">Leitura detalhada dos pulsos para avaliar o estado dos órgãos e sistemas corporais.</p>
                             </div>
                         </div>
                     </div>
@@ -394,7 +410,7 @@
     <section id="oxigenio" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-primary mb-4">Oxigenioozonioterapia Asséptica</h2>
+                <h2 class="text-4xl font-bold text-gold mb-4">Oxigenioozonioterapia Asséptica</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Tratamentos assépticos avançados com ozônio medicinal para rejuvenescimento e revitalização celular
                 </p>
@@ -800,8 +816,8 @@
                         <div class="text-center mb-6">
                             <div class="text-3xl mb-3">🧿</div>
                             <h4 class="text-xl font-bold text-cyan-700 mb-2">Consulta Terapêutica Biorepositiva Essencial</h4>
-                            <div class="text-2xl font-bold text-gray-800">R$ 320</div>
-                            <p class="text-sm text-gray-600 mt-2">Avaliação energética funcional (60min)</p>
+                            <div class="text-2xl font-bold text-gray-800">R$ 390</div>
+                            <p class="text-sm text-gray-600 mt-2">Consulta Clínica Integrativa (60min)</p>
                         </div>
                         
                         <ul class="space-y-2 mb-6 text-sm">
@@ -900,6 +916,190 @@
                 </div>
             </div>
             
+            <!-- Seção: Pacotes de 8 Sessões -->
+            <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 mb-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-primary mb-4">🟢 Pacotes de 8 Sessões</h3>
+                    <p class="text-gray-600">Tratamentos continuados com melhor custo-benefício</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Pacote Laser Acupuntura -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">🔺</div>
+                            <h4 class="text-xl font-bold text-red-600 mb-2">Laser Acupuntura</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 576</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 72,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Estimulação sem agulhas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Indicado para dores crônicas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Processo inflamatório reduzido</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                    
+                    <!-- Pacote Moxabustão -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">🔥</div>
+                            <h4 class="text-xl font-bold text-orange-600 mb-2">Moxabustão</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 720</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 90,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Aquecimento de pontos energéticos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Fortalecimento do sistema imune</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Ideal para fadiga e baixa energia</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                    
+                    <!-- Pacote Ventosaterapia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">🫙</div>
+                            <h4 class="text-xl font-bold text-purple-600 mb-2">Ventosaterapia</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 800</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 100,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Melhora da circulação</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Relaxamento muscular profundo</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Detoxificação natural</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                    
+                    <!-- Pacote Ozonioterapia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">💨</div>
+                            <h4 class="text-xl font-bold text-blue-600 mb-2">Ozonioterapia</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 960</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 120,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Oxigenação celular</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Ação antimicrobiana</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Revitalização e rejuvenescimento</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                    
+                    <!-- Pacote Dietoterapia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">🍃</div>
+                            <h4 class="text-xl font-bold text-green-600 mb-2">Dietoterapia Chinesa</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 720</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 90,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Orientação nutricional energética</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Alimentos terapêuticos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Equilíbrio dos cinco elementos</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                    
+                    <!-- Pacote Fitoterapia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl mb-3">🌿</div>
+                            <h4 class="text-xl font-bold text-emerald-600 mb-2">Fitoterapia & Suplementação</h4>
+                            <div class="text-2xl font-bold text-gray-800">R$ 880</div>
+                            <p class="text-sm text-gray-600 mt-2">8 sessões - R$ 110,00 por sessão</p>
+                        </div>
+                        
+                        <ul class="space-y-2 mb-6 text-sm">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Plantas medicinais chinesas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Suplementação energética</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-2">✅</span>
+                                <span>Fórmulas personalizadas</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm">
+                            📅 Agende seu Tratamento
+                        </button>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -1232,7 +1432,7 @@
                     
                     <div class="space-y-6">
                         <p class="text-lg text-gray-700 leading-relaxed">
-                            <strong class="text-gray-900">Dr. Hamilton</strong> é terapeuta, estudioso e criador da Medicina Integrativa Biorepositiva. Com formação em Medicina Chinesa, Práticas Integrativas, Ozonioterapia, Bioenergia e Saúde do Trabalhador, atua promovendo um cuidado profundo, humanizado e integrativo.
+                            <strong class="text-gray-900">Dr. Hamilton</strong> é terapeuta, estudioso e criador da Medicina Integrativa Biorepositiva. Com formação em Medicina Chinesa, Práticas Integrativas, Ozonioterapia, Bioenergética e Saúde do Trabalhador, atua promovendo um cuidado profundo, humanizado e integrativo.
                         </p>
                         
                         <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-6 border-l-4 border-primary">
@@ -1241,7 +1441,7 @@
                                 <h3 class="text-xl font-semibold text-gray-800">Sobre mim:</h3>
                             </div>
                             <p class="text-gray-700 leading-relaxed italic">
-                                "Sou entusiasta pela integração, natureza, energia e pelos caminhos da verdadeira saúde. Minha jornada me levou a integrar saberes antigos e novos para oferecer um cuidado que respeita o tempo de cada um. Acredito que cada pessoa tem dentro de si a capacidade de se transformar. Eu apenas ajudo a iluminar esse caminho com escuta, conhecimento e presença."
+                                "Sou entusiasta pela integração, natureza, energia e pelos caminhos da verdadeira saúde. Minha jornada me levou a integrar saberes milenares e novos para oferecer um cuidado que respeita o tempo de cada um. Acredito que cada pessoa tem dentro de si a capacidade de se transformar. Eu apenas ajudo a iluminar esse caminho com escuta, conhecimento e presença."
                             </p>
                         </div>
                         
@@ -1257,7 +1457,7 @@
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-energy text-accent mr-2"></i>
-                                    <span>Bioenergia</span>
+                                    <span>Bioenergética</span>
                                 </div>
                             </div>
                         </div>
@@ -1346,6 +1546,10 @@
             
             <div class="border-t border-gray-700 pt-8 text-center text-gray-300">
                 <p>&copy; 2024 Holozonic. Todos os direitos reservados. | Desenvolvido com tecnologia e cuidado.</p>
+                <div class="mt-4 text-xs text-gray-500">
+                    <p>Lei nº 14.648/2023 | Parecer Normativo nº. 01/2023/COFEN/PLEN/ASLEG</p>
+                    <p>Resolução COFEN nº 0567/2018 | Resolução COFEN nº 0529/2016</p>
+                </div>
             </div>
         </div>
     </footer>

@@ -166,13 +166,13 @@ function setupAgendamentoButtons() {
         });
     });
     
-    // Teste do Ronco Gratuito Button
-    const testeRoncoButton = document.getElementById('teste-ronco-btn');
-    if (testeRoncoButton) {
-        testeRoncoButton.addEventListener('click', function() {
-            window.location.href = 'teste-ronco.html';
+    // Contato Button
+    const contatoButtons = document.querySelectorAll('#contato-btn, #mobile-contato-btn');
+    contatoButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showContatoModal();
         });
-    }
+    });
 }
 
 // VitaLin Plans
@@ -264,6 +264,93 @@ function setupModalHandlers() {
     window.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();
+        }
+    });
+}
+
+// Show Contato Modal
+function showContatoModal() {
+    const modalHTML = `
+        <div class="modal-overlay fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-6">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">Formulário de Contato</h3>
+                    <p class="text-gray-600">Deixe sua mensagem e entraremos em contato</p>
+                </div>
+                
+                <form id="contato-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Nome completo</label>
+                        <input type="text" id="nome" name="nome" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Telefone (WhatsApp)</label>
+                        <input type="tel" id="telefone" name="telefone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Descreva seu problema e sua necessidade</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.body.style.overflow = 'hidden';
+    
+    // Setup form submission
+    const form = document.getElementById('contato-form');
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+        submitButton.disabled = true;
+        
+        try {
+            const response = await fetch('https://formspree.io/f/holozonic@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+                closeModal();
+            } else {
+                throw new Error('Erro no envio');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('Erro ao enviar mensagem. Tente novamente.', 'error');
+        } finally {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
         }
     });
 }

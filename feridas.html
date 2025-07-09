@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Feridas - Holozonic</title>
+    <meta name="description" content="Tratamento especializado de feridas na Holozonic - Tecnologia avançada e atendimento domiciliar para cicatrização eficaz.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+    <!-- TailwindCSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E90FF',
+                        secondary: '#32CD32',
+                        accent: '#8A2BE2',
+                        light: '#D3D3D3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full bg-white/98 backdrop-blur-md shadow-lg z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="img/logo.png" alt="Holozonic" class="h-8 w-auto mr-2">
+                    <span class="text-xl font-bold text-primary">Holozonic</span>
+                </div>
+            </div>
+            
+            <!-- Navegação -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="monitoramento-inteligente.html" class="text-gray-700 hover:text-primary transition-colors">Monitoramento</a>
+                <a href="medicina-chinesa.html" class="text-gray-700 hover:text-primary transition-colors">Medicina Chinesa</a>
+                <a href="mib.html" class="text-gray-700 hover:text-primary transition-colors">MIB</a>
+                <a href="oxigeniozonioterapia-estetica.html" class="text-gray-700 hover:text-primary transition-colors">Ozonioterapia</a>
+                <a href="feridas.html" class="text-primary font-semibold">Feridas</a>
+            </div>
+            
+            <!-- Botão Mobile -->
+            <button class="md:hidden text-primary text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+                    Tratamento de <span class="text-secondary">Feridas</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Especialistas em cicatrização e tratamento de feridas complexas com tecnologia avançada e atendimento personalizado
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sobre o Tratamento -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Clínica Holozonic - Especializada em Feridas</h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        A Clínica Holozonic oferece tratamento especializado para feridas complexas, combinando tecnologia avançada com cuidado humanizado. Nossa equipe multidisciplinar conta com profissionais especializados em cicatrização e regeneração tecidual.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Utilizamos as mais modernas técnicas de tratamento, incluindo oxigênio-ozonioterapia, tecnologia a laser, e protocolos personalizados para cada tipo de ferida e condição do paciente.
+                    </p>
+                    <div class="bg-secondary/10 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-secondary mb-3">
+                            <i class="fas fa-home mr-2"></i>
+                            Atendimento Domiciliar
+                        </h3>
+                        <p class="text-gray-600">
+                            Oferecemos atendimento domiciliar especializado para pacientes com mobilidade reduzida, garantindo continuidade do tratamento no conforto de sua residência.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Nossos Diferenciais</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-microscope text-primary mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Diagnóstico Preciso</h4>
+                                <p class="text-sm text-gray-600">Avaliação completa da ferida e condições associadas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-cog text-secondary mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Tecnologia Avançada</h4>
+                                <p class="text-sm text-gray-600">Equipamentos modernos para acelerar a cicatrização</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-user-md text-accent mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Equipe Especializada</h4>
+                                <p class="text-sm text-gray-600">Profissionais com expertise em tratamento de feridas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-home text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Atendimento Domiciliar</h4>
+                                <p class="text-sm text-gray-600">Cuidados especializados no conforto de sua casa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tipos de Feridas -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Tipos de Feridas Tratadas</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Oferecemos tratamento especializado para diversos tipos de feridas, desde as mais simples até as mais complexas
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-red-500 mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Úlceras Diabéticas</h3>
+                    <p class="text-gray-600">
+                        Tratamento especializado para úlceras do pé diabético com protocolos específicos para controle glicêmico e cicatrização.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-blue-500 mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Úlceras Venosas</h3>
+                    <p class="text-gray-600">
+                        Cuidados específicos para úlceras venosas com terapias que melhoram a circulação e aceleram a cicatrização.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-orange-500 mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Queimaduras</h3>
+                    <p class="text-gray-600">
+                        Tratamento de queimaduras de diferentes graus com tecnologia avançada e cuidados especializados.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-green-500 mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dermatites</h3>
+                    <p class="text-gray-600">
+                        Cuidados para dermatites complexas e lesões cutâneas inflamatórias com abordagem integrativa.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-purple-500 mb-4">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Feridas Cirúrgicas</h3>
+                    <p class="text-gray-600">
+                        Acompanhamento pós-operatório e tratamento de complicações em feridas cirúrgicas.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl text-indigo-500 mb-4">
+                        <i class="fas fa-band-aid"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Feridas Crônicas</h3>
+                    <p class="text-gray-600">
+                        Tratamento de feridas de difícil cicatrização com protocolos avançados e acompanhamento contínuo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tecnologias e Práticas -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Tecnologias e Práticas Utilizadas</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Combinamos tecnologia de ponta com práticas integradas para resultados superiores
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Tecnologias Avançadas</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-wind text-primary mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Oxigênio-Ozonioterapia</h4>
+                                <p class="text-sm text-gray-600">Ação antimicrobiana e oxigenante para acelerar a cicatrização</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-laser-pointer text-secondary mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Terapia a Laser</h4>
+                                <p class="text-sm text-gray-600">Estimulação celular e redução da inflamação</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-droplet text-accent mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Curativos Especializados</h4>
+                                <p class="text-sm text-gray-600">Produtos avançados para diferentes tipos de feridas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-secondary/10 to-accent/10 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-6">Práticas Integradas</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-leaf text-secondary mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Fitoterapia</h4>
+                                <p class="text-sm text-gray-600">Plantas medicinais para cicatrização e anti-inflamatório</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-spa text-accent mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Aromaterapia</h4>
+                                <p class="text-sm text-gray-600">Óleos essenciais para cicatrização e bem-estar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-apple-alt text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Orientação Nutricional</h4>
+                                <p class="text-sm text-gray-600">Nutrição específica para acelerar a cicatrização</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-secondary">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-6">
+                    Precisa de Tratamento Especializado em Feridas?
+                </h2>
+                <p class="text-white/90 text-lg mb-8">
+                    Nossa equipe está pronta para oferecer o melhor tratamento para sua condição. 
+                    Agende sua consulta ou solicite atendimento domiciliar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="agendar-consulta" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Agendar Consulta
+                    </button>
+                    <button id="atendimento-domiciliar" class="bg-white/20 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors border border-white/30">
+                        <i class="fas fa-home mr-2"></i>
+                        Atendimento Domiciliar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="img/logo.png" alt="Holozonic" class="h-8 w-auto mr-2">
+                        <span class="text-xl font-bold">Holozonic</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Especialistas em tratamento de feridas com tecnologia avançada e cuidado humanizado.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> (48) 99999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> holozonic@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Lages/SC & Balneário Camboriú/SC</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Tratamento de Úlceras Diabéticas</li>
+                        <li>Queimaduras</li>
+                        <li>Feridas Cirúrgicas</li>
+                        <li>Atendimento Domiciliar</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Holozonic. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('agendar-consulta').addEventListener('click', function() {
+            if (typeof showAgendamentoModal === 'function') {
+                showAgendamentoModal();
+            } else {
+                window.location.href = 'index.html#agendamento';
+            }
+        });
+        
+        document.getElementById('atendimento-domiciliar').addEventListener('click', function() {
+            const message = encodeURIComponent('Olá! Gostaria de solicitar atendimento domiciliar para tratamento de feridas.');
+            window.open(`https://wa.me/5548999999999?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html> 
