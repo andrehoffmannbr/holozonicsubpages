@@ -98,6 +98,28 @@
     transform: scale(1.05);
 }
 
+/* Logo styles */
+.logo-hover img {
+    transition: transform 0.2s ease;
+}
+
+.logo-hover:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 768px) {
+    .logo-hover img {
+        height: 70px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .logo-hover img {
+        height: 80px !important;
+    }
+}
+
 /* Menu links hover effects */
 .menu-link {
     position: relative;
