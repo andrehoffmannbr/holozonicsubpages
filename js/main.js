@@ -170,7 +170,7 @@ function setupAgendamentoButtons() {
     const testeRoncoButton = document.getElementById('teste-ronco-btn');
     if (testeRoncoButton) {
         testeRoncoButton.addEventListener('click', function() {
-            window.location.href = 'teste-ronco.html';
+            showTesteRoncoModal();
         });
     }
 }
@@ -365,6 +365,96 @@ function closeModal() {
         modal.remove();
         document.body.style.overflow = 'auto';
     }
+}
+
+// Show Teste do Ronco Modal
+function showTesteRoncoModal() {
+    const modalHTML = `
+        <div class="modal-overlay fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl max-w-md w-full p-6 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-6">
+                    <div class="text-4xl text-orange-500 mb-4">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">Teste do Ronco Gratuito</h3>
+                    <p class="text-gray-600">Preencha o formulário abaixo e entraremos em contato</p>
+                </div>
+                
+                <form id="teste-ronco-form" class="space-y-4">
+                    <input type="hidden" name="_to" value="holozonic@gmail.com">
+                    <input type="hidden" name="_subject" value="Teste do Ronco Gratuito - Novo Formulário">
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Nome completo</label>
+                        <input type="text" name="nome" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Telefone (WhatsApp)</label>
+                        <input type="tel" name="telefone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Descreva seu problema e sua necessidade</label>
+                        <textarea name="problema" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Enviar Formulário
+                    </button>
+                </form>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.body.style.overflow = 'hidden';
+    
+    // Setup form submission
+    const form = document.getElementById('teste-ronco-form');
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+        submitButton.disabled = true;
+        
+        try {
+            const response = await fetch('https://formspree.io/f/your_form_id', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Formulário enviado com sucesso! Entraremos em contato em breve.', 'success');
+                closeModal();
+            } else {
+                throw new Error('Erro no envio');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showNotification('Erro ao enviar formulário. Tente novamente.', 'error');
+        } finally {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        }
+    });
 }
 
 // Portal Telemedicina
