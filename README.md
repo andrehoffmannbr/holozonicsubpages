@@ -13,7 +13,7 @@ Site institucional da **Clínica Holozonic**, especializada em medicina integrat
 ### 🎯 **Funcionalidades Principais**
 
 - ✅ **Formulário de Pré-Anamnese Protegido** - Acesso liberado após agendamento/compra
-- ✅ **Monitoramento Inteligente** - Sistema simplificado com botão único de ativação
+
 - ✅ **Menu Mobile Otimizado** - Navegação responsiva com categorias visíveis
 - ✅ **Design Responsivo** - Interface moderna adaptável a todos os dispositivos
 - ✅ **PWA Ready** - Aplicação web progressiva com funcionalidades offline

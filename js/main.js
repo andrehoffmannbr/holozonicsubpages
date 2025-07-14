@@ -17,7 +17,7 @@ function initializeApp() {
     setupProgressBars();
     setupIntersectionObserver();
     setupModalHandlers();
-    setupMonitoramentoInteligente();
+
     setupPreAnamneseProtection();
     setupPWA();
 }
@@ -782,34 +782,7 @@ function showUpdateNotification() {
     });
 }
 
-// Monitoramento Inteligente
-function setupMonitoramentoInteligente() {
-    const btnAtivarMonitoramento = document.getElementById('ativar-monitoramento');
-    
-    if (btnAtivarMonitoramento) {
-        btnAtivarMonitoramento.addEventListener('click', function() {
-            const originalText = this.innerHTML;
-            
-            // Simular ativação do monitoramento
-            this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Ativando Monitoramento...';
-            this.disabled = true;
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check mr-2"></i>Monitoramento Ativo';
-                this.classList.remove('bg-primary', 'hover:bg-blue-600');
-                this.classList.add('bg-green-500', 'hover:bg-green-600');
-                
-                showNotification('Monitoramento Inteligente ativado com sucesso!', 'success');
-                
-                // Atualizar status no dashboard
-                const statusElement = document.querySelector('.text-green-300');
-                if (statusElement) {
-                    statusElement.textContent = 'Monitoramento Ativo';
-                }
-            }, 2000);
-        });
-    }
-}
+
 
 // Proteção do Formulário de Pré-Anamnese
 function setupPreAnamneseProtection() {
