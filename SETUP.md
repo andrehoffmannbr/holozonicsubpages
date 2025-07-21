@@ -1,10 +1,11 @@
-# 🚀 Sistema de Pagamentos Holozonic - Guia de Configuração
+# 🚀 Sistema de Pagamentos Holozonic - Guia de Configuração (Vercel Functions)
 
 ## 📋 Visão Geral
 
-Sistema completo de agendamento e pagamentos integrado com:
+Sistema completo de agendamento e pagamentos integrado com **Vercel Functions**:
+- **Frontend + Backend** na mesma URL (Vercel)
 - **Formulário de Pré-Anamnese** (Formspree)
-- **Sistema de Pagamentos** (Mercado Pago)
+- **Sistema de Pagamentos** (Mercado Pago via Vercel Functions)
 - **Agendamento** (Google Calendar)
 
 ## 🛠️ Pré-requisitos
@@ -57,17 +58,20 @@ O calendário já está configurado para: `holozonic@gmail.com`
 
 ## 🚀 Executando o Sistema
 
-### 1. Iniciar o Servidor Backend
+### 1. Instalar Vercel CLI (primeira vez)
 
 ```bash
-# Desenvolvimento (com auto-reload)
-npm run dev
-
-# Ou produção
-npm start
+npm install -g vercel
 ```
 
-O servidor estará disponível em: `http://localhost:3000`
+### 2. Iniciar desenvolvimento local
+
+```bash
+# Desenvolvimento com Vercel Functions
+npm run dev
+```
+
+O sistema estará disponível em: `http://localhost:3000`
 
 ### 2. Verificar Status
 
@@ -84,8 +88,12 @@ Acesse `http://localhost:3000` para ver se está funcionando.
 
 ```
 holozonicsubpages/
-├── server.js                          # Servidor Node.js + Express
 ├── package.json                       # Dependências
+├── vercel.json                        # Configuração Vercel
+├── api/                               # ⭐ Vercel Functions
+│   ├── criar-pagamento.js             # Function: Criar pagamentos
+│   ├── webhook.js                     # Function: Webhook Mercado Pago
+│   └── servicos.js                    # Function: Listar serviços
 ├── formulario-preanamnese.html         # Formulário de pré-anamnese
 ├── sucesso.html                       # Página de sucesso + calendário
 ├── erro.html                          # Página de erro
