@@ -5,16 +5,7 @@
       "runtime": "@vercel/node"
     }
   },
-  "env": {
-    "MERCADOPAGO_ACCESS_TOKEN": "@mercadopago-access-token",
-    "MERCADOPAGO_PUBLIC_KEY": "@mercadopago-public-key",
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
+
   "headers": [
     {
       "source": "/api/(.*)",
@@ -36,12 +27,6 @@
           "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
     }
   ]
 } 
