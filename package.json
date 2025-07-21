@@ -5,9 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "vercel dev",
-    "dev": "vercel dev",
-    "build": "vercel build",
-    "deploy": "vercel --prod"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "mercadopago": "^2.0.15"
