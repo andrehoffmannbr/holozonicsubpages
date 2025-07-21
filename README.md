@@ -140,4 +140,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 <div align="center">
   <strong>🏥 Holozonic - Integrando tradição e inovação para seu bem-estar</strong>
-</div> 
+</div>
+
+---
+
+**✅ Sistema de Pagamentos Ativo - Vercel Functions  
+🚀 Deploy: 21/01/2025 - Backend + Frontend integrados** 
