@@ -39,13 +39,30 @@ class HolozonicPaymentSystem {
     
     init() {
         console.log('🚀 Sistema de Pagamento Holozonic inicializado');
+        console.log('🔍 Debug: Verificando botões disponíveis...');
+        
+        // Debug - contar todos os botões
+        const allButtons = document.querySelectorAll('button');
+        console.log(`📊 Total de botões encontrados: ${allButtons.length}`);
+        
+        allButtons.forEach((btn, index) => {
+            console.log(`Botão ${index + 1}: "${btn.textContent.trim()}"`);
+        });
+        
         this.setupEventListeners();
     }
     
     setupEventListeners() {
-        document.addEventListener('DOMContentLoaded', () => {
+        if (document.readyState === 'loading') {
+            console.log('📅 DOM ainda carregando, aguardando DOMContentLoaded...');
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('✅ DOM carregado! Anexando listeners...');
+                this.attachButtonListeners();
+            });
+        } else {
+            console.log('✅ DOM já carregado! Anexando listeners imediatamente...');
             this.attachButtonListeners();
-        });
+        }
     }
     
     attachButtonListeners() {
@@ -71,20 +88,35 @@ class HolozonicPaymentSystem {
     }
     
     attachServiceButton(buttonText, serviceId) {
-        const buttons = Array.from(document.querySelectorAll('button')).filter(btn => 
-            btn.textContent.includes(buttonText) || 
-            btn.textContent.includes('Agende seu Tratamento')
-        );
+        console.log(`🔍 Procurando botões para: "${buttonText}" (serviceId: ${serviceId})`);
         
-        buttons.forEach(button => {
+        const buttons = Array.from(document.querySelectorAll('button')).filter(btn => {
+            const text = btn.textContent.trim();
+            const matches = text.includes(buttonText) || text.includes('Agende seu Tratamento');
+            if (matches) {
+                console.log(`✅ Botão encontrado: "${text}"`);
+            }
+            return matches;
+        });
+        
+        console.log(`📊 Total de botões encontrados para "${buttonText}": ${buttons.length}`);
+        
+        buttons.forEach((button, index) => {
             // Evitar adicionar múltiplos listeners
-            if (button.dataset.holozonicAttached) return;
+            if (button.dataset.holozonicAttached) {
+                console.log(`⚠️ Botão ${index + 1} já tem listener anexado`);
+                return;
+            }
+            
             button.dataset.holozonicAttached = 'true';
             
             button.addEventListener('click', (e) => {
                 e.preventDefault();
+                console.log(`🔥 CLIQUE DETECTADO! Botão: "${button.textContent.trim()}" → Serviço: ${serviceId}`);
                 this.redirectToForm(serviceId);
             });
+            
+            console.log(`✅ Listener anexado ao botão ${index + 1}: "${button.textContent.trim()}"`);
         });
     }
     
@@ -126,9 +158,9 @@ class HolozonicPaymentSystem {
             });
         });
         
-        // Botões específicos Presencial/Domicílio para feridas
-        const presencialBtn = document.querySelector('button:contains("Presencial")');
-        const domicilioBtn = document.querySelector('button:contains("Domicílio")');
+        // Botões específicos Presencial/Domicílio para feridas - SEM jQuery
+        const presencialBtn = this.findElementByText('button', 'Presencial');
+        const domicilioBtn = this.findElementByText('button', 'Domicílio');
         
         if (presencialBtn && !presencialBtn.dataset.holozonicAttached) {
             presencialBtn.dataset.holozonicAttached = 'true';
@@ -305,10 +337,22 @@ class HolozonicPaymentSystem {
             // Redirecionar para checkout do Mercado Pago
             window.location.href = paymentData.init_point;
             
-        } catch (error) {
+                } catch (error) {
             console.error('❌ Erro ao processar formulário:', error);
             alert('Erro ao processar pagamento. Tente novamente ou entre em contato conosco.');
         }
+    }
+    
+    // Função para encontrar elementos por texto - Substituindo jQuery :contains()
+    findElementByText(selector, text) {
+        const elements = Array.from(document.querySelectorAll(selector));
+        return elements.find(el => el.textContent.includes(text));
+    }
+    
+    // Função para encontrar múltiplos elementos por texto
+    findElementsByText(selector, text) {
+        const elements = Array.from(document.querySelectorAll(selector));
+        return elements.filter(el => el.textContent.includes(text));
     }
 }
 
@@ -320,21 +364,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Tornar disponível globalmente para uso em outros scripts
     window.holozonicPayment = holozonicPayment;
-});
-
-// Helper function para buscar elementos que contêm texto específico
-jQuery.expr[':'].contains = function(a, i, m) {
-    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-};
-
-// Fallback se jQuery não estiver disponível
-if (typeof jQuery === 'undefined') {
-    // Função alternativa para encontrar elementos por texto
-    function findElementsByText(text) {
-        const elements = Array.from(document.querySelectorAll('button'));
-        return elements.filter(el => el.textContent.includes(text));
-    }
-    
-    // Adicionar ao protótipo do sistema
-    HolozonicPaymentSystem.prototype.findElementsByText = findElementsByText;
-} 
+}); 
