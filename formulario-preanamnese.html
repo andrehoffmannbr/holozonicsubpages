@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pré-Anamnese - Holozonic</title>
+    <meta name="description" content="Formulário de pré-anamnese da Holozonic para avaliação inicial do paciente.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #38B2AC;
+            --accent: #F56565;
+        }
+        
+        .primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .border-primary { border-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+        }
+        
+        .input-label {
+            position: absolute;
+            left: 16px;
+            top: 12px;
+            color: #64748b;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-size: 16px;
+        }
+        
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            top: -8px;
+            left: 12px;
+            font-size: 12px;
+            color: var(--primary);
+            background: white;
+            padding: 0 4px;
+        }
+        
+        .checkbox-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .checkbox-custom:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .checkbox-custom:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: -2px;
+            left: 2px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(44, 82, 130, 0.3);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Holozonic Logo" class="h-12 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">Holozonic</h1>
+                        <p class="text-sm text-gray-600">Medicina Integrativa</p>
+                    </div>
+                </div>
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-home text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Header do Formulário -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white mb-4">
+                    <i class="fas fa-clipboard-list text-yellow-300 mr-3"></i>
+                    Formulário de Pré-Anamnese
+                </h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    Este formulário nos ajuda a entender melhor seu histórico de saúde e necessidades específicas para oferecer o melhor tratamento personalizado.
+                </p>
+            </div>
+
+            <!-- Barra de Progresso -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+
+            <!-- Formulário -->
+            <div class="form-container p-8">
+                <form action="https://formspree.io/f/xrbgoqod" method="POST" id="preAnamneseForm">
+                    <!-- Informações do Serviço Selecionado -->
+                    <input type="hidden" name="servico_selecionado" id="servicoSelecionado" value="">
+                    <input type="hidden" name="valor_servico" id="valorServico" value="">
+                    
+                    <!-- Seção 1: Dados Pessoais -->
+                    <section class="form-section" data-section="1">
+                        <h2 class="section-title">
+                            <i class="fas fa-user text-secondary mr-2"></i>
+                            Dados Pessoais
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="input-group">
+                                <input type="text" name="nome_completo" class="input-field" placeholder=" " required>
+                                <label class="input-label">Nome Completo *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="email" name="email" class="input-field" placeholder=" " required>
+                                <label class="input-label">E-mail *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="tel" name="telefone" class="input-field" placeholder=" " required>
+                                <label class="input-label">Telefone/WhatsApp *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="date" name="data_nascimento" class="input-field" required>
+                                <label class="input-label">Data de Nascimento *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <select name="sexo" class="input-field" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <label class="input-label">Sexo *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="text" name="profissao" class="input-field" placeholder=" ">
+                                <label class="input-label">Profissão</label>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="text" name="endereco" class="input-field" placeholder=" ">
+                            <label class="input-label">Endereço Completo</label>
+                        </div>
+                    </section>
+
+                    <!-- Seção 2: Histórico Médico -->
+                    <section class="form-section hidden" data-section="2">
+                        <h2 class="section-title">
+                            <i class="fas fa-heartbeat text-secondary mr-2"></i>
+                            Histórico Médico
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="input-group">
+                                <textarea name="queixa_principal" rows="4" class="input-field" placeholder=" " required></textarea>
+                                <label class="input-label">Qual sua principal queixa ou motivo da consulta? *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="historico_doenca" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Tem alguma doença crônica? Qual?</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="medicamentos" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Faz uso de algum medicamento? Quais?</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="cirurgias" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Já realizou alguma cirurgia? Quais e quando?</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="alergias" rows="2" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Possui alguma alergia medicamentosa ou alimentar?</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="historico_familiar" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Histórico familiar de doenças (diabetes, hipertensão, câncer, etc.)</label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Seção 3: Estilo de Vida -->
+                    <section class="form-section hidden" data-section="3">
+                        <h2 class="section-title">
+                            <i class="fas fa-leaf text-secondary mr-2"></i>
+                            Estilo de Vida
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-primary">Hábitos Alimentares</h3>
+                                
+                                <div class="input-group">
+                                    <select name="dieta" class="input-field">
+                                        <option value="">Selecione...</option>
+                                        <option value="onivoro">Onívoro</option>
+                                        <option value="vegetariano">Vegetariano</option>
+                                        <option value="vegano">Vegano</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                    <label class="input-label">Tipo de Dieta</label>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <input type="number" name="agua_diaria" class="input-field" placeholder=" " min="0" max="10">
+                                    <label class="input-label">Quantos litros de água bebe por dia?</label>
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">Consome regularmente:</label>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" name="consumo[]" value="cafe" class="checkbox-custom">
+                                            <span>Café</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" name="consumo[]" value="alcool" class="checkbox-custom">
+                                            <span>Álcool</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" name="consumo[]" value="tabaco" class="checkbox-custom">
+                                            <span>Tabaco</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" name="consumo[]" value="acucar" class="checkbox-custom">
+                                            <span>Açúcar/Doces</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-primary">Atividade Física e Sono</h3>
+                                
+                                <div class="input-group">
+                                    <select name="exercicio_frequencia" class="input-field">
+                                        <option value="">Selecione...</option>
+                                        <option value="sedentario">Sedentário</option>
+                                        <option value="1-2x">1-2x por semana</option>
+                                        <option value="3-4x">3-4x por semana</option>
+                                        <option value="5+x">5+ vezes por semana</option>
+                                        <option value="atleta">Atleta profissional</option>
+                                    </select>
+                                    <label class="input-label">Frequência de Exercícios</label>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <input type="number" name="horas_sono" class="input-field" placeholder=" " min="1" max="12">
+                                    <label class="input-label">Quantas horas dorme por noite?</label>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <select name="qualidade_sono" class="input-field">
+                                        <option value="">Selecione...</option>
+                                        <option value="excelente">Excelente</option>
+                                        <option value="boa">Boa</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="ruim">Ruim</option>
+                                        <option value="pessima">Péssima</option>
+                                    </select>
+                                    <label class="input-label">Qualidade do Sono</label>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <select name="nivel_stress" class="input-field">
+                                        <option value="">Selecione...</option>
+                                        <option value="baixo">Baixo</option>
+                                        <option value="moderado">Moderado</option>
+                                        <option value="alto">Alto</option>
+                                        <option value="muito-alto">Muito Alto</option>
+                                    </select>
+                                    <label class="input-label">Nível de Estresse</label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Seção 4: Sintomas e Objetivos -->
+                    <section class="form-section hidden" data-section="4">
+                        <h2 class="section-title">
+                            <i class="fas fa-target text-secondary mr-2"></i>
+                            Sintomas e Objetivos
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="input-group">
+                                <textarea name="sintomas_atuais" rows="4" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Descreva os sintomas que sente atualmente</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="objetivos_tratamento" rows="4" class="input-field" placeholder=" " required></textarea>
+                                <label class="input-label">Quais são seus objetivos com o tratamento? *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <select name="urgencia" class="input-field" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="baixa">Baixa - Prevenção/Bem-estar</option>
+                                    <option value="media">Média - Sintomas moderados</option>
+                                    <option value="alta">Alta - Sintomas intensos</option>
+                                    <option value="urgente">Urgente - Preciso de atenção imediata</option>
+                                </select>
+                                <label class="input-label">Como classifica a urgência do seu caso? *</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="tratamentos_anteriores" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Já fez algum tratamento de medicina integrativa antes? Qual?</label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <textarea name="observacoes" rows="3" class="input-field" placeholder=" "></textarea>
+                                <label class="input-label">Observações adicionais ou dúvidas</label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Seção 5: Consentimento e Finalização -->
+                    <section class="form-section hidden" data-section="5">
+                        <h2 class="section-title">
+                            <i class="fas fa-shield-alt text-secondary mr-2"></i>
+                            Consentimento e Finalização
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                                <h3 class="text-lg font-semibold text-blue-800 mb-3">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    Informações Importantes
+                                </h3>
+                                <ul class="text-blue-700 space-y-2">
+                                    <li>• Seus dados são protegidos pela LGPD</li>
+                                    <li>• As informações serão usadas apenas para seu atendimento</li>
+                                    <li>• Após o envio, você será direcionado para o pagamento</li>
+                                    <li>• Somente após o pagamento confirmado você poderá agendar</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <label class="flex items-start space-x-3">
+                                    <input type="checkbox" name="consentimento_dados" value="sim" class="checkbox-custom mt-1" required>
+                                    <span class="text-gray-700">
+                                        Declaro que as informações fornecidas são verdadeiras e autorizo o uso dos meus dados para fins de atendimento médico, conforme a 
+                                        <a href="politicas-privacidade.html" target="_blank" class="text-primary hover:underline">Política de Privacidade</a>.
+                                    </span>
+                                </label>
+                                
+                                <label class="flex items-start space-x-3">
+                                    <input type="checkbox" name="consentimento_tratamento" value="sim" class="checkbox-custom mt-1" required>
+                                    <span class="text-gray-700">
+                                        Estou ciente de que a medicina integrativa complementa o tratamento médico convencional e não o substitui.
+                                    </span>
+                                </label>
+                                
+                                <label class="flex items-start space-x-3">
+                                    <input type="checkbox" name="consentimento_contato" value="sim" class="checkbox-custom mt-1">
+                                    <span class="text-gray-700">
+                                        Autorizo o contato via WhatsApp e e-mail para comunicações sobre meu tratamento e promoções da clínica.
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <!-- Resumo do Serviço Selecionado -->
+                            <div class="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border">
+                                <h3 class="text-lg font-semibold text-primary mb-3">
+                                    <i class="fas fa-clipboard-check mr-2"></i>
+                                    Resumo do Serviço Selecionado
+                                </h3>
+                                <div id="resumoServico" class="text-gray-700">
+                                    <p><strong>Serviço:</strong> <span id="nomeServicoResumo">-</span></p>
+                                    <p><strong>Valor:</strong> <span id="valorServicoResumo">-</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Botões de Navegação -->
+                    <div class="flex justify-between mt-8 pt-6 border-t">
+                        <button type="button" id="btnAnterior" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors hidden">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Anterior
+                        </button>
+                        
+                        <div class="flex space-x-4 ml-auto">
+                            <button type="button" id="btnProximo" class="btn-primary">
+                                Próximo
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                            
+                            <button type="submit" id="btnEnviar" class="btn-primary hidden">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar e Prosseguir para Pagamento
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="img/logo.png" alt="Holozonic Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold">Holozonic</span>
+            </div>
+            <p class="text-gray-300">
+                © 2024 Holozonic. Todos os direitos reservados. | 
+                <a href="politicas-privacidade.html" class="hover:text-blue-300">Políticas de Privacidade</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegação entre seções do formulário
+        const formSections = document.querySelectorAll('.form-section');
+        const btnProximo = document.getElementById('btnProximo');
+        const btnAnterior = document.getElementById('btnAnterior');
+        const btnEnviar = document.getElementById('btnEnviar');
+        const progressBar = document.getElementById('progressBar');
+        
+        let currentSection = 1;
+        const totalSections = formSections.length;
+        
+        // Capturar parâmetros da URL
+        function getUrlParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const servico = urlParams.get('servico');
+            const valor = urlParams.get('valor');
+            
+            if (servico && valor) {
+                document.getElementById('servicoSelecionado').value = servico;
+                document.getElementById('valorServico').value = valor;
+                document.getElementById('nomeServicoResumo').textContent = servico;
+                document.getElementById('valorServicoResumo').textContent = `R$ ${valor}`;
+            }
+        }
+        
+        // Atualizar progresso
+        function updateProgress() {
+            const progress = (currentSection / totalSections) * 100;
+            progressBar.style.width = progress + '%';
+        }
+        
+        // Mostrar seção atual
+        function showSection(sectionNumber) {
+            formSections.forEach((section, index) => {
+                if (index + 1 === sectionNumber) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+            
+            // Controle dos botões
+            btnAnterior.classList.toggle('hidden', sectionNumber === 1);
+            btnProximo.classList.toggle('hidden', sectionNumber === totalSections);
+            btnEnviar.classList.toggle('hidden', sectionNumber !== totalSections);
+            
+            updateProgress();
+        }
+        
+        // Validar seção atual
+        function validateCurrentSection() {
+            const currentSectionElement = document.querySelector(`[data-section="${currentSection}"]`);
+            const requiredFields = currentSectionElement.querySelectorAll('[required]');
+            
+            for (let field of requiredFields) {
+                if (!field.value.trim()) {
+                    field.focus();
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        // Event Listeners
+        btnProximo.addEventListener('click', () => {
+            if (validateCurrentSection() && currentSection < totalSections) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        });
+        
+        btnAnterior.addEventListener('click', () => {
+            if (currentSection > 1) {
+                currentSection--;
+                showSection(currentSection);
+            }
+        });
+        
+        // Submissão do formulário
+        document.getElementById('preAnamneseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateCurrentSection()) {
+                return;
+            }
+            
+            // Mostrar loading
+            btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+            btnEnviar.disabled = true;
+            
+            // Obter dados do serviço
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceId = urlParams.get('serviceId');
+            const servicoNome = urlParams.get('servico');
+            const valor = urlParams.get('valor');
+            
+            // Enviar para Formspree primeiro
+            const formData = new FormData(this);
+            formData.append('_next', `${window.location.origin}/pagamento-processando.html?serviceId=${serviceId}&servico=${encodeURIComponent(servicoNome)}&valor=${valor}`);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Após envio bem-sucedido do formulário, criar pagamento
+                    return createPaymentAfterForm(serviceId, servicoNome, valor, formData);
+                } else {
+                    throw new Error('Erro no envio do formulário');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao enviar formulário. Tente novamente.');
+                btnEnviar.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Enviar e Prosseguir para Pagamento';
+                btnEnviar.disabled = false;
+            });
+        });
+        
+        // Função para criar pagamento após envio do formulário
+        async function createPaymentAfterForm(serviceId, servicoNome, valor, formData) {
+            try {
+                const response = await fetch('http://localhost:3000/criar-pagamento', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        servicoId: serviceId,
+                        servicoNome: servicoNome,
+                        valor: parseFloat(valor)
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Erro ao criar pagamento');
+                }
+                
+                const paymentData = await response.json();
+                
+                // Redirecionar para checkout do Mercado Pago
+                window.location.href = paymentData.init_point;
+                
+            } catch (error) {
+                console.error('❌ Erro ao criar pagamento:', error);
+                // Fallback: redirecionar para página de contato
+                alert('Formulário enviado com sucesso! Redirecionando para contato devido a problema técnico no pagamento.');
+                window.location.href = 'index.html#contato';
+            }
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            getUrlParameters();
+            showSection(1);
+        });
+        
+        // Máscara para telefone
+        document.querySelector('input[name="telefone"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 7) {
+                value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html> 

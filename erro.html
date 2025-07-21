@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro no Pagamento - Holozonic</title>
+    <meta name="description" content="Ocorreu um erro no seu pagamento. Nossa equipe está aqui para ajudar.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #38B2AC;
+            --error: #F56565;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F56565 0%, #E53E3E 100%);
+            min-height: 100vh;
+        }
+        
+        .error-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Holozonic Logo" class="h-12 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">Holozonic</h1>
+                        <p class="text-sm text-gray-600">Medicina Integrativa</p>
+                    </div>
+                </div>
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-home text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Erro -->
+            <div class="text-center mb-8">
+                <div class="inline-block mb-6">
+                    <div class="bg-red-500 text-white rounded-full p-6 inline-block">
+                        <i class="fas fa-times text-6xl"></i>
+                    </div>
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4">
+                    ❌ Ops! Algo deu errado
+                </h1>
+                <p class="text-xl text-red-100 max-w-2xl mx-auto">
+                    Infelizmente não foi possível processar seu pagamento. Não se preocupe, nossa equipe está aqui para ajudar!
+                </p>
+            </div>
+
+            <!-- Container Principal -->
+            <div class="error-container p-8 mb-8">
+                <!-- Possíveis Causas -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-6 text-center">
+                        <i class="fas fa-question-circle mr-2"></i>
+                        Possíveis Causas
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                            <h3 class="font-semibold text-yellow-800 mb-2">
+                                <i class="fas fa-credit-card mr-2"></i>
+                                Problemas com o Cartão
+                            </h3>
+                            <ul class="text-yellow-700 text-sm space-y-1">
+                                <li>• Cartão bloqueado ou vencido</li>
+                                <li>• Limite insuficiente</li>
+                                <li>• Dados incorretos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-semibold text-blue-800 mb-2">
+                                <i class="fas fa-wifi mr-2"></i>
+                                Problemas Técnicos
+                            </h3>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Conexão instável</li>
+                                <li>• Timeout da sessão</li>
+                                <li>• Manutenção do sistema</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Próximas Ações -->
+                <div class="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        O que fazer agora?
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl mb-2">🔄</div>
+                            <h4 class="font-semibold mb-2">Tentar Novamente</h4>
+                            <p class="text-sm text-gray-600">Volte e tente fazer o pagamento novamente</p>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl mb-2">💳</div>
+                            <h4 class="font-semibold mb-2">Outro Cartão</h4>
+                            <p class="text-sm text-gray-600">Use um cartão diferente ou outro meio de pagamento</p>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-white rounded-lg shadow">
+                            <div class="text-3xl mb-2">📞</div>
+                            <h4 class="font-semibold mb-2">Fale Conosco</h4>
+                            <p class="text-sm text-gray-600">Nossa equipe pode ajudar com o pagamento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contatos de Suporte -->
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                        <i class="fas fa-headset mr-2"></i>
+                        Precisa de Ajuda? Estamos Aqui!
+                    </h3>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://wa.me/5511999998888?text=Olá! Tive um problema com o pagamento e preciso de ajuda." 
+                           target="_blank" 
+                           class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors inline-flex items-center gap-2 font-semibold">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            WhatsApp: (11) 99999-8888
+                        </a>
+                        
+                        <a href="mailto:contato@holozonic.com.br?subject=Erro no Pagamento - Preciso de Ajuda" 
+                           class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                            <i class="fas fa-envelope"></i>
+                            contato@holozonic.com.br
+                        </a>
+                        
+                        <a href="tel:+551133334444" 
+                           class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                            <i class="fas fa-phone"></i>
+                            (11) 3333-4444
+                        </a>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mt-4">
+                        <i class="fas fa-clock mr-1"></i>
+                        Atendimento: Segunda à Sexta, 8h às 18h | Sábados, 8h às 12h
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="text-center">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="javascript:history.back()" 
+                       class="bg-primary text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                        <i class="fas fa-arrow-left"></i>
+                        Tentar Novamente
+                    </a>
+                    
+                    <a href="index.html" 
+                       class="bg-gray-600 text-white px-8 py-4 rounded-lg hover:bg-gray-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                        <i class="fas fa-home"></i>
+                        Voltar ao Início
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="img/logo.png" alt="Holozonic Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold">Holozonic</span>
+            </div>
+            <p class="text-gray-300">
+                © 2024 Holozonic. Todos os direitos reservados. | 
+                <a href="politicas-privacidade.html" class="hover:text-blue-300">Políticas de Privacidade</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html> 

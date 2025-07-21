@@ -646,6 +646,48 @@
 **Arquivos modificados:**
 - 9 páginas HTML: Ajuste de padding-top das seções hero
 
+## ✅ Sessão 17: Commit e Push - Ajuste de Headers
+**Data:** [Data atual]
+
+**Solicitação:** Fazer commit e push das alterações de ajuste de headers para o repositório GitHub
+
+**Ações realizadas:**
+1. **Verificação do status:**
+   - Identificadas modificações nas 9 páginas HTML
+   - Arquivo documentation.md atualizado
+
+2. **Staging das alterações:**
+   - Comando: `git add .`
+   - Todos os arquivos modificados adicionados ao staging area
+
+3. **Commit criado:**
+   - **Hash:** 97d7c6b
+   - **Mensagem:** "fix: Ajustar headers para evitar sobreposição com menu fixo"
+   - **Alterações:** 10 arquivos modificados, 80 inserções, 9 deleções
+   - **Tipo:** Bug fix (correção de problema de UX)
+
+4. **Push realizado:**
+   - **Comando:** `git push origin main`
+   - **Resultado:** Sucesso (ea3cf3a..97d7c6b)
+   - **Objetos:** 23 enumerados, 12 comprimidos, 2.46 KiB enviados
+
+5. **Status final:**
+   - Working tree clean
+   - Branch local sincronizada com origin/main
+   - Nenhuma alteração pendente
+
+**Resumo técnico:**
+- **Problema:** Header fixo sobrepondo conteúdo principal
+- **Solução:** Aumento de padding-top de 5rem para 7rem (+32px)
+- **Impacto:** Melhoria significativa na experiência de navegação
+- **Páginas:** 9 páginas HTML ajustadas consistentemente
+
+**Repositório:**
+- URL: https://github.com/andrehoffmannbr/holozonicsubpages.git
+- Branch: main
+- Commit: 97d7c6b
+- Status: Atualizado e sincronizado
+
 ## Notas Importantes
 
 - A página `exames-imagem.html` ainda existe e é acessível via URL direta

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Aprovado - Holozonic</title>
+    <meta name="description" content="Pagamento aprovado com sucesso! Agora você pode agendar sua consulta.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #38B2AC;
+            --success: #48BB78;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #48BB78 0%, #38B2AC 100%);
+            min-height: 100vh;
+        }
+        
+        .success-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .success-animation {
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .calendar-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5C 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid var(--success);
+        }
+        
+        .step-number {
+            background: var(--success);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Holozonic Logo" class="h-12 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">Holozonic</h1>
+                        <p class="text-sm text-gray-600">Medicina Integrativa</p>
+                    </div>
+                </div>
+                <a href="index.html" class="text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-home text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <!-- Confirmação de Sucesso -->
+            <div class="text-center mb-8">
+                <div class="success-animation inline-block mb-6">
+                    <div class="bg-green-500 text-white rounded-full p-6 inline-block">
+                        <i class="fas fa-check text-6xl"></i>
+                    </div>
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4">
+                    🎉 Pagamento Aprovado com Sucesso!
+                </h1>
+                <p class="text-xl text-green-100 max-w-2xl mx-auto">
+                    Parabéns! Seu pagamento foi processado com sucesso. Agora você pode agendar sua consulta no calendário abaixo.
+                </p>
+            </div>
+
+            <!-- Container Principal -->
+            <div class="success-container p-8 mb-8">
+                <!-- Próximos Passos -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-6 text-center">
+                        <i class="fas fa-list-check mr-2"></i>
+                        Próximos Passos
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Pagamento Confirmado</h3>
+                                <p class="text-sm text-gray-600">✅ Concluído</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Agendar Consulta</h3>
+                                <p class="text-sm text-gray-600">📅 Use o calendário abaixo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Comparecimento</h3>
+                                <p class="text-sm text-gray-600">🏥 Na data agendada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações Importantes -->
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 mb-8">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Informações Importantes
+                    </h3>
+                    <ul class="text-blue-700 space-y-2">
+                        <li>• <strong>Confirmação:</strong> Você receberá um e-mail de confirmação em breve</li>
+                        <li>• <strong>Reagendamento:</strong> Caso precise reagendar, entre em contato conosco</li>
+                        <li>• <strong>Documentos:</strong> Traga um documento com foto no dia da consulta</li>
+                        <li>• <strong>Pontualidade:</strong> Chegue 15 minutos antes do horário agendado</li>
+                        <li>• <strong>Dúvidas:</strong> Nossa equipe está disponível via WhatsApp</li>
+                    </ul>
+                </div>
+
+                <!-- Calendário do Google -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-primary mb-6">
+                        <i class="fas fa-calendar-alt mr-3"></i>
+                        Agende Sua Consulta
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Selecione o melhor horário disponível em nossa agenda
+                    </p>
+                    
+                    <div class="calendar-container">
+                        <iframe 
+                            src="https://calendar.google.com/calendar/embed?src=holozonic%40gmail.com&ctz=America%2FSao_Paulo"
+                            style="border:0" 
+                            width="100%" 
+                            height="600" 
+                            frameborder="0" 
+                            scrolling="no">
+                        </iframe>
+                    </div>
+                    
+                    <p class="text-sm text-gray-500 mt-4">
+                        <i class="fas fa-clock mr-1"></i>
+                        Horários disponíveis: Segunda à Sexta, 8h às 18h | Sábados, 8h às 12h
+                    </p>
+                </div>
+
+                <!-- Contatos de Emergência -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <i class="fas fa-headset mr-2"></i>
+                            Precisa de Ajuda?
+                        </h3>
+                        
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://wa.me/5511999998888?text=Olá! Acabei de fazer o pagamento e gostaria de agendar minha consulta." 
+                               target="_blank" 
+                               class="btn-whatsapp">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                                WhatsApp: (11) 99999-8888
+                            </a>
+                            
+                            <a href="mailto:contato@holozonic.com.br?subject=Agendamento - Pagamento Aprovado" 
+                               class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                contato@holozonic.com.br
+                            </a>
+                            
+                            <a href="tel:+551133334444" 
+                               class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors inline-flex items-center gap-2">
+                                <i class="fas fa-phone"></i>
+                                (11) 3333-4444
+                            </a>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mt-4">
+                            Nossa equipe está disponível para ajudar você com o agendamento
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="text-center mb-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html" 
+                       class="bg-primary text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                        <i class="fas fa-home"></i>
+                        Voltar ao Início
+                    </a>
+                    
+                    <button onclick="window.print()" 
+                            class="bg-gray-600 text-white px-8 py-4 rounded-lg hover:bg-gray-700 transition-colors inline-flex items-center gap-2 font-semibold">
+                        <i class="fas fa-print"></i>
+                        Imprimir Comprovante
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="img/logo.png" alt="Holozonic Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold">Holozonic</span>
+            </div>
+            <p class="text-gray-300">
+                © 2024 Holozonic. Todos os direitos reservados. | 
+                <a href="politicas-privacidade.html" class="hover:text-blue-300">Políticas de Privacidade</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Verificar parâmetros da URL para personalizar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paymentId = urlParams.get('payment_id');
+            const status = urlParams.get('status');
+            const merchantOrder = urlParams.get('merchant_order_id');
+            
+            if (paymentId) {
+                console.log('Payment ID:', paymentId);
+                console.log('Status:', status);
+                console.log('Merchant Order:', merchantOrder);
+                
+                // Aqui você pode fazer uma chamada para sua API para verificar o status do pagamento
+                // e personalizar a página baseado nos dados do pagamento
+            }
+            
+            // Animação de entrada
+            const container = document.querySelector('.success-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.6s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // Mostrar notificação de boas-vindas
+            setTimeout(() => {
+                if ('Notification' in window && Notification.permission === 'granted') {
+                    new Notification('Holozonic - Pagamento Aprovado!', {
+                        body: 'Seu pagamento foi processado com sucesso. Agora você pode agendar sua consulta.',
+                        icon: 'img/logo.png'
+                    });
+                }
+            }, 2000);
+        });
+        
+        // Solicitar permissão para notificações
+        if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+    </script>
+</body>
+</html> 
