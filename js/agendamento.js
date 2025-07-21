@@ -276,7 +276,7 @@ class HolozonicPaymentSystem {
                         <button onclick="holozonicPayment.redirectToForm('${id}')" 
                                 class="text-left p-4 border rounded-lg hover:bg-gray-50 transition-colors">
                             <h4 class="font-semibold text-gray-800">${data.nome}</h4>
-                            <p class="text-primary font-bold">R$ ${data.preco}</p>
+                            <p class="text-primary font-bold"></p>
                         </button>
                     `).join('')}
                 </div>
