@@ -7,13 +7,32 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Detectar URL base automaticamente
+const getBaseURL = (req) => {
+    if (process.env.NODE_ENV === 'production') {
+        // Em produção, usar a URL do Railway
+        return process.env.RAILWAY_STATIC_URL || `${req.protocol}://${req.get('host')}`;
+    }
+    return 'http://localhost:3000';
+};
+
 // Configuração do Mercado Pago
 const client = new MercadoPagoConfig({
     accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN || 'APP_USR-5956351957753101-061711-e7363d09d29a257c3e1d645ba3004ae8-1862853195',
 });
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+        'https://holozonicsubpages.vercel.app',
+        'https://andrehoffmannbr.github.io'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -91,9 +110,9 @@ app.post('/criar-pagamento', async (req, res) => {
                 installments: 12
             },
             back_urls: {
-                success: `${req.protocol}://${req.get('host')}/sucesso.html`,
-                failure: `${req.protocol}://${req.get('host')}/erro.html`,
-                pending: `${req.protocol}://${req.get('host')}/pendente.html`
+                success: `https://holozonicsubpages.vercel.app/sucesso.html`,
+                failure: `https://holozonicsubpages.vercel.app/erro.html`,
+                pending: `https://holozonicsubpages.vercel.app/pendente.html`
             },
             auto_return: 'approved',
             external_reference: `HOLOZONIC-${Date.now()}-${servicoId}`,

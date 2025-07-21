@@ -658,7 +658,12 @@
         // Função para criar pagamento após envio do formulário
         async function createPaymentAfterForm(serviceId, servicoNome, valor, formData) {
             try {
-                const response = await fetch('http://localhost:3000/criar-pagamento', {
+                // Detectar URL da API automaticamente
+                const apiURL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:3000' 
+                    : 'https://holozonicsubpages-backend.up.railway.app';
+                
+                const response = await fetch(`${apiURL}/criar-pagamento`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

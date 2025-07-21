@@ -30,7 +30,13 @@ class HolozonicPaymentSystem {
         };
         
         this.baseURL = window.location.protocol + '//' + window.location.host;
-        this.serverURL = 'http://localhost:3000'; // Alterar para URL do servidor em produção
+        
+        // Detectar automaticamente a URL da API
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            this.serverURL = 'http://localhost:3000'; // Desenvolvimento local
+        } else {
+            this.serverURL = 'https://holozonicsubpages-backend.up.railway.app'; // Produção Railway
+        }
         
         this.init();
     }
