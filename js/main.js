@@ -489,7 +489,7 @@ function openWhatsApp() {
         });
     }
     
-    const phoneNumber = '5511999998888';
+    const phoneNumber = '554899128212';
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta na Clínica Holozonic.');
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     
