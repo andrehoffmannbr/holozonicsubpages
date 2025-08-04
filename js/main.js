@@ -282,23 +282,13 @@ function showAgendamentoModal() {
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-primary mb-2">Agendamento Online</h3>
-                    <p class="text-gray-600">Escolha como deseja agendar sua consulta</p>
+                    <p class="text-gray-600">Agende sua consulta pelo WhatsApp</p>
                 </div>
                 
                 <div class="space-y-4">
-                    <button onclick="openPortalTelemedicina()" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                        <i class="fas fa-external-link-alt mr-2"></i>
-                        Portal Telemedicina
-                    </button>
-                    
                     <button onclick="openWhatsApp()" class="w-full bg-secondary text-white py-3 rounded-lg hover:bg-green-600 transition-colors">
                         <i class="fab fa-whatsapp mr-2"></i>
                         WhatsApp
-                    </button>
-                    
-                    <button onclick="openTeleconsulta()" class="w-full bg-accent text-white py-3 rounded-lg hover:bg-purple-600 transition-colors">
-                        <i class="fas fa-video mr-2"></i>
-                        Teleconsulta
                     </button>
                 </div>
             </div>
