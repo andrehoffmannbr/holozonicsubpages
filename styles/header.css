@@ -85,10 +85,13 @@
 }
 
 /* Manter logo sempre com cor original */
+
 #main-header .logo-hover {
     color: #1E90FF !important;
+    max-height: 80px;
+    width: auto;
+    height: 80px;
 }
-
 /* Logo hover effect */
 .logo-hover {
     transition: transform 0.2s ease, color 0.2s ease;
