@@ -9,6 +9,22 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
+        <!-- Fundo claro exclusivo da HOME (não altera outros componentes) -->
+        <style id="home-bg-style">
+            /* Ajuste de cor: altere COLOR_MODE no prompt (blue/green) */
+            :root {
+                --home-bg: #E6F7FF; /* #E6F7FF (azul) ou #E8F9E9 (verde) */
+            }
+
+            html, body {
+                background: var(--home-bg) !important;
+                /* Não mexer em tipografia nem em cores dos cards */
+                /* Não usar reset global adicional */
+            }
+
+            /* Segurança: não interferir em elementos com background próprio */
+            /* Nenhuma regra extra aqui. Mantemos o escopo no fundo da página. */
+        </style>
     
     <!-- TailwindCSS Configuration -->
     <script>
@@ -202,7 +218,7 @@
     </section>
     
     <!-- Seção: Por que a Holozonic -->
-    <section id="sobre" class="py-20 bg-gray-50">
+    <section id="sobre" class="py-20" style="background:#E6F7FF;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-primary mb-4">Por que a Holozonic?</h2>
@@ -460,7 +476,7 @@
     </section>
     
     <!-- Seção: OXIGÊNIO-OZONIOTERAPIA ASSÉPTICA -->
-    <section id="oxigenio" class="py-20 bg-gray-50">
+    <section id="oxigenio" class="py-20" style="background:#E6F7FF;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-primary mb-4">OXIGÊNIO-OZONIOTERAPIA ASSÉPTICA</h2>
@@ -741,7 +757,7 @@
         </div>
     </section>
     <!-- Seção: Consultas Avulsas -->
-    <section id="consultas" class="py-20 bg-gray-50">
+    <section id="consultas" class="py-20" style="background:#E6F7FF;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-primary mb-4">Consultas Avulsas com Protocolos Personalizados</h2>
@@ -904,7 +920,7 @@
     </section>
 
     <!-- Seção: Pacotes de 8 Sessões -->
-    <section class="py-20 bg-white">
+    <section class="py-20" style="background:#E6F7FF;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center bg-teal-100 text-teal-700 px-6 py-3 rounded-full text-lg font-medium mb-6">
